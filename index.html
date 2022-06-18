@@ -1,46 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <html>
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>All About US</title>
-      <link rel="stylesheet" href="./styles/normalize.css" />
-      <link rel="stylesheet" href="./styles/style.css" />
-      <!-- <style>
-      .grid-container {
-        display: grid;
-        column-gap: 10px;
-        grid-template-columns: auto auto auto;
-        background-color: black;
-        padding: 10px;
-      }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Around the US</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <h1>Around the US</h1>
 
-      .grid-item {
-        background-color: rgba(255, 255, 255, 0.8);
-        border: 1px solid rgba(0, 0, 0, 0.8);
-        padding: 20px;
-        font-size: 30px;
-        text-align: center;
-      }
-    </style> -->
-    </head>
-    <body>
-      <h1>The column-gap Property</h1>
-
-      <p>
-        Use the <em>column-gap</em> property to adjust the space between the
-        columns:
-      </p>
-
-      <div class="grid-container">
-        <div class="grid-item">1</div>
-        <div class="grid-item">2</div>
-        <div class="grid-item">3</div>
-        <div class="grid-item">4</div>
-        <div class="grid-item">5</div>
-        <div class="grid-item">6</div>
+      <div class="heading__cousteau">
+        <h2>Jacques Cousteau</h2>
+        <p>explorer</p>
       </div>
-    </body>
-  </html>
+      <div class="heading__cousteau-image"></div>
+        <img
+          src="./images/jacques-cousteau.jpg"
+          alt="jacques cousteau"
+        />
+      </div>
+      <div class="card">
+        <img
+          src="./images/yosemite-valley.jpg"
+          alt="Yosemite Valley"
+          style="width: 25%"
+        />
+        <div class="container">
+          <h4><b>Yosemite Valley</b></h4>
+        </div>
+        <img
+          src="./images/lake-louise.png"
+          alt="Lake Louise"
+          style="width: 25%"
+        />
+        <div class="container">
+          <h4><b>Lake Louise</b></h4>
+        </div>
+        <img
+          src="./images/bald-mountains.png"
+          alt="Bald Mountains"
+          style="width: 25%"
+        />
+        <div class="container">
+          <h4><b>Bald Mountains</b></h4>
+        </div>
+        <img src="./images/latemar.png" alt="Latemar" style="width: 25%" />
+        <div class="container">
+          <h4><b>Latemar</b></h4>
+        </div>
+        <img
+          src="./images/vanoise-national-park.png"
+          alt="national park"
+          style="width: 25%"
+        />
+        <div class="container">
+          <h4><b>Vanoise National Park</b></h4>
+        </div>
+        <img
+          src="./images/lago-di-braies.png"
+          alt="lago di braies"
+          style="width: 25%"
+        />
+        <div class="container">
+          <h4><b>Lago di Braies</b></h4>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

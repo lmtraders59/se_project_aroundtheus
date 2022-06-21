@@ -26,10 +26,10 @@ heading__cousteau-image {
 }
 
 .card__container {
-  /* display: grid;
+  display: grid;
   grid-template-columns: 25% 25% 25%;
   padding-left: 200px;
-  grid-gap: 20px 17px; */
+  grid-gap: 20px 17px;
   font-family: "Inter", Arial, sans-serif;
   padding: 15px 0 30px;
 }

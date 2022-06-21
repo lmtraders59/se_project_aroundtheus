@@ -8,6 +8,11 @@
   line-height: 20px;
 }
 
+.logo__image {
+  width: 173px;
+  height: 33px;
+}
+
 heading__cousteau {
 }
 
@@ -17,28 +22,42 @@ heading__cousteau-image {
   margin-top: 155.25px;
   margin-left: 177.5px;
   border: 70%;
+  border-radius: 10px;
 }
 
-.grid__card {
+.card__container {
+  /* display: grid;
+  grid-template-columns: 25% 25% 25%;
+  padding-left: 200px;
+  grid-gap: 20px 17px; */
+  font-family: "Inter", Arial, sans-serif;
+  padding: 15px 0 30px;
+}
+
+.card {
   /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: 0.3s; */
+  transition: 0.3s;
   display: grid;
   width: 282px;
   height: 282px;
   border-radius: 10px;
   grid-column: 6;
   grid-template-columns: 1fr;
+  width: 25%; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 282px);
+  justify-content: center;
+  grid-gap: 20px 18px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-}
-
-img {
+.card__image {
   border-radius: 10px;
 }
 
-.container {
+.card__content-container {
   padding: 2px 16px;
   font-size: 24px;
   font-weight: 900;

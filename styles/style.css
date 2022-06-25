@@ -13,21 +13,34 @@
   width: 173px;
   height: 33px;
   padding-top: 45px;
+  padding-bottom: 40px;
 }
 
 heading__text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header_description {
+  display: flex;
+  flex-direction: column;
+  color: white;
 }
 
 heading__image {
-  width: 168.75px;
-  height: 127.5px;
+  /* width: 168.75px;
+  height: 127.5px; */
   /* margin-top: 155.25px;
   margin-left: 177.5px; */
-  border: 70%;
-  border-radius: 10px;
+  /* border-radius: 10px;
   position: absolute;
   left: 78.5px;
-  top: 122.25px;
+  top: 122.25px; */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: 40px;
+  margin-right: 30px;
 }
 
 .card__container {
@@ -73,13 +86,13 @@ heading__image {
   color: black;
 }
 
-.profile__pen-image {
+.card__pen-image {
   width: 10px;
   height: 10px;
 }
 
 .card__heart-button {
-  margin-right: 30px;
+  /* margin-left: 5px; */
 }
 .card__heart-button:hover {
   opacity: 0.5;

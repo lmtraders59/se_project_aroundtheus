@@ -1,12 +1,18 @@
-.page {
+* + * {
+  border: 1px solid red;
+}
+
+.body {
   background-color: black;
+  height: 100vh;
+}
+
+.page {
   font-family: "Inter", Arial, sans-serif;
-  min-width: 1100px;
-  max-width: 1600px;
+  width: 880px;
   margin: 0 auto;
   font-size: 16px;
   line-height: 20px;
-  padding-left: 200px;
 }
 
 /* @media screen and (max-width: 880px) {
@@ -49,6 +55,14 @@
 
 .heading__text {
   color: white;
+  width: 194px;
+  height: 24px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  box-sizing: border-box;
 }
 
 .heading__pencil-button {
@@ -65,15 +79,17 @@
 
 .heading__save-button {
   color: white;
-  width: 50px;
+  width: 150px;
   height: 50px;
-  border: 1px solid #ffffff;
   box-sizing: border-box;
   margin-left: 180px;
+  /* margin-top: 20px; */
 }
-/* .heading__save-button {
+
+.heading__save-button:hover {
   opacity: 0.5;
-} */
+}
+
 .header_description {
 }
 
@@ -86,21 +102,14 @@
 
 .card__container {
   display: grid;
-  grid-template-columns: 25% 25% 25%;
-  /* padding-left: 200px; */
-  grid-gap: 20px 17px;
+  grid-template-columns: repeat(3, 282px);
+  grid-gap: 23px 17px;
   font-family: "Inter", Arial, sans-serif;
-  padding: 15px 0 30px;
+  margin: 16px 0 0 0;
+  padding-bottom: 150px;
 }
 
 .card {
-  /* display: grid;
-  grid-template-columns: repeat(auto-fit, 282px);
-  justify-content: center;
-  grid-gap: 20px 18px;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;  */
   background: white;
   border-radius: 10px;
 }

@@ -15,19 +15,15 @@
   line-height: 20px;
 }
 
-@media screen and (max-width: 880px) {
-  .page {
-    max-width: 768px;
-    margin: 0 auto;
-    padding: 0;
-  }
-}
-
 @media screen and (max-width: 580px) {
   .page {
     max-width: 320px;
-    margin: 0 auto;
-    padding: 0;
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .page {
+    max-width: 768px;
   }
 }
 
@@ -35,7 +31,7 @@
   width: 173px;
   height: 33px;
   padding-top: 45px;
-  padding-bottom: 40px;
+  padding-bottom: 81px;
 }
 
 .heading {
@@ -47,68 +43,87 @@
 
 /* @media screen and (max-width: 580px) {
   .heading {
-    /* margin-top: 28px; */
-    float: none;
-    width: 100%;
+    margin-top: 28px;
+    width: 320px;
   } */
 
-  .heading__text {
+/* @media screen and (max-width: 880px) {
+  .heading {
+    display: flex;
+    gap: 0 40px;
     color: white;
-    width: 194px;
-    height: 24px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 42px;
-    line-height: 48px;
-    box-sizing: border-box;
-  }
+    padding-bottom: 51px;
+  } */
 
-  .heading__pencil-button {
-    color: white;
-    width: 24x;
-    height: 24px;
-    border: 1px solid #ffffff;
-    box-sizing: border-box;
-    margin-left: 10px;
-  }
-  .heading__pencil-button:hover {
-    opacity: 0.5;
-  }
+.heading__text {
+  color: white;
+  width: 194px; 
+  height: 24px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  box-sizing: border-box;
+}
 
-  .heading__save-button {
-    color: white;
-    width: 150px;
-    height: 50px;
-    box-sizing: border-box;
-    margin-left: 180px;
-    margin-top: 30px;
-  }
+.heading__pencil-button {
+  color: white;
+  width: 24x;
+  height: 24px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  margin-left: 10px;
+}
+.heading__pencil-button:hover {
+  opacity: 0.5;
+}
 
-  .heading__save-button:hover {
-    opacity: 0.5;
-  }
+.heading__pencil {
+}
 
-  .heading_description {
-  }
+.heading__save-button {
+  color: white;
+  width: 150px;
+  height: 50px;
+  box-sizing: border-box;
+  margin-left: 322px; 
+  margin-top: 30px;
+}
 
-  .heading__image {
-    border-radius: 50%;
-    overflow: hidden;
-    width: 128px;
-    height: 128px;
-  }
+.heading__save-button:hover {
+  opacity: 0.5;
+}
 
+.heading_description {
+}
+
+.heading__image {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+}
+
+.card__container {
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  grid-gap: 23px 17px;
+  font-family: "Inter", Arial, sans-serif;
+  margin: 16px 0 0 0;
+  padding-bottom: 150px;
+}
+/* @media screen and (max-width: 580px) {
   .card__container {
-    display: grid;
-    grid-template-columns: repeat(3, 282px);
-    grid-gap: 23px 17px;
-    font-family: "Inter", Arial, sans-serif;
-    margin: 16px 0 0 0;
-    padding-bottom: 150px;
+    grid-template-columns: 1fr;
+    max-width: 282px;
   }
-
-  .card {
+  @media screen and (max-width: 880px) {
+    .card__container {
+      grid-template-columns: 1fr 1fr;
+      margin: 0 auto;
+    }  */
+.card {
     background: white;
     border-radius: 10px;
     /* width: 282px;
@@ -117,7 +132,6 @@
 }
 
 .card__image {
-  /* border-radius: 10px; */
   max-height: 230px;
   width: 100%;
 }
@@ -137,10 +151,6 @@
   box-sizing: border-box;
   margin: 0;
   margin-right: 16px;
-  /* white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;  */
-
 }
 
 .card__text {
@@ -149,18 +159,15 @@
   padding-top: 25px;
   padding-bottom: 25px;
   overflow: hidden;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
 }
-. .card__pen-image {
+.card__pen-image {
   width: 10px;
   height: 10px;
 }
 
-.card__heart-button {
-  /* margin-left: 5px; */
-}
-.card__heart-button:hover {
-  opacity: 0.5;
+.card__edit-button:hover {
+  opacity: 0.3;
 }
 
 /* @media screen and (max-width: 880px) {
@@ -176,25 +183,5 @@
     grid-template-columns: 1fr;
     max-width: 282px;
     margin: 0 auto;
-  }
-} */
-
-/* .footer {
-  font-family: "Inter", Arial, sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 22px;
-  color: #545454;
-  margin: 67px 0 60px;
-}
-.footer__copyright {
-  margin: 0;
-}
-@media screen and (max-width: 580px) {
-  .footer {
-    margin: 48px 19px 36px;
-    font-size: 14px;
-    line-height: 17px;
   }
 } */

@@ -1,6 +1,6 @@
-* + * {
+/* * + * {
   border: 1px solid red;
-}
+} */
 
 .body {
   background-color: black;
@@ -15,20 +15,21 @@
   line-height: 20px;
 }
 
-/* @media screen and (max-width: 880px) {
+@media screen and (max-width: 880px) {
   .page {
     max-width: 768px;
     margin: 0 auto;
     padding: 0;
   }
 }
+
 @media screen and (max-width: 580px) {
   .page {
     max-width: 320px;
     margin: 0 auto;
     padding: 0;
   }
-} */
+}
 
 .around__image {
   width: 173px;
@@ -45,73 +46,73 @@
 
 /* @media screen and (max-width: 580px) {
   .heading {
-    margin-top: 28px;
-}
+    /* margin-top: 28px; */
+    float: none;
+    width: 100%;
+  } */
 
-.heading {
-  border-bottom: 1px solid rgba(84, 84, 84, 0.7);
-  margin-top: 45px;
-} */
+  .heading__text {
+    color: white;
+    width: 194px;
+    height: 24px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 48px;
+    box-sizing: border-box;
+  }
 
-.heading__text {
-  color: white;
-  width: 194px;
-  height: 24px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 42px;
-  line-height: 48px;
-  box-sizing: border-box;
-}
+  .heading__pencil-button {
+    color: white;
+    width: 24x;
+    height: 24px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    margin-left: 10px;
+  }
+  .heading__pencil-button:hover {
+    opacity: 0.5;
+  }
 
-.heading__pencil-button {
-  color: white;
-  width: 24x;
-  height: 24px;
-  border: 1px solid #ffffff;
-  box-sizing: border-box;
-  margin-left: 10px;
-}
-.heading__pencil-button:hover {
-  opacity: 0.5;
-}
+  .heading__save-button {
+    color: white;
+    width: 150px;
+    height: 50px;
+    box-sizing: border-box;
+    margin-left: 180px;
+    margin-top: 30px;
+  }
 
-.heading__save-button {
-  color: white;
-  width: 150px;
-  height: 50px;
-  box-sizing: border-box;
-  margin-left: 180px;
-  /* margin-top: 20px; */
-}
+  .heading__save-button:hover {
+    opacity: 0.5;
+  }
 
-.heading__save-button:hover {
-  opacity: 0.5;
-}
+  .heading_description {
+  }
 
-.header_description {
-}
+  .heading__image {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 128px;
+    height: 128px;
+  }
 
-.heading__image {
-  border-radius: 50%;
-  overflow: hidden;
-  width: 128px;
-  height: 128px;
-}
+  .card__container {
+    display: grid;
+    grid-template-columns: repeat(3, 282px);
+    grid-gap: 23px 17px;
+    font-family: "Inter", Arial, sans-serif;
+    margin: 16px 0 0 0;
+    padding-bottom: 150px;
+  }
 
-.card__container {
-  display: grid;
-  grid-template-columns: repeat(3, 282px);
-  grid-gap: 23px 17px;
-  font-family: "Inter", Arial, sans-serif;
-  margin: 16px 0 0 0;
-  padding-bottom: 150px;
-}
-
-.card {
-  background: white;
-  border-radius: 10px;
+  .card {
+    background: white;
+    border-radius: 10px;
+    /* width: 282px;
+  height: 282px; */
+  }
 }
 
 .card__image {
@@ -135,11 +136,19 @@
   box-sizing: border-box;
   margin: 0;
   margin-right: 16px;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;  */
+
 }
 
 .card__text {
   margin: 0 16px 0 0;
   white-space: nowrap;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  overflow: hidden;
+  text-overflow: ellipsis; 
 }
 . .card__pen-image {
   width: 10px;

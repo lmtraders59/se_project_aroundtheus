@@ -118,16 +118,18 @@
   margin: 16px 0 0 0;
   padding-bottom: 150px;
 }
-/* @media screen and (max-width: 580px) {
+@media screen and (max-width: 580px) {
   .card__container {
     grid-template-columns: 1fr;
     max-width: 282px;
   }
-  @media screen and (max-width: 880px) {
+}
+@media screen and (max-width: 880px) {
     .card__container {
       grid-template-columns: 1fr 1fr;
       margin: 0 auto;
-    }  */
+    }  
+  }
 .card {
     background: white;
     border-radius: 10px;

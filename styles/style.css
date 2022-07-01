@@ -65,6 +65,8 @@
   font-size: 42px;
   line-height: 48px;
   box-sizing: border-box;
+  margin-top: 16px; 
+  margin-bottom: 16px;
 }
 
 .heading__pencil-button {
@@ -74,6 +76,7 @@
   border: 1px solid #ffffff;
   box-sizing: border-box;
   margin-left: 10px;
+  margin-bottom: 16px;
 }
 .heading__pencil-button:hover {
   opacity: 0.5;
@@ -88,7 +91,7 @@
   height: 50px;
   box-sizing: border-box;
   margin-left: 322px; 
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .heading__save-button:hover {
@@ -160,10 +163,11 @@
   padding-bottom: 25px;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.card__pen-image {
-  width: 10px;
-  height: 10px;
+  font-family: "Inter", Arial, sans-serif;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
 }
 
 .card__edit-button:hover {

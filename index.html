@@ -6,6 +6,7 @@
     <title>Around the US</title>
     <link rel="stylesheet" href="./styles/normalize.css" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./vendor/fonts.css" />
   </head>
   <body class="body">
     <div class="page">
@@ -18,27 +19,20 @@
       </header>
       <div class="heading">
         <div class="heading__image">
-          <img
-            src="./images/jacques-cousteau.jpg"
-            alt="jacques cousteau"
-            <!--
-            width="100%"
-            --
-          />
-          />
+          <div class="heading__hidden">
+            <img src="./images/jacques-cousteau.jpg" alt="jacques cousteau" />
+          </div>
         </div>
         <div class="heading__cousteau">
-          <p class="heading__text">Jacques Cousteau</p>
-          <p class="heading__description">Explorer</p>
+          <h2 class="heading__text">Jacques Cousteau</h2>
           <button type="button" class="heading__pencil-button">
             <img alt="Pencil button" src="./images/pencil-vector.svg" />
           </button>
+          <p class="heading__description">Explorer</p>
         </div>
-        <img
-          alt="Add button"
-          class="heading__save-button"
-          src="./images/Add-Button.svg"
-        />
+        <button type="button" class="heading__save-button">
+          <img alt="Add button" src="./images/Add-Button.svg" />
+        </button>
       </div>
       <section class="card__container">
         <div class="card">

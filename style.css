@@ -48,6 +48,10 @@ heading__image {
   width: 120px;
   height: 120px;
 }
+.page_section {
+  max-width: 882px;
+  margin: 0 auto;
+}
 
 .card__container {
   display: grid;

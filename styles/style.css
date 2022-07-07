@@ -9,7 +9,7 @@
 
 .page {
   font-family: "Inter", Arial, sans-serif;
-  width: 880px;
+  /* width: 880px; */
   margin: 0 auto;
   font-size: 16px;
   line-height: 20px;
@@ -18,7 +18,7 @@
 
 @media screen and (max-width: 580px) {
   .page {
-    max-width: 320px;
+    /* max-width: 320px; */
   }
 }
 
@@ -163,8 +163,8 @@
 }
 @media screen and (max-width: 580px) {
   .card__container {
-    grid-template-columns: repeat(auto-fit, 282px);
-    max-width: 282px;
+    /* grid-template-columns: repeat(auto-fit, 282px);
+    max-width: 282px; */
   }
 }
 @media screen and (max-width: 880px) {
@@ -172,9 +172,24 @@
     /* grid-template-columns: repeat(auto-fit, 282px);
     margin: 0 auto;
     max-width: 600px; */
-    display: grid;
+    /* display: grid;
     margin: 0;
-    padding: 0;
+    padding: 0; */
+  }
+}
+
+.cards {
+}
+
+.page_section {
+  max-width: 882px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media screen and (max-width: 1140px) {
+  .page_section {
+    width: calc(100% - 40px);
   }
 }
 

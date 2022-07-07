@@ -59,6 +59,12 @@
   grid-gap: 9px 17px;
 }
 
+@media screen and (max-width: 580px) {
+  .profile__image-container {
+    flex-direction: column;
+  }
+}
+
 /* @media screen and (max-width: 580px) {
   .profile {
     margin-top: 28px;

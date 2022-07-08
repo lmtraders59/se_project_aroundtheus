@@ -1,28 +1,20 @@
 .page {
-  background: #000;
-}
-
-.page__content {
-  background-color: black;
-  min-height: 100vh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  display: flex;
-  flex-direction: column;
-  /* It's about time to tell students about sticky footer (in "Could be improved") */
-}
-
-.page__section {
-  width: 100%;
-  max-width: 882px;
-  box-sizing: border-box;
-  position: relative;
+  font-family: "Inter", Arial, sans-serif;
+  width: 880px;
   margin: 0 auto;
+  font-size: 16px;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
 }
 
-@media screen and (max-width: 1140px) {
-  .page__section {
-    width: calc(100% - 40px);
+@media screen and (max-width: 580px) {
+  .page {
+    /* max-width: 320px; */
   }
 }
 
+@media screen and (max-width: 880px) {
+  .page {
+    max-width: 768px;
+  }
+}

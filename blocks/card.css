@@ -1,8 +1,6 @@
 .card {
   background: white;
   border-radius: 10px;
-  /* width: 282px;
-  height: 282px; */
   display: flex;
   overflow: hidden;
   flex-direction: column;
@@ -11,7 +9,6 @@
 .card__image {
   min-height: 282px;
   object-fit: cover;
-  /* width: 100%; */
 }
 
 .card__content-container {
@@ -19,9 +16,7 @@
   font-size: 24px;
   font-weight: 900;
   font-style: normal;
-  font-family: Inter;
-  /* width: auto;
-  background-color: white; */
+  font-family: "Inter", Arial, sans-serif;
   color: black;
   display: flex;
   justify-content: space-between;
@@ -46,7 +41,14 @@
   line-height: 29px;
 }
 
+.card__edit-button {
+  /* background: transparent url("../images/heart-vector.svg") center no-repeat; */
+  border: none;
+  background: no-repeat;
+  background: center;
+}
+
 .card__edit-button:hover {
-  opacity: 0.3;
+  opacity: 0.5;
   cursor: pointer;
 }

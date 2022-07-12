@@ -28,26 +28,9 @@
   }
 }
 
-/* @media screen and (max-width: 580px) {
-  .profile {
-    margin-top: 28px;
-    width: 320px;
-  }
-} */
-
-/* @media screen and (max-width: 880px) {
-  .profile {
-    display: flex;
-    gap: 0 40px;
-    color: white;
-    padding-bottom: 51px;
-    }
-  } */
-
 .profile__text {
   color: white;
   width: 373px;
-  height: 50px;
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -98,7 +81,7 @@
 }
 
 .profile__save-button:hover {
-  opacity: 0.5;
+  opacity: 0.6;
   cursor: pointer;
 }
 

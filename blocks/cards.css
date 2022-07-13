@@ -9,18 +9,6 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.page_section {
-  max-width: 882px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-@media screen and (max-width: 1140px) {
-  .page_section {
-    width: calc(100% - 40px);
-  }
-}
-
 @media screen and (max-width: 580px) {
   .cards__container {
     grid-template-columns: repeat(auto-fit, 282px);

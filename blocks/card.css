@@ -7,7 +7,7 @@
 }
 
 .card__image {
-  min-height: 282px;
+  max-height: 282px;
   object-fit: cover;
 }
 

@@ -38,6 +38,7 @@
   line-height: 48px;
   box-sizing: border-box;
   margin-top: 16px;
+  margin-bottom: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -49,6 +50,9 @@
   line-height: 22px;
   margin: 0;
   grid-area: description;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .profile__pencil-button {
   color: white;

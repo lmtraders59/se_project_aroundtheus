@@ -75,13 +75,16 @@
 .profile__save-button {
   box-sizing: border-box;
   border-radius: 2px;
-  min-width: 150px;
-  min-height: 50px;
   display: flex;
   justify-content: right;
   align-items: center;
-  margin-left: auto;
   background: transparent url(../images/Add-Button.svg) center no-repeat;
+  width: 150px;
+  height: 50px;
+  background-size: 22px;
+  margin-left: auto;
+  /* border: 2px solid #fff; */
+  transition: 0.3s;
 }
 
 .profile__save-button:hover {
@@ -94,12 +97,6 @@
   overflow: hidden;
   width: 120px;
   height: 120px;
-}
-
-.profile__hidden {
-  /* width: 100%;
-  object-fit: cover; */
-  /* object-fit: cover;
-  background-position: cover;
-   margin: 0 29px 0 0; */
+  object-fit: cover;
+  background-position: center;
 }

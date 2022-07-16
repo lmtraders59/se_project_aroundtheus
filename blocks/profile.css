@@ -6,13 +6,6 @@
   align-items: center;
 }
 
-/* @media screen and (max-width: 480px) {
-  .profile {
-    padding: 43px 0 21px;
-    flex-direction: column;
-    text-align: center;
-  } */
-
 .profile__image-container {
   display: grid;
   grid-template-areas:
@@ -100,4 +93,20 @@
   height: 120px;
   object-fit: cover;
   background-position: center;
+}
+
+/* @media screen and (max-width: 480px) {
+  .profile {
+    padding: 43px 0 21px;
+    flex-direction: column;
+    text-align: center;
+  } */
+
+@media screen and (max-width: 580px) {
+  .profile__image-container {
+    flex-direction: column;
+  }
+  .profile__save-button {
+    margin-left: 0;
+  }
 }

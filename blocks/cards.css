@@ -23,9 +23,6 @@
 }
 @media screen and (max-width: 880px) {
   .cards__container {
-    /* grid-template-columns: repeat(auto-fit, 282px);
-    margin: 0 auto;
-    max-width: 600px; */
     display: grid;
     margin: 0;
     padding: 0;

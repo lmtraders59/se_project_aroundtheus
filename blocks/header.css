@@ -1,7 +1,7 @@
 .header {
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding: 45px 0;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 .header__around-image {
   width: 173px;
@@ -19,4 +19,13 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    min-height: 85px;
+  }
+  .header::before {
+    width: calc(100% + 40px);
+  }
 }

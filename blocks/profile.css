@@ -101,7 +101,6 @@
   .profile__image-container {
     grid-template-columns: minmax(auto, 228px) auto;
     grid-gap: 5px 6px;
-    background-color: pink;
   }
 }
 
@@ -115,7 +114,6 @@
 @media screen and (max-width: 568px) {
   .profile__image-container {
     grid-template-columns: minmax(auto, 195px) auto;
-    background-color: red;
   }
 }
 
@@ -124,7 +122,5 @@
     padding: 43px 0 21px;
     flex-direction: column;
     text-align: center;
-    background-color: green;
-    /* margin-right: 0; */
   }
 }

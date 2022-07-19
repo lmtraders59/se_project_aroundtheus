@@ -48,11 +48,9 @@
   overflow: hidden;
 }
 .profile__pencil-button {
-  color: white;
   height: 24px;
   width: 24px;
   border: 1px solid #ffffff;
-  box-sizing: border-box;
   background: transparent url(../images/pencil-vector.svg) center no-repeat;
   grid-area: button;
   align-self: center;

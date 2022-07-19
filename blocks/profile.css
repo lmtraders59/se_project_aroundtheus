@@ -126,7 +126,6 @@
   .profile__text {
     font-size: 27px;
     line-height: 33px;
-    /* It's 56px according to the design. Don't be too strict with students here. */
   }
 
   .profile__description {
@@ -143,14 +142,6 @@
     text-align: center;
   }
 
-  /* .profile__info {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin: 29px 0 33px 0;
-  } */
-
   .profile__text {
     font-size: 22px;
     min-width: 201px;
@@ -160,18 +151,8 @@
     margin-bottom: 10px;
   }
 
-  /* .profile__image {
-    margin-right: 0;
-  } */
-
   .profile__save-button {
-    /* width: 282px; */
-    width: 100%;
+    width: calc(100% - 160px);
+    margin: 0 auto;
   }
-
-  /* .profile__pencil-button {
-    width: 18px;
-    height: 18px;
-    background-size: 8px 8px;
-  } */
 }

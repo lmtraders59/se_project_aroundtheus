@@ -24,7 +24,6 @@
 @media screen and (max-width: 880px) {
   .cards__container {
     display: grid;
-    margin: 0;
     padding: 0;
     justify-content: center;
   }

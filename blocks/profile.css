@@ -72,12 +72,16 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  background: transparent url(../images/Add-Button.svg) center no-repeat;
-  width: 150px;
+  background: transparent url(../images/plus-button.svg) center no-repeat;
   height: 50px;
+  width: 150px;
   background-size: 22px;
-  margin-left: auto;
   transition: 0.3s;
+  border: 1px solid #ffffff;
+  align-self: stretch;
+  margin-left: 29px;
+  margin-right: 19px;
+  margin-top: 20px;
 }
 
 .profile__save-button:hover {
@@ -102,13 +106,6 @@
   }
 }
 
-/* @media screen and (max-width: 580px) {
-  .profile__image-container {
-    flex-direction: column;
-    background-color: orange;
-  }
-} */
-
 @media screen and (max-width: 568px) {
   .profile__image-container {
     grid-template-columns: minmax(auto, 195px) auto;
@@ -120,5 +117,12 @@
     padding: 43px 0 21px;
     flex-direction: column;
     text-align: center;
+  }
+  .profile__text {
+    font-size: 20px;
+  }
+  .profile__description {
+    font-size: 12px;
+    margin-bottom: 10px;
   }
 }

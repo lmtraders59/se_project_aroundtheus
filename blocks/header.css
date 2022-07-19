@@ -28,4 +28,9 @@
   .header::before {
     width: calc(100% + 40px);
   }
+  .header__around-image {
+    width: 126px;
+    height: 24px;
+    margin: 0 0 0 7px;
+  }
 }

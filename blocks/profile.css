@@ -95,7 +95,7 @@
   height: 120px;
   object-fit: cover;
   background-position: center;
-  margin: 0 29px 0 0;
+  /* margin: 0 29px 0 0; */
 }
 
 @media screen and (max-width: 740px) {
@@ -143,16 +143,30 @@
   }
 
   .profile__text {
-    font-size: 22px;
+    font-size: 18px;
     min-width: 201px;
+    font-weight: 500;
+    font-family: "Inter", Arial, sans-serif;
   }
   .profile__description {
-    font-size: 12px;
     margin-bottom: 10px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    font-family: "Inter";
+  }
+
+  .profile__pencil-button {
+    height: 18px;
+    width: 18px;
+    background-size: 7.49px 7.5px;
   }
 
   .profile__save-button {
-    width: calc(100% - 160px);
-    margin: 0 auto;
+    width: calc(100% - 40px);
+    margin: 0 auto 6px;
+    text-align: center;
   }
 }

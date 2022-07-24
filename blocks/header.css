@@ -6,6 +6,7 @@
 .header__around-image {
   width: 173px;
   height: 33px;
+  object-fit: contain;
 }
 
 .header__around-image::before {
@@ -18,6 +19,18 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 0;
+}
+
+@media screen and (max-width: 740px) {
+  .header__around-image {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 568px) {
+  .header__around-image {
+    margin-left: 20px;
+  }
 }
 
 @media screen and (max-width: 480px) {

@@ -2,8 +2,9 @@
   display: flex;
   gap: 0 40px;
   color: white;
-  padding: 20px 0 32px;
+  padding: 20px 20px 32px;
   align-items: center;
+  font-family: "Inter", Arial, sans-serif;
 }
 
 .profile__image-container {
@@ -15,15 +16,8 @@
   grid-gap: 9px 17px;
 }
 
-@media screen and (max-width: 580px) {
-  .profile__image-container {
-    flex-direction: column;
-  }
-}
-
 .profile__text {
   color: white;
-  /* width: 373px; */
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;
   font-weight: 500;
@@ -81,6 +75,7 @@
   align-self: stretch;
   margin-left: auto;
   margin-top: 30px;
+  /* flex: 0 0 150px; */
 }
 
 .profile__save-button:hover {
@@ -90,12 +85,10 @@
 
 .profile__image {
   border-radius: 50%;
-  overflow: hidden;
-  width: 120px;
+  flex: 0 0 120px;
   height: 120px;
   object-fit: cover;
   background-position: center;
-  /* margin: 0 29px 0 0; */
 }
 
 @media screen and (max-width: 740px) {
@@ -128,11 +121,20 @@
     line-height: 33px;
   }
 
+  /* .profile__image {
+    margin: 0 10px 0 0;
+  } */
+
   .profile__description {
     font-size: 14px;
     line-height: 17px;
-    /* width: 100%; */
   }
+
+  /* .profile__save-button {
+    width: calc(100% - 40px);
+    margin: 0 auto 6px;
+    text-align: center;
+  } */
 }
 
 @media screen and (max-width: 480px) {
@@ -142,30 +144,38 @@
     text-align: center;
   }
 
+  .profile__image-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 29px 0 33px 0;
+  }
+
   .profile__text {
-    font-size: 18px;
+    font-size: 22px;
     min-width: 201px;
     font-weight: 500;
     font-family: "Inter", Arial, sans-serif;
   }
+
+  .profile__image {
+    margin-right: 0;
+  }
+
   .profile__description {
-    margin-bottom: 10px;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
-    text-align: center;
-    font-family: "Inter";
+    width: 100%;
   }
 
   .profile__pencil-button {
     height: 18px;
     width: 18px;
-    background-size: 7.49px 7.5px;
+    background-size: 8px 8px;
   }
 
   .profile__save-button {
     width: calc(100% - 40px);
+    height: 50px;
     margin: 0 auto 6px;
     text-align: center;
   }

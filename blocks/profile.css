@@ -2,7 +2,7 @@
   display: flex;
   gap: 0 40px;
   color: white;
-  padding: 40px 20px 32px;
+  padding: 40px 0 32px 0;
   align-items: center;
   font-family: "Inter", Arial, sans-serif;
 }
@@ -91,6 +91,10 @@
 }
 
 @media screen and (max-width: 740px) {
+  .profile {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .profile__image-container {
     grid-template-columns: minmax(auto, 228px) auto;
     grid-gap: 5px 6px;
@@ -111,6 +115,10 @@
 }
 
 @media screen and (max-width: 568px) {
+  .profile {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
   .profile__image-container {
     grid-template-columns: minmax(auto, 195px) auto;
   }

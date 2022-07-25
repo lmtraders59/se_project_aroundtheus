@@ -24,7 +24,7 @@
   font-size: 42px;
   line-height: 48px;
   box-sizing: border-box;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   margin-bottom: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -52,7 +52,7 @@
   margin: 0;
   transition: 0.3s;
   background-size: 10px 10px;
-  margin-top: 15px;
+  margin-top: 26px;
 }
 
 .profile__pencil-button:hover {
@@ -75,7 +75,6 @@
   align-self: stretch;
   margin-left: auto;
   margin-top: 30px;
-  /* flex: 0 0 150px; */
 }
 
 .profile__save-button:hover {
@@ -149,7 +148,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 29px 0 33px 0;
+    margin: 29px 0 36px 0;
   }
 
   .profile__text {
@@ -176,7 +175,7 @@
   .profile__save-button {
     width: calc(100% - 40px);
     height: 50px;
-    margin: 0 auto 6px;
+    margin: 0 auto 36px;
     text-align: center;
   }
 }

@@ -26,8 +26,8 @@
   }
 }
 
-@media screen and (max-width: 1140px) {
+/* @media screen and (max-width: 1140px) {
   .page__section {
     width: calc(100% - 40px);
   }
-}
+} */

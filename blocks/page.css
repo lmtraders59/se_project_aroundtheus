@@ -5,6 +5,7 @@
   font-size: 16px;
   line-height: 20px;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .page__section {
@@ -15,7 +16,7 @@
 
 @media screen and (max-width: 580px) {
   .page {
-    /* max-width: 320px; */
+    max-width: 320px;
   }
 }
 

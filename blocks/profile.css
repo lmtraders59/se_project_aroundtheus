@@ -2,7 +2,7 @@
   display: flex;
   gap: 0 40px;
   color: white;
-  padding: 20px 20px 32px;
+  padding: 40px 20px 32px;
   align-items: center;
   font-family: "Inter", Arial, sans-serif;
 }
@@ -52,7 +52,7 @@
   margin: 0;
   transition: 0.3s;
   background-size: 10px 10px;
-  margin-top: 26px;
+  margin-top: 20px;
 }
 
 .profile__pencil-button:hover {
@@ -148,7 +148,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 29px 0 36px 0;
+    /* margin: 29px 0 36px 0; */
+    margin: 18px 0 36px 0;
   }
 
   .profile__text {

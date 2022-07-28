@@ -1,7 +1,6 @@
 .header {
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding: 45px 0;
-  /* margin-bottom: 20px; */
   font-family: "Inter", Arial, sans-serif;
 }
 .header__around-image {
@@ -38,6 +37,12 @@
 }
 
 @media screen and (max-width: 480px) {
+  .header {
+    height: 83px;
+    padding: 0;
+    margin-top: 28px;
+  }
+
   .header::before {
     width: calc(100% + 40px);
   }

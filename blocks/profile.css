@@ -68,7 +68,7 @@
   align-items: center;
   background: transparent url(../images/plus-button.svg) center no-repeat;
   height: 50px;
-  width: 150px;
+  min-width: 150px;
   background-size: 22px;
   transition: 0.3s;
   border: 2px solid #ffffff;

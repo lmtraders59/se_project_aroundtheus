@@ -1,7 +1,14 @@
-Project 3: Around The U.S.
+Practicum - Around The US
 
-Some of the features of Project 3:
+This is Project 4 of the Software Engineering program at Practicum. It was created using HTML, CSS, and JavaScript based from the Figma design provided by Practicum.
 
-This project is uses grid and flex elements to display cards in a resposonsive web design.
+Project features:
+
+Semantic HTML5
+CSS Grid and Media Queries
+Flexbox
+Positioning
+BEM
+Javascript
 
 The link to GitHub Pages is https://lmtraders59.github.io/se_project_aroundtheus/

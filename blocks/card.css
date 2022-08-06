@@ -51,3 +51,22 @@
   opacity: 0.5;
   cursor: pointer;
 }
+
+.card__delete-button {
+  background-color: transparent;
+  background-image: url(../images/Trash.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  appearance: none;
+  border: none;
+  width: 18px;
+  height: 19px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.card__delete-button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}

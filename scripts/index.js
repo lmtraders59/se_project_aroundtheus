@@ -26,6 +26,19 @@ const initialCards = [
   },
 ];
 
+const imagePreview = document.getElementById("image-preview");
+const imagePreviewPicture = imagePreview.querySelector(".modal__preview-image");
+
+const cardImages = document.querySelectorAll(".card .card__image");
+
+cardImages.forEach((item, i) => {
+  item.addEventListener("click", () => {
+    imagePreview.classList.add("modal_opened");
+    imagePreviewPicture.src = item.src;
+  });
+});
+// -----------------------------------
+
 //popups and buttons
 const profileEditPopup = document.querySelector("#profileEdit");
 const addCardPopup = document.querySelector("#cardAdd");

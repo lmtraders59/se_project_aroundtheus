@@ -124,6 +124,97 @@
         <p class="footer__copyright">© 2022 Around The U.S.</p>
       </footer>
     </div>
-    <script src="index.js"></script>
+    <div class="modal" id="profileEdit">
+      <div class="modal__container">
+        <button type="button" class="modal__exit-button" id="profileExitBtn">
+          <img
+            src="./images/Close-icon.svg"
+            alt="exit button"
+            class="modal__exit-button-image"
+          />
+        </button>
+        <form class="modal__form" id="edit-form">
+          <h3 class="modal__form-title">Edit profile</h3>
+          <fieldset class="modal__form-fieldset">
+            <input
+              type="text"
+              class="modal__form-input"
+              name="name"
+              value="Jacques Cousteau"
+              required
+              id="nameInput"
+              placeholder="Name"
+            />
+            <input
+              type="text"
+              class="modal__form-input"
+              name="description"
+              value="Explorer"
+              required
+              id="jobInput"
+              placeholder="Profession"
+            />
+          </fieldset>
+          <fieldset class="modal__form-fieldset">
+            <button type="submit" class="modal__form-button">Save</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="cardAdd">
+      <div class="modal__container">
+        <button type="button" class="modal__exit-button" id="addExitBtn">
+          <img
+            src="./images/Close-icon.svg"
+            alt="exit button"
+            class="modal__exit-button-image"
+          />
+        </button>
+        <form class="modal__form" id="add-form">
+          <h3 class="modal__form-title">New Place</h3>
+          <fieldset class="modal__form-fieldset">
+            <input
+              type="text"
+              class="modal__form-input"
+              name="title"
+              value=""
+              required
+              placeholder="Title"
+            />
+            <input
+              type="url"
+              class="modal__form-input"
+              name="link"
+              value=""
+              required
+              placeholder="Image link"
+            />
+          </fieldset>
+          <fieldset class="modal__form-fieldset">
+            <button type="submit" class="modal__form-button">Save</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="image-preview">
+      <div class="modal__preview-container" id="image-preview-content">
+        <button
+          class="modal__exit-button"
+          id="image-preview_close"
+          type="button"
+        >
+          <img
+            src="./images/Close-Icon.svg"
+            alt="exit button"
+            class="modal__exit-button-image"
+          />
+        </button>
+        <div>
+          <img class="modal__preview-image" alt="" src=" " />
+          <h3 class="modal__preview-title"></h3>
+        </div>
+      </div>
+    </div>
+    <script src="scripts/index.js"></script>
   </body>
 </html>

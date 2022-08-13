@@ -8,11 +8,7 @@
   opacity: 0;
   transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
-.modal_opened {
-  visibility: visible;
-  opacity: 1;
-  transition: visibility 0s, opacity 0.5s linear;
-}
+
 .modal__container {
   display: block;
   position: fixed;
@@ -23,6 +19,13 @@
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.modal_opened {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+
 .modal__preview-container {
   display: block;
   position: fixed;

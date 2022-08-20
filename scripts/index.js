@@ -1,42 +1,42 @@
-///cards array
+// cards array
 const initialCards = [
   {
     name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+    link: "https://code.s3.yandex.net/web-code/yosemite.png",
   },
   {
     name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.png",
   },
   {
     name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.png",
   },
   {
     name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+    link: "https://code.s3.yandex.net/web-code/latemar.png",
   },
   {
     name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+    link: "https://code.s3.yandex.net/web-code/vanoise.png",
   },
   {
     name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
+    link: "https://code.s3.yandex.net/web-code/lago.png",
   },
 ];
 
-const imagePreview = document.getElementById("image-preview");
-const imagePreviewPicture = imagePreview.querySelector(".modal__preview-image");
+// const imagePreview = document.getElementById("image-preview");
+// const imagePreviewPicture = imagePreview.querySelector(".modal__preview-image");
 
-const cardImages = document.querySelectorAll(".card .card__image");
+// const cardImages = document.querySelectorAll(".card .card__image");
 
-cardImages.forEach((item, i) => {
-  item.addEventListener("click", () => {
-    imagePreview.classList.add("modal_opened");
-    imagePreviewPicture.src = item.src;
-  });
-});
+// cardImages.forEach((item, i) => {
+//   item.addEventListener("click", () => {
+//     imagePreview.classList.add("modal_opened");
+//     imagePreviewPicture.src = item.src;
+//   });
+// });
 // -----------------------------------
 
 //popups and buttons
@@ -110,7 +110,7 @@ const addFormElement = document.querySelector("#add-form");
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
 
-const profileName = document.querySelector(".profile__title");
+const profileName = document.querySelector(".profile__text");
 const profileJob = document.querySelector(".profile__description");
 
 function handleProfileFormSubmit(evt) {

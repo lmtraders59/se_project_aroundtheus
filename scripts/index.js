@@ -64,16 +64,16 @@ function renderCard(cardElement, container) {
 function createCard(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");
-  const cardTitle = cardElement.querySelector(".card__title");
+  const cardTitle = cardElement.querySelector(".card__text");
 
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
 
-  const cardLikeButton = cardElement.querySelector(".card__like-button");
-  cardLikeButton.addEventListener("click", () => {
-    cardLikeButton.classList.toggle("card__like-button_on");
-  });
+  // const cardLikeButton = cardElement.querySelector(".card__like-button");
+  // cardLikeButton.addEventListener("click", () => {
+  //   cardLikeButton.classList.toggle("card__like-button_on");
+  // });
 
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
@@ -100,8 +100,8 @@ profileCloseBtn.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
 addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
-addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));
-previewClose.addEventListener("click", () => closeModalWindow(previewModal));
+// addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));
+// previewClose.addEventListener("click", () => closeModalWindow(previewModal));
 
 //forms
 const profileFormElement = document.querySelector("#edit-form");
@@ -122,23 +122,23 @@ function handleProfileFormSubmit(evt) {
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
-addFormElement.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  const name = evt.target.title.value;
-  const link = evt.target.link.value;
-  const cardView = createCard({
-    name,
-    link,
-  });
-  renderCard(cardView, cardList);
-  addFormElement.reset();
-  closeModalWindow(addCardPopup);
-});
+// addFormElement.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+//   const name = evt.target.title.value;
+//   const link = evt.target.link.value;
+//   const cardView = createCard({
+//     name,
+//     link,
+//   });
+//   renderCard(cardView, cardList);
+//   addFormElement.reset();
+//   closeModalWindow(addCardPopup);
+// });
 
 const cardTemplate =
   document.querySelector("#cardTemplate").content.firstElementChild;
 
-const cardList = document.querySelector(".cards__list");
+const cardList = document.querySelector(".cards__container");
 
 initialCards.forEach(function (data) {
   const cardView = createCard(data);

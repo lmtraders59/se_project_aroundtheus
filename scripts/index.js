@@ -2,27 +2,27 @@
 const initialCards = [
   {
     name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.png",
+    link: "./images/yosemite.png",
   },
   {
     name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.png",
+    link: "./images/lake-louise.png",
   },
   {
     name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.png",
+    link: "./images/bald-mountains.png",
   },
   {
     name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.png",
+    link: "./images/latemar.png",
   },
   {
     name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.png",
+    link: "./images/vanoise.png",
   },
   {
     name: "Lago di Braies",
-    link: "https://code.s3.yandex.necreateCardt/web-code/lago.png",
+    link: "./images/lago.png",
   },
 ];
 
@@ -70,7 +70,7 @@ function createCard(data) {
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
 
-  // const cardLikeButton = cardElement.querySelector(".card__like-button");
+  // const cardLikeButton = cardElement.querySelector(".card__edit-button");
   // cardLikeButton.addEventListener("click", () => {
   //   cardLikeButton.classList.toggle("card__like-button_on");
   // });
@@ -122,21 +122,20 @@ function handleProfileFormSubmit(evt) {
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
-addFormElement.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  const name = evt.target.title.value;
-  const link = evt.target.link.value;
-  const cardView = createCard({
-    name,
-    link,
-  });
-  renderCard(cardView, cardList);
-  addFormElement.reset();
-  closeModalWindow(addCardPopup);
-});
+// addFormElement.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+//   const name = evt.target.title.value;
+//   const link = evt.target.link.value;
+//   const cardView = createCard({
+//     name,
+//     link,
+//   });
+//   renderCard(cardView, cardList);
+//   addFormElement.reset();
+//   closeModalWindow(addCardPopup);
+// });
 
-const cardTemplate =
-  document.querySelector("#cardTemplate").content.firstElementChild;
+const cardTemplate = document.querySelector("#cardTemplate").content;
 
 const cardList = document.querySelector(".cards__container");
 

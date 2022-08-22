@@ -22,7 +22,7 @@ const initialCards = [
   },
   {
     name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.png",
+    link: "https://code.s3.yandex.necreateCardt/web-code/lago.png",
   },
 ];
 
@@ -41,13 +41,13 @@ const initialCards = [
 
 //popups and buttons
 const profileEditPopup = document.querySelector("#profileEdit");
-const addCardPopup = document.querySelector("#cardAdd");
-const previewModal = document.querySelector("#image-preview");
+// const addCardPopup = document.querySelector("#cardAdd");
+// const previewModal = document.querySelector("#image-preview");
 const editProfileButton = document.querySelector("#openModal");
-const addCardButton = document.querySelector("#openModal2");
+// const addCardButton = document.querySelector("#openModal2");
 const profileCloseBtn = document.querySelector("#profileExitBtn");
-const addCloseBtn = document.querySelector("#addExitBtn");
-const previewClose = document.querySelector("#image-preview_close");
+// const addCloseBtn = document.querySelector("#addExitBtn");
+// const previewClose = document.querySelector("#image-preview_close");
 
 //functions
 function openModalWindow(modalWindow) {
@@ -75,21 +75,21 @@ function createCard(data) {
   //   cardLikeButton.classList.toggle("card__like-button_on");
   // });
 
-  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  cardDeleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
+  // const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+  // cardDeleteButton.addEventListener("click", () => {
+  //   cardElement.remove();
+  // });
 
-  cardImage.addEventListener("click", () => {
-    const previewImage = previewModal.querySelector(".modal__preview-image");
-    const previewTitle = previewModal.querySelector(".modal__preview-title");
-    previewImage.src = data.link;
-    previewImage.alt = data.name;
-    previewTitle.textContent = data.name;
-    openModalWindow(previewModal);
-  });
+  // cardImage.addEventListener("click", () => {
+  //   const previewImage = previewModal.querySelector(".modal__preview-image");
+  //   const previewTitle = previewModal.querySelector(".modal__preview-title");
+  //   previewImage.src = data.link;
+  //   previewImage.alt = data.name;
+  //   previewTitle.textContent = data.name;
+  //   openModalWindow(previewModal);
+  // });
 
-  return cardElement;
+  // return cardElement;
 }
 
 //event listeners
@@ -99,7 +99,7 @@ editProfileButton.addEventListener("click", () =>
 profileCloseBtn.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
-addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
+// addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
 // addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));
 // previewClose.addEventListener("click", () => closeModalWindow(previewModal));
 
@@ -122,18 +122,18 @@ function handleProfileFormSubmit(evt) {
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
 
-// addFormElement.addEventListener("submit", (evt) => {
-//   evt.preventDefault();
-//   const name = evt.target.title.value;
-//   const link = evt.target.link.value;
-//   const cardView = createCard({
-//     name,
-//     link,
-//   });
-//   renderCard(cardView, cardList);
-//   addFormElement.reset();
-//   closeModalWindow(addCardPopup);
-// });
+addFormElement.addEventListener("submit", (evt) => {
+  evt.preventDefault();
+  const name = evt.target.title.value;
+  const link = evt.target.link.value;
+  const cardView = createCard({
+    name,
+    link,
+  });
+  renderCard(cardView, cardList);
+  addFormElement.reset();
+  closeModalWindow(addCardPopup);
+});
 
 const cardTemplate =
   document.querySelector("#cardTemplate").content.firstElementChild;

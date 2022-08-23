@@ -1,8 +1,8 @@
 // cards array
 const initialCards = [
   {
-    name: "Yosemite Valley",
-    link: "./images/yosemite.png",
+    name: "Lago di Braies",
+    link: "./images/lago-di-braies.png",
   },
   {
     name: "Lake Louise",
@@ -13,41 +13,23 @@ const initialCards = [
     link: "./images/bald-mountains.png",
   },
   {
+    name: "Yosemite Valley",
+    link: "./images/yosemite-valley.png",
+  },
+  {
     name: "Latemar",
     link: "./images/latemar.png",
   },
   {
     name: "Vanoise National Park",
-    link: "./images/vanoise.png",
-  },
-  {
-    name: "Lago di Braies",
-    link: "./images/lago.png",
+    link: "./images/vanoise-national-park.png",
   },
 ];
 
-// const imagePreview = document.getElementById("image-preview");
-// const imagePreviewPicture = imagePreview.querySelector(".modal__preview-image");
-
-// const cardImages = document.querySelectorAll(".card .card__image");
-
-// cardImages.forEach((item, i) => {
-//   item.addEventListener("click", () => {
-//     imagePreview.classList.add("modal_opened");
-//     imagePreviewPicture.src = item.src;
-//   });
-// });
-// -----------------------------------
-
 //popups and buttons
 const profileEditPopup = document.querySelector("#profileEdit");
-// const addCardPopup = document.querySelector("#cardAdd");
-// const previewModal = document.querySelector("#image-preview");
 const editProfileButton = document.querySelector("#openModal");
-// const addCardButton = document.querySelector("#openModal2");
 const profileCloseBtn = document.querySelector("#profileExitBtn");
-// const addCloseBtn = document.querySelector("#addExitBtn");
-// const previewClose = document.querySelector("#image-preview_close");
 
 //functions
 function openModalWindow(modalWindow) {
@@ -69,27 +51,7 @@ function createCard(data) {
   cardImage.src = data.link;
   cardImage.alt = data.name;
   cardTitle.textContent = data.name;
-
-  // const cardLikeButton = cardElement.querySelector(".card__edit-button");
-  // cardLikeButton.addEventListener("click", () => {
-  //   cardLikeButton.classList.toggle("card__like-button_on");
-  // });
-
-  // const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-  // cardDeleteButton.addEventListener("click", () => {
-  //   cardElement.remove();
-  // });
-
-  // cardImage.addEventListener("click", () => {
-  //   const previewImage = previewModal.querySelector(".modal__preview-image");
-  //   const previewTitle = previewModal.querySelector(".modal__preview-title");
-  //   previewImage.src = data.link;
-  //   previewImage.alt = data.name;
-  //   previewTitle.textContent = data.name;
-  //   openModalWindow(previewModal);
-  // });
-
-  // return cardElement;
+  return cardElement;
 }
 
 //event listeners
@@ -99,13 +61,10 @@ editProfileButton.addEventListener("click", () =>
 profileCloseBtn.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
-// addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
-// addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));
-// previewClose.addEventListener("click", () => closeModalWindow(previewModal));
 
 //forms
 const profileFormElement = document.querySelector("#edit-form");
-const addFormElement = document.querySelector("#add-form");
+// const addFormElement = document.querySelector("#add-form");
 
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
@@ -121,19 +80,6 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
-
-// addFormElement.addEventListener("submit", (evt) => {
-//   evt.preventDefault();
-//   const name = evt.target.title.value;
-//   const link = evt.target.link.value;
-//   const cardView = createCard({
-//     name,
-//     link,
-//   });
-//   renderCard(cardView, cardList);
-//   addFormElement.reset();
-//   closeModalWindow(addCardPopup);
-// });
 
 const cardTemplate = document.querySelector("#cardTemplate").content;
 

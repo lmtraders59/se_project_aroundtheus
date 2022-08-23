@@ -6,13 +6,8 @@
   -webkit-font-smoothing: antialiased;
   justify-content: center;
   padding-top: 10px;
+  padding-left: 0;
 }
-
-/* @media screen and (max-width: 568px) {
-  .cards__container {
-    padding: 15px 0 18px;
-  }
-} */
 
 @media screen and (max-width: 580px) {
   .cards__container {

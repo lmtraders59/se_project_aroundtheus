@@ -30,6 +30,11 @@ const initialCards = [
 const profileEditPopup = document.querySelector("#profileEdit");
 const editProfileButton = document.querySelector("#openModal");
 const profileCloseBtn = document.querySelector("#profileExitBtn");
+// const addCardPopup = document.querySelector("#cardAdd");
+// const previewModal = document.querySelector("#image-preview");
+// const addCardButton = document.querySelector("#openModal2");
+// const addCloseBtn = document.querySelector("#addExitBtn");
+// const previewClose = document.querySelector("#image-preview_close");
 
 //functions
 function openModalWindow(modalWindow) {
@@ -62,9 +67,36 @@ profileCloseBtn.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
 
+const cardLikeButton = cardElement.querySelector(".card__like-button");
+cardLikeButton.addEventListener("click", () => {
+  cardLikeButton.classList.toggle("card__like-button_on");
+});
+
+//
+// const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+// cardDeleteButton.addEventListener("click", () => {
+//   cardElement.remove();
+// });
+
+//   cardImage.addEventListener("click", () => {
+//     const previewImage = previewModal.querySelector(".modal__preview-image");
+//     const previewTitle = previewModal.querySelector(".modal__preview-title");
+//     previewImage.src = data.link;
+//     previewImage.alt = data.name;
+//     previewTitle.textContent = data.name;
+//     openModalWindow(previewModal);
+//   });
+
+//   return cardElement;
+// }
+
+// addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
+// addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));
+// previewClose.addEventListener("click", () => closeModalWindow(previewModal));
+
 //forms
 const profileFormElement = document.querySelector("#edit-form");
-// const addFormElement = document.querySelector("#add-form");
+const addFormElement = document.querySelector("#add-form");
 
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
@@ -80,6 +112,19 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+
+// addFormElement.addEventListener("submit", (evt) => {
+//   evt.preventDefault();
+//   const name = evt.target.title.value;
+//   const link = evt.target.link.value;
+//   const cardView = createCard({
+//     name,
+//     link,
+//   });
+//   renderCard(cardView, cardList);
+//   addFormElement.reset();
+//   closeModalWindow(addCardPopup);
+// });
 
 const cardTemplate = document.querySelector("#cardTemplate").content;
 

@@ -52,6 +52,10 @@
   cursor: pointer;
 }
 
+.card__edit-button_on {
+  background-image: url(../images/Union.svg);
+}
+
 .card__delete-button {
   background-color: transparent;
   background-image: url(../images/Trash.svg);
@@ -59,11 +63,10 @@
   background-repeat: no-repeat;
   appearance: none;
   border: none;
-  width: 18px;
-  height: 19px;
-  position: absolute;
-  top: 18px;
-  right: 15px;
+  width: 30px;
+  height: 30px;
+  position: relative;
+  bottom: 250px;
 }
 
 .card__delete-button:hover {

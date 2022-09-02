@@ -41,13 +41,13 @@
   line-height: 29px;
 }
 
-.card__edit-button {
+.card__like-button {
   border: none;
   background: no-repeat;
   background: center;
 }
 
-.card__edit-button:hover {
+.card__like-button:hover {
   opacity: 0.5;
   cursor: pointer;
 }

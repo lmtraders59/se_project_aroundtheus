@@ -67,28 +67,42 @@ profileCloseBtn.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
 
-const cardLikeButton = cardElement.querySelector(".card__like-button");
-cardLikeButton.addEventListener("click", () => {
-  cardLikeButton.classList.toggle("card__like-button_on");
-});
+function createCard(data) {
+  const cardElement = cardTemplate.cloneNode(true);
+  const cardImage = cardElement.querySelector(".card__image");
+  const cardTitle = cardElement.querySelector(".card__text");
 
-//
+  const cardLikeButton = cardElement.querySelector(".card__like-button");
+  cardLikeButton.addEventListener("click", () => {
+    cardLikeButton.classList.toggle("card__like-button_on");
+  });
+
+  const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+  cardDeleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
+
+  cardImage.src = data.link;
+  cardImage.alt = data.name;
+  cardTitle.textContent = data.name;
+  return cardElement;
+}
+
 // const cardDeleteButton = cardElement.querySelector(".card__delete-button");
 // cardDeleteButton.addEventListener("click", () => {
 //   cardElement.remove();
 // });
 
-//   cardImage.addEventListener("click", () => {
-//     const previewImage = previewModal.querySelector(".modal__preview-image");
-//     const previewTitle = previewModal.querySelector(".modal__preview-title");
-//     previewImage.src = data.link;
-//     previewImage.alt = data.name;
-//     previewTitle.textContent = data.name;
-//     openModalWindow(previewModal);
-//   });
+// cardImage.addEventListener("click", () => {
+//   const previewImage = previewModal.querySelector(".modal__preview-image");
+//   const previewTitle = previewModal.querySelector(".modal__preview-title");
+//   previewImage.src = data.link;
+//   previewImage.alt = data.name;
+//   previewTitle.textContent = data.name;
+//   openModalWindow(previewModal);
+// });
 
-//   return cardElement;
-// }
+// return cardElement;
 
 // addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
 // addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));

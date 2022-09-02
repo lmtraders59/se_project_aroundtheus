@@ -44,7 +44,7 @@
 .card__like-button {
   border: none;
   background: no-repeat;
-  background: center;
+  background-position: center;
 }
 
 .card__like-button:hover {
@@ -52,8 +52,10 @@
   cursor: pointer;
 }
 
-.card__edit-button_on {
+.card__like-button_on {
   background-image: url(../images/Union.svg);
+  border: none;
+  align-self: center;
 }
 
 .card__delete-button {

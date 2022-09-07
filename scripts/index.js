@@ -48,16 +48,20 @@ function renderCard(cardElement, container) {
   cardList.prepend(cardElement);
 }
 
-function createCard(data) {
-  const cardElement = cardTemplate.cloneNode(true);
-  const cardImage = cardElement.querySelector(".card__image");
-  const cardTitle = cardElement.querySelector(".card__text");
+// function createCard(data) {
+//   const cardElement = cardTemplate.cloneNode(true);
+//   const cardImage = cardElement.querySelector(".card__image");
+//   const cardTitle = cardElement.querySelector(".card__text");
 
-  cardImage.src = data.link;
-  cardImage.alt = data.name;
-  cardTitle.textContent = data.name;
-  return cardElement;
-}
+//   cardImage.addEventListener("click", () => {
+//     console.log(123);
+//   });
+
+//   cardImage.src = data.link;
+//   cardImage.alt = data.name;
+//   cardTitle.textContent = data.name;
+//   return cardElement;
+// }
 
 //event listeners
 editProfileButton.addEventListener("click", () =>
@@ -72,15 +76,27 @@ function createCard(data) {
   const cardImage = cardElement.querySelector(".card__image");
   const cardTitle = cardElement.querySelector(".card__text");
 
+  cardImage.addEventListener("click", (event) => {
+    console.log(event.target.src);
+    // find modal preview
+    // open modal preview
+    // in modal preview pass the url you got to render an appropriate image
+  });
+
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_on");
   });
 
+  // delete card
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();
   });
+
+  // const cardTemplate = document
+  //   .querySelector("cardTemplate")
+  //   .content.querySelector(".card");
 
   cardImage.src = data.link;
   cardImage.alt = data.name;

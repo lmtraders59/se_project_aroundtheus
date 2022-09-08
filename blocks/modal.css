@@ -24,6 +24,8 @@
   visibility: visible;
   opacity: 1;
   transition: visibility 0s, opacity 0.5s linear;
+  /* top: 0;
+  left: 0; */
 }
 
 .modal__form {
@@ -49,6 +51,8 @@
   gap: 29px;
   padding: 0;
   margin: 0;
+  top: 0;
+  left: 0;
 }
 .modal__form-input {
   font-family: "Inter", Arial, sans-serif;
@@ -92,6 +96,17 @@
 .modal__exit-button:hover {
   opacity: 0.5;
   cursor: pointer;
+}
+
+.modal__preview-container {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0;
+  margin: 0;
 }
 
 .modal__preview-image {

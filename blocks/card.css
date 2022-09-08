@@ -65,8 +65,10 @@
   background-repeat: no-repeat;
   appearance: none;
   border: none;
-  width: 28px;
-  height: 30px;
+  /* width: 28px;
+  height: 29px; */
+  width: 18px;
+  height: 19px;
   position: relative;
   /* flex-basis: auto; */
   bottom: 250px;

@@ -35,7 +35,7 @@ const addCardButton = document.querySelector("#openModal2");
 const addCloseBtn = document.querySelector("#addExitBtn");
 const previewCloseBtn = document.querySelector("#image-preview_close");
 
-// Preview Image Modal
+// preview image modal
 const previewImageEl = document.querySelector(".modal__preview-image");
 const previewImageTitle = document.querySelector(".modal__preview-title");
 const previewModal = document.querySelector("#image-preview");
@@ -51,21 +51,6 @@ function closeModalWindow(modalWindow) {
 function renderCard(cardElement, container) {
   cardList.prepend(cardElement);
 }
-
-// function createCard(data) {
-//   const cardElement = cardTemplate.cloneNode(true);
-//   const cardImage = cardElement.querySelector(".card__image");
-//   const cardTitle = cardElement.querySelector(".card__text");
-
-//   cardImage.addEventListener("click", () => {
-//     console.log(123);
-//   });
-
-//   cardImage.src = data.link;
-//   cardImage.alt = data.name;
-//   cardTitle.textContent = data.name;
-//   return cardElement;
-// }
 
 //event listeners
 editProfileButton.addEventListener("click", () =>
@@ -83,20 +68,18 @@ function createCard(data) {
   cardImage.addEventListener("click", (event) => {
     openModalWindow(previewModal);
 
-    console.log(previewImageEl);
-    console.log(event.target.src);
-
     previewImageEl.src = event.target.src;
-    previewImageEl.alt = event.target.alt; // replace data.name with the value from image from event.target
+    previewImageEl.alt = event.target.alt;
     previewImageTitle.textContent = data.name;
   });
 
+  // like button
   const cardLikeButton = cardElement.querySelector(".card__like-button");
   cardLikeButton.addEventListener("click", () => {
     cardLikeButton.classList.toggle("card__like-button_on");
   });
 
-  // delete card
+  // delete card button
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
     cardElement.remove();

@@ -82,6 +82,7 @@ function createCard(data) {
   // delete card button
   const cardDeleteButton = cardElement.querySelector(".card__delete-button");
   cardDeleteButton.addEventListener("click", () => {
+    console.log(cardElement.querySelector(".card"));
     cardElement.remove();
   });
 
@@ -127,7 +128,10 @@ addFormElement.addEventListener("submit", (evt) => {
   closeModalWindow(addCardPopup);
 });
 
-const cardTemplate = document.querySelector("#cardTemplate").content;
+const cardTemplate = document
+  .querySelector("#cardTemplate")
+  .content.querySelector(".card");
+document.querySelector("#cardTemplate").content.querySelector(".card"); // li class
 
 const cardList = document.querySelector(".cards__container");
 

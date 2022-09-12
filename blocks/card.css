@@ -25,6 +25,7 @@
   margin: 0;
   margin-right: 16px;
   grid-template-columns: repeat(auto-fit, 282px);
+  position: relative;
 }
 
 .card__text {
@@ -68,10 +69,9 @@
   border: none;
   width: 18px;
   height: 19px;
-  left: 30px;
-  position: relative;
-  bottom: 250px;
-}
+  left: 250px;
+  position: absolute;
+  bottom: 320px;
 }
 
 .card__delete-button:hover {

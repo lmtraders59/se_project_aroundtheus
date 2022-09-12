@@ -131,7 +131,7 @@ addFormElement.addEventListener("submit", (evt) => {
 const cardTemplate = document
   .querySelector("#cardTemplate")
   .content.querySelector(".card");
-document.querySelector("#cardTemplate").content.querySelector(".card"); // li class
+document.querySelector("#cardTemplate").content.querySelector(".card");
 
 const cardList = document.querySelector(".cards__container");
 

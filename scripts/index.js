@@ -29,14 +29,14 @@ const initialCards = [
 //popups and buttons
 const profileEditPopup = document.querySelector("#profileEdit");
 const editProfileButton = document.querySelector("#openModal");
-const profileCloseBtn = document.querySelector("#profileExitBtn");
+const profileCloseButton = document.querySelector("#profileExitBtn");
 const addCardPopup = document.querySelector("#cardAdd");
 const addCardButton = document.querySelector("#openModal2");
-const addCloseBtn = document.querySelector("#addExitBtn");
-const previewCloseBtn = document.querySelector("#image-preview_close");
+const addCloseButton = document.querySelector("#addExitBtn");
+const previewCloseButton = document.querySelector("#image-preview_close");
 
 // preview image modal
-const previewImageEl = document.querySelector(".modal__preview-image");
+const previewImageElement = document.querySelector(".modal__preview-image");
 const previewImageTitle = document.querySelector(".modal__preview-title");
 const previewModal = document.querySelector("#image-preview");
 
@@ -54,9 +54,13 @@ function renderCard(cardElement, container) {
 
 //event listeners
 editProfileButton.addEventListener("click", () =>
+  // function fillProfileForm() {
+  //   profileNameInput.value = cardElement.querySelector(".profile__text");
+  //   profileOccupationInput.value = cardElement.querySelector(".profile__description");
+  // }
   openModalWindow(profileEditPopup)
 );
-profileCloseBtn.addEventListener("click", () =>
+profileCloseButton.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
 
@@ -68,8 +72,8 @@ function createCard(data) {
   cardImage.addEventListener("click", (event) => {
     openModalWindow(previewModal);
 
-    previewImageEl.src = event.target.src;
-    previewImageEl.alt = event.target.alt;
+    previewImageElement.src = event.target.src;
+    previewImageElement.alt = event.target.alt;
     previewImageTitle.textContent = data.name;
   });
 
@@ -99,8 +103,10 @@ const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
 
 addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
-addCloseBtn.addEventListener("click", () => closeModalWindow(addCardPopup));
-previewCloseBtn.addEventListener("click", () => closeModalWindow(previewModal));
+addCloseButton.addEventListener("click", () => closeModalWindow(addCardPopup));
+previewCloseButton.addEventListener("click", () =>
+  closeModalWindow(previewModal)
+);
 
 const profileName = document.querySelector(".profile__text");
 const profileJob = document.querySelector(".profile__description");

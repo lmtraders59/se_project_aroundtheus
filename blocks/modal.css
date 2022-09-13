@@ -89,8 +89,8 @@
   position: absolute;
   height: 40px;
   border: none;
-  right: -10%;
-  top: -10%;
+  right: -15%;
+  top: -15%;
   background: none;
 }
 .modal__exit-button:hover {

@@ -41,7 +41,7 @@ const profileNameInput = profileEditPopup.querySelector(
 const profileOccupationInput = profileEditPopup.querySelector(
   ".modal__form-input-description"
 );
-console.log(profileNameInput);
+
 // preview image modal
 const previewImageElement = document.querySelector(".modal__preview-image");
 const previewImageTitle = document.querySelector(".modal__preview-title");
@@ -53,7 +53,6 @@ const profileDescription = document.querySelector(".profile__description");
 
 //functions
 function fillProfileForm() {
-  console.log(profileNameInput);
   profileNameInput.value = profileTitle.textContent;
   profileOccupationInput.value = profileDescription.textContent;
 }

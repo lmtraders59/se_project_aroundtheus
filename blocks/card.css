@@ -9,6 +9,7 @@
 .card__image {
   max-height: 282px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .card__content-container {

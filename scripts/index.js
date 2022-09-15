@@ -57,9 +57,10 @@ function fillProfileForm() {
   profileOccupationInput.value = profileDescription.textContent;
 }
 function openModalWindow(modalWindow) {
-  fillProfileForm();
+  // fillProfileForm();
   modalWindow.classList.add("modal_opened");
 }
+
 function closeModalWindow(modalWindow) {
   modalWindow.classList.remove("modal_opened");
 }
@@ -69,9 +70,15 @@ function renderCard(cardElement, container) {
 }
 
 //event listeners
-editProfileButton.addEventListener("click", () =>
-  openModalWindow(profileEditPopup)
-);
+editProfileButton.addEventListener("click", () => {
+  fillProfileForm();
+  openModalWindow(profileEditPopup);
+});
+
+// editProfileButton.addEventListener("click", () =>
+//   openModalWindow(profileEditPopup)
+// );
+
 profileCloseButton.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );

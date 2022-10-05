@@ -75,13 +75,14 @@ editProfileButton.addEventListener("click", () => {
   openModalWindow(profileEditPopup);
 });
 
-// editProfileButton.addEventListener("click", () =>
-//   openModalWindow(profileEditPopup)
-// );
-
 profileCloseButton.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
+
+// profileCloseButton.addEventListener('keydown', (event) => {
+//   if (event.key === 'Escape'){
+//   closeModalWindow(profileEditPopup)
+// }
 
 function createCard(data) {
   const cardElement = cardTemplate.cloneNode(true);

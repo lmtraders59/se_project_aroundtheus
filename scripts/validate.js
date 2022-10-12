@@ -1,13 +1,14 @@
 console.log("Form validate.js this works superstar :)");
 
 function setEventlisteners(formEl, options) {
-    const { inputSelector } = options;
-    const inputEls = [...formEl.querySelectorAll("inputSelector")];
-        inputEls.forEach = ((inputEl) => {
-            inputEl.addEventListener("e", () => (  
-        });
-    });
+  const { inputSelector } = options;
+  const inputEls = [...formEl.querySelectorAll("inputSelector")];
+      inputEls.forEach = ((inputEl) => {
+          inputEl.addEventListener("e", () => { 
+      });
+  });
 }
+console.log(inputEls);
 
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll("options.formSelector")];
@@ -17,7 +18,7 @@ function enableValidation(options) {
     })
 
 // look for all inputs inside of the form
-  setEventlisteners (formEl, options);
+  setEventlisteners (formEl, options) ({
 // loop thru all inputs to see if they are valid
   // if all inputs are not valid
     // get validation message
@@ -27,7 +28,7 @@ function enableValidation(options) {
   // if all inputs are valid  
     // enable submit button
     // reset error messages
- });
+});
 
 const config = {
   formSelector: ".popup__form",

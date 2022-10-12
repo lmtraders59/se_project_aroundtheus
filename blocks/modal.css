@@ -121,6 +121,21 @@
   color: #ffffff;
 }
 
+.modal__error {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  color: red;
+  opacity: 0;
+  transition: opacity 0.3s;
+  margin: 0 36px;
+}
+
+.modal__error_visible {
+  opacity: 1;
+}
+
 @media screen and (max-width: 880px) {
   .modal__container {
     width: 282px;

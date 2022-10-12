@@ -79,11 +79,6 @@ profileCloseButton.addEventListener("click", () =>
   closeModalWindow(profileEditPopup)
 );
 
-// profileCloseButton.addEventListener('keydown', (event) => {
-//   if (event.key === 'Escape'){
-//   closeModalWindow(profileEditPopup)
-// }
-
 function createCard(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");

@@ -81,15 +81,23 @@
               id="nameInput"
               placeholder="Name"
             />
+            <span class="modal__error" id="nameInput-error"
+              >error name too small</span
+            >
             <input
               type="text"
               class="modal__form-input modal__form-input-description"
               name="description"
               value=""
+              minlength="2"
+              maxlength="200"
               required
               id="jobInput"
               placeholder="Profession"
             />
+            <span class="modal__error" id="descriptionInput-error"
+              >error profession length too small</span
+            >
           </fieldset>
           <fieldset class="modal__form-fieldset">
             <button type="submit" class="modal__form-button">Save</button>
@@ -151,7 +159,7 @@
         </div>
       </div>
     </div>
-    <script src="./scripts/index.js"></script>
     <script src="./scripts/validate.js"></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>

@@ -136,6 +136,18 @@
   opacity: 1;
 }
 
+.modal__form-button:hover:not(.modal__form-button_disabled) {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.modal__form-button_disabled {
+  border: 1px solid #000000;
+  border-radius: 2px;
+  opacity: 0.2;
+  cursor: default;
+}
+
 @media screen and (max-width: 880px) {
   .modal__container {
     width: 282px;
@@ -148,6 +160,7 @@
     font-size: 14px;
     line-height: 17px;
   }
+
   .modal__exit-button {
     top: -15%;
     right: 0%;

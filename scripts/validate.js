@@ -1,17 +1,19 @@
-console.log("Form validate.js this works superstar at Practicum :)");
-
 function setEventlisteners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("onkeypress", (event) => {
-      function functionCheckIsFieldValid(event, target) {}
+      if (!inputEl.validity.valid) {
+        const error = document.querySelector("#" + inputEl.id + "-error");
+        // add class if error
+      }
       // when user press on a keyboard, after every key this function is called
       // functionCheckIsFieldValid(event.target)
     });
     console.dir(inputEl);
   });
 }
+function functionCheckIsFieldValid(event, target) {}
 
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
@@ -46,3 +48,4 @@ const config = {
 };
 
 enableValidation(config);
+console.dir(config);

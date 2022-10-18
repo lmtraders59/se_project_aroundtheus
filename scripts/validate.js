@@ -5,7 +5,10 @@ function setEventlisteners(formEl, options) {
     inputEl.addEventListener("onkeypress", (event) => {
       if (!inputEl.validity.valid) {
         const error = document.querySelector("#" + inputEl.id + "-error");
+        return modal__error;
         // add class if error
+      } else {
+        // remove modal__error
       }
       // when user press on a keyboard, after every key this function is called
       // functionCheckIsFieldValid(event.target)

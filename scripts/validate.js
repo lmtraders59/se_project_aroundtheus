@@ -1,32 +1,34 @@
-function setEventlisteners(formEl, options) {
+function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
+  console.log(inputEls);
   inputEls.forEach((inputEl) => {
-    inputEl.addEventListener("onkeypress", (event) => {
-      if (!inputEl.validity.valid) {
-        const error = document.querySelector("#" + inputEl.id + "-error");
-        return modal__error;
-        // add class if error
-      } else {
-        // remove modal__error
-      }
-      // when user press on a keyboard, after every key this function is called
-      // functionCheckIsFieldValid(event.target)
+    inputEl.addEventListener("keydown", (event) => {
+      console.log(event.target.validity.valid);
+      console.log(inputEl.validationMessage);
+      console.log(inputEl.value);
+      // if (!inputEl.validity.valid) {
+      //   const error = document.querySelector("#" + inputEl.id + "-error");
+      //   return modal__error;
+      //   // add class if error
+      // }
     });
-    console.dir(inputEl);
   });
 }
+
+// looking for each form
+// -- inside of this form...search for all inputs
+
 function functionCheckIsFieldValid(event, target) {}
 
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
-  formEls.forEach(
-    (formEl) =>
-      formEl.addEventListener("submit", (e) => {
-        e.preventDefault();
-      })
-    //setEventlisteners(formEl, options);
-  );
+  formEls.forEach((formEl) => {
+    formEl.addEventListener("submit", (e) => {
+      e.preventDefault();
+    });
+    setEventListeners(formEl, options);
+  });
 }
 
 // look for all inputs inside of the form
@@ -51,4 +53,3 @@ const config = {
 };
 
 enableValidation(config);
-console.dir(config);

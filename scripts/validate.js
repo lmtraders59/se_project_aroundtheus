@@ -1,12 +1,55 @@
+function showInputError(formEl, inputEl, options) {
+  const errorMessageEl = formEl.querySelector("#" + inputEl + "-error");
+  inputEl.classList.add(options.inputErrorClass);
+  errorMessageEl.textContent = inputEl.validationMessage;
+  errorMessageEl.classList.add(errorClass);
+}
+
+function hideInputError(formEl, inputEl, options) {
+  const errorMessageEl = formEl.querySelector("#" + inputEl + "-error");
+  inputEl.classList.remove(options.inputErrorClass);
+  errorMessageEl.textContent = "";
+  errorMessageEl.classList.remove(errorClass);
+}
+
+function checkInputValidity(formEl, inputEl, options) {
+  if (!inputEl.validity.valid) {
+    showInputError(formEl, inputEl, options);
+  } else {
+    hideInputError(formEl, inputEl, options);
+  }
+}
+
+function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
+  let foundInvalid = false;
+  inputEls.forEach((inputEl) => {
+    if (!inputEl.validity.valid) {
+      foundInvalid = true;
+    }
+  });
+  if (foundInvalid) {
+    submitButton.classList.add(inactiveButtonClass);
+    submitButton.disabled = true;
+  } else {
+    submitButton.classList.remove(inactiveButtonClass);
+    submitButton.disabled = false;
+  }
+}
+
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  console.log(inputEls);
+  const submitButton = formEl.querySelector(".modal__form-button");
+  // console.log(inputEls);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("keydown", (event) => {
-      console.log(event.target.validity.valid);
-      console.log(inputEl.validationMessage);
-      console.log(inputEl.value);
+      // console.log(event.target.validity.valid);
+      // console.log(inputEl.validationMessage);
+      // console.log(inputEl.value);
+      checkInputValidity(formEl, inputEl, options);
+      toggleButtonState = (inputEls, submitButton, options);
+      {
+      }
       // if (!inputEl.validity.valid) {
       //   const error = document.querySelector("#" + inputEl.id + "-error");
       //   return modal__error;

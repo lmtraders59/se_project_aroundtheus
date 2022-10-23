@@ -1,15 +1,15 @@
 function showInputError(formEl, inputEl, options) {
-  const errorMessageEl = formEl.querySelector("#" + inputEl + "-error");
+  const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
-  errorMessageEl.classList.add(errorClass);
+  errorMessageEl.classList.add(options.errorClass);
 }
 
 function hideInputError(formEl, inputEl, options) {
-  const errorMessageEl = formEl.querySelector("#" + inputEl + "-error");
+  const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.remove(options.inputErrorClass);
   errorMessageEl.textContent = "";
-  errorMessageEl.classList.remove(errorClass);
+  errorMessageEl.classList.remove(options.errorClass);
 }
 
 function checkInputValidity(formEl, inputEl, options) {

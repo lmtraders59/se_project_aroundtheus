@@ -3,6 +3,7 @@ function showInputError(formEl, inputEl, options) {
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
   errorMessageEl.classList.add(options.errorClass);
+  console.log(errorMessageEl);
 }
 
 function hideInputError(formEl, inputEl, options) {
@@ -42,7 +43,7 @@ function setEventListeners(formEl, options) {
   const submitButton = formEl.querySelector(".modal__form-button");
   // console.log(inputEls);
   inputEls.forEach((inputEl) => {
-    inputEl.addEventListener("keydown", (event) => {
+    inputEl.addEventListener("input", (event) => {
       // console.log(event.target.validity.valid);
       // console.log(inputEl.validationMessage);
       // console.log(inputEl.value);

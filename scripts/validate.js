@@ -9,7 +9,7 @@ function showInputError(formEl, inputEl, options) {
 function hideInputError(formEl, inputEl, options) {
   const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.remove(options.inputErrorClass);
-  errorMessageEl.textContent = "";
+  errorMessageEl.textContent = " ";
   errorMessageEl.classList.remove(options.errorClass);
 }
 

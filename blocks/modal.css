@@ -135,11 +135,11 @@
   opacity: 1;
 }
 
-/* .modal__input_type_error {
-  color: red;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-} */
+.modal__input_type_error {
+  /* color: red; */
+  /* border: none; */
+  border-bottom: 1px solid rgba(227, 8, 8, 0.958);
+}
 
 .modal__form-button:hover:not(.modal__form-button_disabled) {
   cursor: pointer;

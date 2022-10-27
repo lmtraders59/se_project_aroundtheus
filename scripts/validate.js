@@ -16,8 +16,16 @@ function hideInputError(formEl, inputEl, options) {
 function checkInputValidity(formEl, inputEl, options) {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, options);
+    document
+      .querySelector(".modal__form-button")
+      .classList.add("modal__form-button_disabled");
+    document.querySelector(".modal__form-button").disabled = true;
   } else {
     hideInputError(formEl, inputEl, options);
+    document
+      .querySelector(".modal__form-button")
+      .classList.remove("modal__form-button_disabled");
+    document.querySelector(".modal__form-button").disabled = false;
   }
 }
 
@@ -48,6 +56,10 @@ function setEventListeners(formEl, options) {
       // console.log(inputEl.validationMessage);
       // console.log(inputEl.value);
       checkInputValidity(formEl, inputEl, options);
+      // so if checkInputValidity falce- you disable button
+      // if (!checkInputValidity(formEl, inputEl, options)) {
+      // ...
+      // })
       toggleButtonState = (inputEls, submitButton, options);
       {
       }

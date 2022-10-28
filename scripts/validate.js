@@ -63,11 +63,6 @@ function setEventListeners(formEl, options) {
       toggleButtonState = (inputEls, submitButton, options);
       {
       }
-      // if (!inputEl.validity.valid) {
-      //   const error = document.querySelector("#" + inputEl.id + "-error");
-      //   return modal__error;
-      //   // add class if error
-      // }
     });
   });
 }

@@ -125,8 +125,12 @@
               minlength="2"
               required
               placeholder="Title"
+              id="title"
             />
-            <!-- <span class="modal__error" id="modal__form-input-error"></span> -->
+            <span
+              class="modal__error modal__form-input-error"
+              id="title-error"
+            ></span>
             <input
               type="url"
               class="modal__form-input"
@@ -134,11 +138,18 @@
               value=""
               required
               placeholder="Image link"
+              id="link"
             />
-            <!-- <span class="modal__error" id="modal__form-input-error"></span> -->
+            <span
+              class="modal__error modal__form-input-error"
+              id="link-error"
+            ></span>
           </fieldset>
           <fieldset class="modal__form-fieldset">
             <button type="submit" class="modal__form-button">Create</button>
+            <button type="submit" class="modal__form-button_disabled">
+              Create
+            </button>
           </fieldset>
         </form>
       </div>

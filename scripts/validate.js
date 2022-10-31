@@ -3,7 +3,6 @@ function showInputError(formEl, inputEl, options) {
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
   errorMessageEl.classList.add(options.errorClass);
-  console.log(errorMessageEl);
 }
 
 function hideInputError(formEl, inputEl, options) {
@@ -13,20 +12,33 @@ function hideInputError(formEl, inputEl, options) {
   errorMessageEl.classList.remove(options.errorClass);
 }
 
-function checkInputValidity(formEl, inputEl, options) {
-  if (!inputEl.validity.valid) {
-    showInputError(formEl, inputEl, options);
-    document
-      .querySelector(".modal__form-button")
-      .classList.add("modal__form-button_disabled");
-    document.querySelector(".modal__form-button").disabled = true;
-  } else {
-    hideInputError(formEl, inputEl, options);
-    document
-      .querySelector(".modal__form-button")
-      .classList.remove("modal__form-button_disabled");
-    document.querySelector(".modal__form-button").disabled = false;
-  }
+function checkInputValidity(formEl, inputEls, options) {
+  return inputEls.every((inputEl) => {
+    if (!inputEl.validity.valid) {
+      showInputError(formEl, inputEl, options);
+      document
+        .querySelector(".modal__form-button")
+        .classList.add("modal__form-button_disabled");
+    } else {
+      hideInputError(formEl, inputEl, options);
+      document
+        .querySelector(".modal__form-button")
+        .classList.remove("modal__form-button_disabled");
+    }
+    return inputEl.validity.valid;
+  });
+  //   showInputError(formEl, inputEl, options);
+  //   document
+  //     .querySelector(".modal__form-button")
+  //     .classList.add("modal__form-button_disabled");
+  //   // document.querySelector(".modal__form-button").disabled = true;
+  // } else {
+  //   hideInputError(formEl, inputEl, options);
+  //   document
+  //     .querySelector(".modal__form-button")
+  //     .classList.remove("modal__form-button_disabled");
+  //   // document.querySelector(".modal__form-button").disabled = false;
+  // }
 }
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
@@ -49,17 +61,21 @@ function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
   const submitButton = formEl.querySelector(".modal__form-button");
-  // console.log(inputEls);
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (event) => {
       // console.log(event.target.validity.valid);
       // console.log(inputEl.validationMessage);
       // console.log(inputEl.value);
-      checkInputValidity(formEl, inputEl, options);
-      // so if checkInputValidity falce- you disable button
+      const value = checkInputValidity(formEl, inputEls, options);
+      // so if checkInputValidity false- you disable button
       // if (!checkInputValidity(formEl, inputEl, options)) {
       // ...
       // })
+      if (value) {
+        document.querySelector(".modal__form-button").disabled = false;
+      } else {
+        document.querySelector(".modal__form-button").disabled = true;
+      }
       toggleButtonState = (inputEls, submitButton, options);
       {
       }

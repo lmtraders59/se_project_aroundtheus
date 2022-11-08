@@ -77,18 +77,6 @@ function enableValidation(options) {
   });
 }
 
-// look for all inputs inside of the form
-// setEventlisteners (formEl, options) ({
-// loop thru all inputs to see if they are valid
-// if all inputs are not valid
-// get validation message
-// add error class to input
-// display error message
-// disable submit button
-// if all inputs are valid
-// enable submit button
-// reset error messages
-
 const config = {
   formSelector: ".modal__form",
   inputSelector: ".modal__form-input",

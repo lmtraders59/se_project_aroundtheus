@@ -56,13 +56,28 @@ function fillProfileForm() {
   profileNameInput.value = profileTitle.textContent;
   profileOccupationInput.value = profileDescription.textContent;
 }
+
 function openModalWindow(modalWindow) {
   // fillProfileForm();
   modalWindow.classList.add("modal_opened");
+  document.addEventListener("keyup", (event) => {
+    event.target;
+    event.target.classList.contains("modal");
+    if (event.key == "Escape") {
+      closeModalWindow(modalWindow);
+    }
+  });
 }
 
 function closeModalWindow(modalWindow) {
   modalWindow.classList.remove("modal_opened");
+  document.removeEventListener("keyup", (event) => {
+    event.target;
+    event.target.classList.contains("modal");
+    if (event.key == "Escape") {
+      closeModalWindow(modalWindow);
+    }
+  });
 }
 
 function renderCard(cardElement, container) {

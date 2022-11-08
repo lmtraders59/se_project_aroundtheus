@@ -57,27 +57,34 @@ function fillProfileForm() {
   profileOccupationInput.value = profileDescription.textContent;
 }
 
-function openModalWindow(modalWindow) {
-  // fillProfileForm();
-  modalWindow.classList.add("modal_opened");
-  document.addEventListener("keyup", (event) => {
-    event.target;
-    event.target.classList.contains("modal");
-    if (event.key == "Escape") {
-      closeModalWindow(modalWindow);
-    }
-  });
+function escButtonHandler(event) {
+  event.target.classList.contains("modal");
+  if (event.key == "Escape") {
+    closeModalWindow();
+  }
 }
 
-function closeModalWindow(modalWindow) {
-  modalWindow.classList.remove("modal_opened");
-  document.removeEventListener("keyup", (event) => {
-    event.target;
-    event.target.classList.contains("modal");
-    if (event.key == "Escape") {
-      closeModalWindow(modalWindow);
-    }
-  });
+function modalBasementClickHandler(event) {
+  if (event.target.classList.contains("modal")) {
+    closeModalWindow();
+  }
+}
+
+// Open and Closing Modal Window for Profile Popup
+function openModalWindow(modalWindow) {
+  modalWindow.classList.add("modal_opened");
+  modalWindow.addEventListener("click", modalBasementClickHandler);
+  document.addEventListener("keyup", escButtonHandler);
+}
+
+// Open and Closing Modal Window for Card Popup
+function closeModalWindow() {
+  const openedModal = document.querySelector(".modal_opened");
+
+  openedModal.classList.remove("modal_opened");
+  openedModal.removeEventListener("click", modalBasementClickHandler);
+
+  document.removeEventListener("keyup", escButtonHandler);
 }
 
 function renderCard(cardElement, container) {
@@ -133,10 +140,8 @@ const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
 
 addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
-addCloseButton.addEventListener("click", () => closeModalWindow(addCardPopup));
-previewCloseButton.addEventListener("click", () =>
-  closeModalWindow(previewModal)
-);
+addCloseButton.addEventListener("click", () => closeModalWindow());
+previewCloseButton.addEventListener("click", () => closeModalWindow());
 
 const profileName = document.querySelector(".profile__text");
 const profileJob = document.querySelector(".profile__description");
@@ -145,7 +150,7 @@ function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileJob.textContent = jobInput.value;
-  closeModalWindow(profileEditPopup);
+  closeModalWindow();
 }
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
@@ -160,7 +165,7 @@ addFormElement.addEventListener("submit", (evt) => {
   });
   renderCard(cardView, cardList);
   addFormElement.reset();
-  closeModalWindow(addCardPopup);
+  closeModalWindow();
 });
 
 const cardTemplate = document

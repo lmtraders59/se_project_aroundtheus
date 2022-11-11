@@ -1,5 +1,4 @@
 function showInputError(formEl, inputEl, options) {
-  debugger;
   const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
@@ -14,7 +13,7 @@ function hideInputError(formEl, inputEl, options) {
 }
 
 function checkInputValidity(formEl, inputEls, options) {
-  return inputEls.every((inputEl) => {
+  return inputEls.forEach((inputEl) => {
     if (!inputEl.validity.valid) {
       showInputError(formEl, inputEl, options);
       document

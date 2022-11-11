@@ -1,4 +1,5 @@
 function showInputError(formEl, inputEl, options) {
+  debugger;
   const errorMessageEl = formEl.querySelector("#" + inputEl.id + "-error");
   inputEl.classList.add(options.inputErrorClass);
   errorMessageEl.textContent = inputEl.validationMessage;
@@ -65,7 +66,7 @@ function setEventListeners(formEl, options) {
   });
 }
 
-function functionCheckIsFieldValid(event, target) {}
+// function functionCheckIsFieldValid(event, target) {}
 
 function enableValidation(options) {
   const formEls = [...document.querySelectorAll(options.formSelector)];
@@ -82,7 +83,7 @@ const config = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__form-button",
   inactiveButtonClass: "modal__form-button_disabled",
-  inputErrorClass: "modal__input-form_type_error",
+  inputErrorClass: "modal__form-input_type_error",
   errorClass: "modal__error_visible",
 };
 

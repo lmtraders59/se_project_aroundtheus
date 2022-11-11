@@ -58,7 +58,6 @@ function fillProfileForm() {
 }
 
 function escButtonHandler(event) {
-  event.target.classList.contains("modal");
   if (event.key == "Escape") {
     closeModalWindow();
   }
@@ -73,7 +72,7 @@ function modalBasementClickHandler(event) {
 // Open and Closing Modal Window for Profile Popup
 function openModalWindow(modalWindow) {
   modalWindow.classList.add("modal_opened");
-  modalWindow.addEventListener("click", modalBasementClickHandler);
+  modalWindow.addEventListener("mousedown", modalBasementClickHandler);
   document.addEventListener("keyup", escButtonHandler);
 }
 
@@ -97,9 +96,7 @@ editProfileButton.addEventListener("click", () => {
   openModalWindow(profileEditPopup);
 });
 
-profileCloseButton.addEventListener("click", () =>
-  closeModalWindow(profileEditPopup)
-);
+profileCloseButton.addEventListener("click", () => closeModalWindow());
 
 function createCard(data) {
   const cardElement = cardTemplate.cloneNode(true);
@@ -165,6 +162,9 @@ addFormElement.addEventListener("submit", (evt) => {
   });
   renderCard(cardView, cardList);
   addFormElement.reset();
+  const submitButton = addFormElement.querySelector(".modal__form-button");
+  submitButton.disabled = true;
+  submitButton.classList.add("modal__form-button_disabled");
   closeModalWindow();
 });
 

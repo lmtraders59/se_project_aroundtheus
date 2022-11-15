@@ -74,6 +74,8 @@ function openModalWindow(modalWindow) {
   modalWindow.classList.add("modal_opened");
   modalWindow.addEventListener("mousedown", modalBasementClickHandler);
   document.addEventListener("keyup", handleEscButton);
+  // you can call the toggleButton(inputEls, submitButton, { inactiveButtonClass }) from validate.js
+  // toggleButtonState(inputEls, submitButton, { inactiveButtonClass });
 }
 
 // Open and Closing Modal Window for Card Popup
@@ -94,6 +96,7 @@ function renderCard(cardElement, container) {
 editProfileButton.addEventListener("click", () => {
   fillProfileForm();
   openModalWindow(profileEditPopup);
+  
 });
 
 profileCloseButton.addEventListener("click", () => closeModalWindow());

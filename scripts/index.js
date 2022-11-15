@@ -57,7 +57,7 @@ function fillProfileForm() {
   profileOccupationInput.value = profileDescription.textContent;
 }
 
-function escButtonHandler(event) {
+function handleEscButton(event) {
   if (event.key == "Escape") {
     closeModalWindow();
   }
@@ -73,7 +73,7 @@ function modalBasementClickHandler(event) {
 function openModalWindow(modalWindow) {
   modalWindow.classList.add("modal_opened");
   modalWindow.addEventListener("mousedown", modalBasementClickHandler);
-  document.addEventListener("keyup", escButtonHandler);
+  document.addEventListener("keyup", handleEscButton);
 }
 
 // Open and Closing Modal Window for Card Popup
@@ -83,7 +83,7 @@ function closeModalWindow() {
   openedModal.classList.remove("modal_opened");
   openedModal.removeEventListener("click", modalBasementClickHandler);
 
-  document.removeEventListener("keyup", escButtonHandler);
+  document.removeEventListener("keyup", handleEscButton);
 }
 
 function renderCard(cardElement, container) {

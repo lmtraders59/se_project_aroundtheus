@@ -25,7 +25,6 @@ const checkFormValidity = (inputs) =>
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
   let isValid = checkFormValidity(inputEls);
-  console.log("this is");
   if (!isValid) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
@@ -56,7 +55,6 @@ function enableValidation(options) {
     });
     setEventListeners(formEl, options);
     const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
-    console.log(inputEls);
     const submitButton = formEl.querySelector(".modal__form-button");
     toggleButtonState(inputEls, submitButton, options);
   });

@@ -174,8 +174,9 @@ addFormElement.addEventListener("submit", (evt) => {
   renderCard(cardView, cardList);
   addFormElement.reset();
   const submitButton = addFormElement.querySelector(".modal__form-button");
-  toggleButtonState([], submitButton, {});
-  submitButton.classList.add("modal__form-button_disabled");
+  toggleButtonState([evt.target.title, evt.target.title], submitButton, {
+    inactiveButtonClass: "modal__form-button_disabled",
+  });
   closeModalWindow();
 });
 

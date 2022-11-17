@@ -24,7 +24,7 @@ const checkFormValidity = (inputs) =>
   inputs.every((input) => input.validity.valid);
 
 function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
-  let isValid = checkFormValidity(inputEls);
+  const isValid = checkFormValidity(inputEls);
   if (!isValid) {
     submitButton.classList.add(inactiveButtonClass);
     submitButton.disabled = true;
@@ -37,7 +37,7 @@ function toggleButtonState(inputEls, submitButton, { inactiveButtonClass }) {
 function setEventListeners(formEl, options) {
   const { inputSelector } = options;
   const inputEls = [...formEl.querySelectorAll(inputSelector)];
-  const submitButton = formEl.querySelector(".modal__form-button");
+  const submitButton = formEl.querySelector(options.submitButtonSelector);
 
   inputEls.forEach((inputEl) => {
     inputEl.addEventListener("input", (event) => {
@@ -55,7 +55,7 @@ function enableValidation(options) {
     });
     setEventListeners(formEl, options);
     const inputEls = [...formEl.querySelectorAll(options.inputSelector)];
-    const submitButton = formEl.querySelector(".modal__form-button");
+    const submitButton = formEl.querySelector(options.submitButtonSelector);
     toggleButtonState(inputEls, submitButton, options);
   });
 }

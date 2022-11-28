@@ -1,3 +1,5 @@
+import FormValidator from "./FormValidator.js";
+
 // cards array
 const initialCards = [
   {
@@ -68,6 +70,29 @@ function modalBasementClickHandler(event) {
     closeModalWindow();
   }
 }
+
+// validation
+const validationSettings = {
+  inputSelector: ".modal__form-input",
+  submitButtonSelector: ".modal__form-button",
+  inactiveButtonClass: "modal__form-button_disabled",
+  inputErrorClass: "modal__form-input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const editFormElement = editFormModalWindow.querySelector(".modal__form");
+const addFormElement = cardFormModalWindow.querySelector(".modal__form-input");
+console.log(editFormElement);
+console.log(addFormElement);
+
+const editFormValidator = new FormValidator(
+  validationSettings,
+  editFormElement
+);
+const addFormValidator = new FormValidator(validationSettings, addFormElement);
+
+editFormValidator.enableVaidation();
+addFormValidator.enableVaidation();
 
 // Open and Closing Modal Window for Profile Popup
 function openModalWindow(modalWindow) {
@@ -142,7 +167,6 @@ function createCard(data) {
 
 //forms
 const profileFormElement = document.querySelector("#edit-form");
-const addFormElement = document.querySelector("#add-form");
 
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
@@ -190,3 +214,4 @@ initialCards.forEach(function (data) {
   const cardView = createCard(data);
   renderCard(cardView, cardList);
 });
+

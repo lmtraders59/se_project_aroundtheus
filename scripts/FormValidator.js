@@ -1,14 +1,20 @@
 class FormValidator {
-  constructor(config, formEl) {
-    this._inputSelector = inputSelector;
-    this._submitButtonSelector = submitButtonSelector;
-    this._inactiveButtonClass = inactiveButtonClass;
-    this._inputErrorClass = inputErrorClass;
-    this._errorClass = errorClass;
-    this._formEl = formEl;
-  }
 
-  FormValidator
+  enableValidation() {}
+ 
+  constructor(settings, formElement) {
+    this._inputSelector = config.inputSelector;
+    this._submitButtonSelector = config.submitButtonSelector;
+    this._inactiveButtonClass = config.inactiveButtonClass;
+    this._inputErrorClass = config.inputErrorClass;
+    this._errorClass = config.errorClass;
+    this._formElement = formElement;
+}
+
+const editFormValidator = new FormValidator();
+
+
+
 
   _showInputError(inputEl, options) {
     const errorMessageEl = this._formEl.querySelector(
@@ -55,9 +61,9 @@ class FormValidator {
     });
     setEventListeners(formEl, options);
   }
-}
 
-const editFormValidator = new FormValidator();
-editFormValidator.enableValidation();
+// const editFormValidator = new FormValidator();
+// editFormValidator.enableValidation();
+// const addFormValidator = new FormValidator();
 
 export default FormValidator;

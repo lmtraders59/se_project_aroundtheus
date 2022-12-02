@@ -1,3 +1,5 @@
+import FormValidator from "./FormValidator.js";
+
 // cards array
 const initialCards = [
   {
@@ -51,11 +53,36 @@ const previewModal = document.querySelector("#image-preview");
 const profileTitle = document.querySelector(".profile__text");
 const profileDescription = document.querySelector(".profile__description");
 
-//Profile function
-function fillProfileForm() {
-  profileNameInput.value = profileTitle.textContent;
-  profileOccupationInput.value = profileDescription.textContent;
-}
+//forms
+const profileFormElement = document.querySelector("#edit-form");
+const addFormElement = document.querySelector("#add-form");
+
+const nameInput = document.querySelector("#nameInput");
+const jobInput = document.querySelector("#jobInput");
+
+const config = {
+  inputSelector: ".modal__form-input",
+  submitButtonSelector: ".modal__form-button",
+  inactiveButtonClass: "modal__form-button_disabled",
+  inputErrorClass: "modal__form-input_type_error",
+  errorClass: "modal__error_visible",
+};
+
+const addCardValidator = new FormValidator(config, addFormElement);
+addCardValidator.enableValidation();
+addCardValidator.disableSubmitButton();
+
+// this._inputSelector = config.inputSelector;
+// this._submitButtonSelector = config.submitButtonSelector;
+// this._inactiveButtonClass = config.inactiveButtonClass;
+// this._inputErrorClass = config.inputErrorClass;
+// this._errorClass = config.errorClass;
+
+// Profile function
+// function fillProfileForm() {
+//   profileNameInput.value = profileTitle.textContent;
+//   profileOccupationInput.value = profileDescription.textContent;
+// }
 
 // Escape handler
 function handleEscButton(event) {
@@ -140,13 +167,6 @@ function createCard(data) {
   cardTitle.textContent = data.name;
   return cardElement;
 }
-
-//forms
-const profileFormElement = document.querySelector("#edit-form");
-const addFormElement = document.querySelector("#add-form");
-
-const nameInput = document.querySelector("#nameInput");
-const jobInput = document.querySelector("#jobInput");
 
 addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
 addCloseButton.addEventListener("click", () => closeModalWindow());

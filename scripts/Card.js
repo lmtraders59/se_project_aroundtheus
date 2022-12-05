@@ -11,11 +11,28 @@
 //     const cardImage = cardElement.querySelector(".card__image");
 //   }
 
+// like button
 //   _handleLikeIcon() {}
+const cardLikeButton = cardElement.querySelector(".card__like-button");
+cardLikeButton.addEventListener("click", () => {
+  cardLikeButton.classList.toggle("card__like-button_on");
+});
 
 //   _handleDeleteCard() {}
+// delete card button
+const cardDeleteButton = cardElement.querySelector(".card__delete-button");
+cardDeleteButton.addEventListener("click", () => {
+  cardElement.remove();
+});
 
 //   _handlePreviewPicture() {}
+cardImage.addEventListener("click", (event) => {
+  openModalWindow(previewModal);
+
+  previewImageElement.src = event.target.src;
+  previewImageElement.alt = event.target.alt;
+  previewImageTitle.textContent = data.name;
+});
 
 //   _getTemplate() {
 //     return document

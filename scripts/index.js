@@ -107,10 +107,8 @@ function openModalWindow(modalWindow) {
 // Open and Closing Modal Window for Card Popup
 function closeModalWindow() {
   const openedModal = document.querySelector(".modal_opened");
-
   openedModal.classList.remove("modal_opened");
   openedModal.removeEventListener("click", modalBasementClickHandler);
-
   document.removeEventListener("keyup", handleEscButton);
 }
 
@@ -128,10 +126,10 @@ editProfileButton.addEventListener("click", () => {
 function fillProfileForm() {
   profileNameInput.value = profileTitle.textContent;
   profileOccupationInput.value = profileDescription.textContent;
-  const submitButton = profileEditPopup.querySelector(".modal__form-button");
-  toggleButtonState([profileNameInput, profileOccupationInput], submitButton, {
-    inactiveButtonClass: "modal__form-button_disabled",
-  });
+  // const submitButton = profileEditPopup.querySelector(".modal__form-button");
+  // toggleButtonState([profileNameInput, profileOccupationInput], submitButton, {
+  //   inactiveButtonClass: "modal__form-button_disabled",
+  // });
 }
 
 // Close Profile Button
@@ -168,6 +166,7 @@ function createCard(data) {
   return cardElement;
 }
 
+// Card Button States
 addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
 addCloseButton.addEventListener("click", () => closeModalWindow());
 previewCloseButton.addEventListener("click", () => closeModalWindow());

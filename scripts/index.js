@@ -74,21 +74,8 @@ addCardValidator.enableValidation();
 addCardValidator.disableSubmitButton();
 
 // Profile Validator
-const addProfileValidator = FormValidator(config, profileFormElement);
+const addProfileValidator = new FormValidator(config, profileFormElement);
 addProfileValidator.enableValidation();
-addProfileValidator.disableSubmitButton();
-
-// this._inputSelector = config.inputSelector;
-// this._submitButtonSelector = config.submitButtonSelector;
-// this._inactiveButtonClass = config.inactiveButtonClass;
-// this._inputErrorClass = config.inputErrorClass;
-// this._errorClass = config.errorClass;
-
-// Profile function
-// function fillProfileForm() {
-//   profileNameInput.value = profileTitle.textContent;
-//   profileOccupationInput.value = profileDescription.textContent;
-// }
 
 // Escape handler
 function handleEscButton(event) {
@@ -97,6 +84,7 @@ function handleEscButton(event) {
   }
 }
 
+// Click Close Window Handler
 function modalBasementClickHandler(event) {
   if (event.target.classList.contains("modal")) {
     closeModalWindow();
@@ -132,15 +120,12 @@ editProfileButton.addEventListener("click", () => {
 function fillProfileForm() {
   profileNameInput.value = profileTitle.textContent;
   profileOccupationInput.value = profileDescription.textContent;
-  // const submitButton = profileEditPopup.querySelector(".modal__form-button");
-  // toggleButtonState([profileNameInput, profileOccupationInput], submitButton, {
-  //   inactiveButtonClass: "modal__form-button_disabled",
-  // });
 }
 
 // Close Profile Button
 profileCloseButton.addEventListener("click", () => closeModalWindow());
 
+// Create Card
 function createCard(data) {
   const cardElement = cardTemplate.cloneNode(true);
   const cardImage = cardElement.querySelector(".card__image");

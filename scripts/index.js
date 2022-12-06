@@ -68,9 +68,15 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
+// Card Validator
 const addCardValidator = new FormValidator(config, addFormElement);
 addCardValidator.enableValidation();
 addCardValidator.disableSubmitButton();
+
+// Profile Validator
+const addProfileValidator = FormValidator(config, profileFormElement);
+addProfileValidator.enableValidation();
+addProfileValidator.disableSubmitButton();
 
 // this._inputSelector = config.inputSelector;
 // this._submitButtonSelector = config.submitButtonSelector;
@@ -194,9 +200,9 @@ addFormElement.addEventListener("submit", (evt) => {
   renderCard(cardView, cardList);
   addFormElement.reset();
   const submitButton = addFormElement.querySelector(".modal__form-button");
-  toggleButtonState([evt.target.title, evt.target.title], submitButton, {
-    inactiveButtonClass: "modal__form-button_disabled",
-  });
+  // toggleButtonState([evt.target.title, evt.target.title], submitButton, {
+  //   inactiveButtonClass: "modal__form-button_disabled",
+  // });
   closeModalWindow();
 });
 

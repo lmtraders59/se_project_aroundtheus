@@ -1,4 +1,5 @@
 import FormValidator from "./FormValidator.js";
+// import FormValidator from "./Card.js";
 
 // cards array
 const initialCards = [
@@ -185,9 +186,6 @@ addFormElement.addEventListener("submit", (evt) => {
   renderCard(cardView, cardList);
   addFormElement.reset();
   const submitButton = addFormElement.querySelector(".modal__form-button");
-  // toggleButtonState([evt.target.title, evt.target.title], submitButton, {
-  //   inactiveButtonClass: "modal__form-button_disabled",
-  // });
   closeModalWindow();
 });
 

@@ -78,9 +78,5 @@ class FormValidator {
     });
     this._setEventListeners();
   }
-
-  // const editFormValidator = new FormValidator();
-  // editFormValidator.enableValidation();
-  // const addFormValidator = new FormValidator();
 }
 export default FormValidator;

@@ -61,6 +61,8 @@ const addFormElement = document.querySelector("#add-form");
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
 
+const cardList = document.querySelector(".cards__container");
+
 const config = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__form-button",
@@ -107,7 +109,12 @@ function closeModalWindow() {
   document.removeEventListener("keyup", handleEscButton);
 }
 
-function renderCard(cardElement, container) {
+initialCards.forEach((data) => {
+  const card = new Card(data, "#cardTemplate");
+  renderCard(card.getView());
+});
+
+function renderCard(cardElement) {
   cardList.prepend(cardElement);
 }
 
@@ -191,8 +198,6 @@ addFormElement.addEventListener("submit", (evt) => {
 const cardTemplate = document
   .querySelector("#cardTemplate")
   .content.querySelector(".card");
-
-const cardList = document.querySelector(".cards__container");
 
 initialCards.forEach(function (data) {
   const cardView = createCard(data);

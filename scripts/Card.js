@@ -6,13 +6,28 @@ class Card {
   }
 
   _setEventListeners() {
-    // listen for like
-    // listen for delete
-    // listen for image click
+    // like button
+    const cardLikeButton =
+      this._cardElement.querySelector(".card__like-button");
+    cardLikeButton.addEventListener("click", () => {
+      cardLikeButton.classList.toggle("card__like-button_on");
+    });
+
+    // delete card button
+    const cardDeleteButton = this._cardElement.querySelector(
+      ".card__delete-button"
+    );
+    cardDeleteButton.addEventListener("click", () => {
+      this._cardElement.remove();
+    });
+    //listen for image click
   }
 
   getView() {
-    this._cardElement = document.querySelector(this._cardselector).content.querySelector('.card').cloneNode(true);
+    this._cardElement = document
+      .querySelector(this._cardselector)
+      .content.querySelector(".card")
+      .cloneNode(true);
     const cardImage = this._cardElement.querySelector(".card__image");
     const cardTitle = this._cardElement.querySelector(".card__text");
 
@@ -24,15 +39,9 @@ class Card {
 
     return this._cardElement;
   }
-  
 }
 
 export default Card;
-
-
-
-
-
 
 // cardImage.addEventListener("click", (event) => {
 //   openModalWindow(previewModal);
@@ -47,9 +56,6 @@ export default Card;
 // It has private methods for working with markup and adding event listeners.
 // It has private methods for each event handler.
 // It has one public method that returns a fully functional card element populated with data.
-
-
-
 
 // addFormElement.addEventListener("submit", (evt) => {
 //   evt.preventDefault();

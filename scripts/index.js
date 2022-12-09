@@ -139,25 +139,13 @@ profileCloseButton.addEventListener("click", () => closeModalWindow());
 //   const cardImage = cardElement.querySelector(".card__image");
 //   const cardTitle = cardElement.querySelector(".card__text");
 
-//   cardImage.addEventListener("click", (event) => {
-//     openModalWindow(previewModal);
+// cardImage.addEventListener("click", (event) => {
+//   openModalWindow(previewModal);
 
-//     previewImageElement.src = event.target.src;
-//     previewImageElement.alt = event.target.alt;
-//     previewImageTitle.textContent = data.name;
-//   });
-
-// like button
-const cardLikeButton = cardElement.querySelector(".card__like-button");
-cardLikeButton.addEventListener("click", () => {
-  cardLikeButton.classList.toggle("card__like-button_on");
-});
-
-// delete card button
-const cardDeleteButton = cardElement.querySelector(".card__delete-button");
-cardDeleteButton.addEventListener("click", () => {
-  cardElement.remove();
-});
+//   previewImageElement.src = event.target.src;
+//   previewImageElement.alt = event.target.alt;
+//   previewImageTitle.textContent = data.name;
+// });
 
 // cardImage.src = data.link;
 // cardImage.alt = data.name;

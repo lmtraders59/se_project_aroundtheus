@@ -1,4 +1,4 @@
-import { openModalWindow, closeModalWindow } from "./utils.js";
+import { openModalWindow } from "./utils.js";
 
 class Card {
   constructor(data, cardselector) {
@@ -23,7 +23,7 @@ class Card {
       this._cardElement.remove();
     });
 
-    //listen for image click
+    //listen for card image click
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {

@@ -47,12 +47,7 @@ const profileOccupationInput = profileEditPopup.querySelector(
   ".modal__form-input-description"
 );
 
-// // preview image modal
-// const previewImageElement = document.querySelector(".modal__preview-image");
-// const previewImageTitle = document.querySelector(".modal__preview-title");
-// const previewModal = document.querySelector("#image-preview");
-
-// Profile Values
+// Profile Value
 const profileTitle = document.querySelector(".profile__text");
 const profileDescription = document.querySelector(".profile__description");
 

@@ -25,7 +25,7 @@ class Card {
 
     //listen for image click
     this._cardElement
-      .querySelector(".card__Image")
+      .querySelector(".card__image")
       .addEventListener("click", () => {
         document.querySelector(".modal__preview-image").src =
           this._cardImage.src;
@@ -34,23 +34,23 @@ class Card {
         const previewModal = document.querySelector("#image-preview");
         openModalWindow(previewModal);
       });
+  }
 
-    getView() {
-      this._cardElement = document
+  getView() {
+    this._cardElement = document
       .querySelector(this._cardselector)
       .content.querySelector(".card")
       .cloneNode(true);
-      this._cardImage = this._cardElement.querySelector(".card__image");
-      this._cardTitle = this._cardElement.querySelector(".card__text");
+    this._cardImage = this._cardElement.querySelector(".card__image");
+    this._cardTitle = this._cardElement.querySelector(".card__text");
 
-      this._setEventListeners();
+    this._setEventListeners();
 
-      this._cardImage.src = this._link;
-      this._cardImage.alt = this._name;
-      this._cardTitle.textContent = this._name;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = this._name;
+    this._cardTitle.textContent = this._name;
 
-      return this._cardElement;
-    }
+    return this._cardElement;
   }
 }
 

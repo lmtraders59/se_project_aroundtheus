@@ -71,7 +71,6 @@ const config = {
 // Card Validator
 const addCardValidator = new FormValidator(config, addFormElement);
 addCardValidator.enableValidation();
-addCardValidator.disableSubmitButton();
 
 // Profile Validator
 const addProfileValidator = new FormValidator(config, profileFormElement);

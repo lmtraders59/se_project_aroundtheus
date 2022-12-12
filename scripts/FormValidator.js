@@ -75,6 +75,7 @@ class FormValidator {
   enableValidation() {
     this._formElement.addEventListener("submit", (e) => {
       e.preventDefault();
+      this.disableSubmitButton();
     });
     this._setEventListeners();
   }

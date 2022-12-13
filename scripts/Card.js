@@ -7,21 +7,24 @@ class Card {
     this._cardselector = cardselector;
   }
 
+  _handleDelete = () => {
+    this._cardElement.remove();
+  };
+
+  _handleLike = () => {
+    this.cardLikeButton.classList.toggle("card__like-button_on");
+  };
+
   _setEventListeners() {
     // like button
-    const cardLikeButton =
-      this._cardElement.querySelector(".card__like-button");
-    cardLikeButton.addEventListener("click", () => {
-      cardLikeButton.classList.toggle("card__like-button_on");
-    });
+    this.cardLikeButton = this._cardElement.querySelector(".card__like-button");
+    this.cardLikeButton.addEventListener("click", this._handleLike);
 
     // delete card button
     const cardDeleteButton = this._cardElement.querySelector(
       ".card__delete-button"
     );
-    cardDeleteButton.addEventListener("click", () => {
-      this._cardElement.remove();
-    });
+    cardDeleteButton.addEventListener("click", this._handleDelete);
 
     //listen for card image click
     this._cardElement
@@ -29,6 +32,10 @@ class Card {
       .addEventListener("click", () => {
         document.querySelector(".modal__preview-image").src =
           this._cardImage.src;
+
+        document.querySelector(".modal__preview-image").alt =
+          this._cardTitle.textContent;
+
         document.querySelector(".modal__preview-title").textContent =
           this._cardTitle.textContent;
         const previewModal = document.querySelector("#image-preview");

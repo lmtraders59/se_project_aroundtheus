@@ -88,6 +88,7 @@ function renderCard(cardElement) {
 //event listeners
 editProfileButton.addEventListener("click", () => {
   fillProfileForm();
+  addProfileValidator.resetValidation();
   openModalWindow(profileEditPopup);
 });
 
@@ -101,7 +102,11 @@ function fillProfileForm() {
 profileCloseButton.addEventListener("click", () => closeModalWindow());
 
 // Card Button States
-addCardButton.addEventListener("click", () => openModalWindow(addCardPopup));
+addCardButton.addEventListener("click", () => {
+  addFormElement.reset();
+  addCardValidator.resetValidation();
+  openModalWindow(addCardPopup);
+});
 addCloseButton.addEventListener("click", () => closeModalWindow());
 previewCloseButton.addEventListener("click", () => closeModalWindow());
 
@@ -123,9 +128,8 @@ addFormElement.addEventListener("submit", (evt) => {
   const link = evt.target.link.value;
   const card = new Card({ name, link }, "#cardTemplate");
   renderCard(card.getView());
-  addFormElement.reset();
-  const submitButton = addFormElement.querySelector(".modal__form-button");
   closeModalWindow();
+  addCardValidator.resetValidation();
 });
 
 const cardTemplate = document

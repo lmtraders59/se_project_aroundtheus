@@ -1,36 +1,36 @@
 import FormValidator from "./FormValidator.js";
 import Card from "./Card.js";
+import "./pages/index.css";
 
 import { openModalWindow, closeModalWindow } from "./utils.js";
 
 // cards array
 const initialCards = [
   {
-    name: "Lago di Braies",
-    link: "./images/lago-di-braies.png",
+    name: "Yosemite Valley",
+    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
   },
   {
     name: "Lake Louise",
-    link: "./images/lake-louise.png",
+    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
   },
   {
     name: "Bald Mountains",
-    link: "./images/bald-mountains.png",
-  },
-  {
-    name: "Yosemite Valley",
-    link: "./images/yosemite-valley.png",
+    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
   },
   {
     name: "Latemar",
-    link: "./images/latemar.png",
+    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
   },
   {
     name: "Vanoise National Park",
-    link: "./images/vanoise-national-park.png",
+    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+  },
+  {
+    name: "Lago di Braies",
+    link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
-
 //popups and buttons
 const profileEditPopup = document.querySelector("#profileEdit");
 const editProfileButton = document.querySelector("#openModal");

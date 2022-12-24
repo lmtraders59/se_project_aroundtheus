@@ -4,13 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Around the US</title>
-    <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="body">
     <div class="page">
       <header class="header">
         <img
-          src="./images/aroundtheus.svg"
+          src="<%=require('./images/aroundtheus.svg')%>"
           alt="Around Logo"
           class="header__around-image"
         />
@@ -18,7 +17,7 @@
       <main class="main">
         <section class="profile">
           <img
-            src="./images/jacques-cousteau.jpg"
+            src="<%=require('./images/jacques-cousteau.jpg')%>"
             alt="jacques cousteau"
             class="profile__image"
           />
@@ -46,7 +45,10 @@
                   <h3 class="card__text"></h3>
                   <button type="button" class="card__delete-button"></button>
                   <button type="button" class="card__like-button">
-                    <img src="./images/heart-vector.svg" alt="Heart Vector" />
+                    <img
+                      src="<%=require('./images/heart-vector.svg')%>"
+                      alt="Heart Vector"
+                    />
                   </button>
                 </div>
               </li>
@@ -62,7 +64,7 @@
       <div class="modal__container">
         <button type="button" class="modal__exit-button" id="profileExitBtn">
           <img
-            src="./images/Close-icon.svg"
+            src="<%=require('./images/Close-icon.svg')%>"
             alt="exit button"
             class="modal__exit-button-image"
           />
@@ -105,7 +107,7 @@
       <div class="modal__container">
         <button type="button" class="modal__exit-button" id="addExitBtn">
           <img
-            src="./images/Close-icon.svg"
+            src="<%=require('./images/Close-icon.svg')%>"
             alt="exit button"
             class="modal__exit-button-image"
           />
@@ -156,7 +158,7 @@
           type="button"
         >
           <img
-            src="./images/Close-icon.svg"
+            src="<%=require('./images/Close-icon.svg')%>"
             alt="exit button"
             class="modal__exit-button-image"
           />
@@ -167,6 +169,5 @@
         </div>
       </div>
     </div>
-    <script type="module" src="./scripts/index.js"></script>
   </body>
 </html>

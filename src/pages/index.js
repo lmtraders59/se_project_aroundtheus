@@ -1,6 +1,8 @@
+// Import of Classes
 import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import "./index.css";
+import UserInfo from "../components/UserInfo.js";
 
 import { openModalWindow, closeModalWindow } from "../components/utils.js";
 
@@ -115,8 +117,10 @@ const profileJob = document.querySelector(".profile__description");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  profileName.textContent = nameInput.value;
-  profileJob.textContent = jobInput.value;
+  setUserInfo(data);
+  getUserInfo();
+  // profileName.textContent = nameInput.value;
+  // profileJob.textContent = jobInput.value;
   closeModalWindow();
 }
 

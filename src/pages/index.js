@@ -62,6 +62,9 @@ const jobInput = document.querySelector("#jobInput");
 
 const cardList = document.querySelector(".cards__container");
 
+const nameEl = document.querySelector(".profile__text");
+const jobEl = document.querySelector(".profile__description");
+
 const config = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__form-button",
@@ -77,6 +80,12 @@ addCardValidator.enableValidation();
 // Profile Validator
 const addProfileValidator = new FormValidator(config, profileFormElement);
 addProfileValidator.enableValidation();
+
+// User Info for Profile
+const userInfo = new UserInfo({
+  nameElement: nameEl,
+  jobElement: jobEl,
+});
 
 initialCards.forEach((data) => {
   const card = new Card(data, "#cardTemplate");
@@ -117,10 +126,11 @@ const profileJob = document.querySelector(".profile__description");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
-  setUserInfo(data);
-  getUserInfo();
-  // profileName.textContent = nameInput.value;
-  // profileJob.textContent = jobInput.value;
+  const data = {
+    name: evt.target.name.value,
+    description: evt.target.description.value,
+  };
+  userInfo.setUserInfo(data);
   closeModalWindow();
 }
 

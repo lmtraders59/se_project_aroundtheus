@@ -3,6 +3,11 @@ import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import "./index.css";
 import UserInfo from "../components/UserInfo.js";
+// import PopupWithImage from "../components/PopupWithImage.js";
+// import PopupWithForm from "../components/PopupWithForm.js";
+// import PopupConfirm from "../components/PopupConfirm.js";
+// import Popup from "../components/Popup.js";
+import Section from "../components/Section.js";
 
 import { openModalWindow, closeModalWindow } from "../components/utils.js";
 

@@ -65,7 +65,7 @@ const addFormElement = document.querySelector("#add-form");
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
 
-const cardList = document.querySelector(".cards__container");
+// const cardList = document.querySelector(".cards__container");
 
 const nameEl = document.querySelector(".profile__text");
 const jobEl = document.querySelector(".profile__description");
@@ -92,14 +92,27 @@ const userInfo = new UserInfo({
   jobElement: jobEl,
 });
 
-initialCards.forEach((data) => {
-  const card = new Card(data, "#cardTemplate");
-  renderCard(card.getView());
-});
+const cardList = new Section(
+  {
+    items: initialCards,
+    renderer: (cardData) => {
+      const card = new Card(cardData, "#cardTemplate");
+      cardList.addItem(card.getView());
+    },
+  },
+  ".cards__container"
+);
 
-function renderCard(cardElement) {
-  cardList.prepend(cardElement);
-}
+cardList.renderItems();
+
+// initialCards.forEach((data) => {
+//   const card = new Card(data, "#cardTemplate");
+//   // renderCard(card.getView());
+// });
+
+// function renderCard(cardElement) {
+//   cardList.prepend(cardElement);
+// }
 
 //event listeners
 editProfileButton.addEventListener("click", () => {
@@ -146,7 +159,7 @@ addFormElement.addEventListener("submit", (evt) => {
   const name = evt.target.title.value;
   const link = evt.target.link.value;
   const card = new Card({ name, link }, "#cardTemplate");
-  renderCard(card.getView());
+  // renderCard(card.getView());
   closeModalWindow();
   addCardValidator.resetValidation();
 });

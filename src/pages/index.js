@@ -164,6 +164,6 @@ addFormElement.addEventListener("submit", (evt) => {
   addCardValidator.resetValidation();
 });
 
-// const cardTemplate = document
-//   .querySelector("#cardTemplate")
-//   .content.querySelector(".card");
+const cardTemplate = document
+  .querySelector("#cardTemplate")
+  .content.querySelector(".card");

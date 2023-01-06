@@ -92,6 +92,7 @@ const userInfo = new UserInfo({
   jobElement: jobEl,
 });
 
+// Card List
 const cardList = new Section(
   {
     items: initialCards,

@@ -105,15 +105,6 @@ const cardList = new Section(
 
 cardList.renderItems();
 
-// initialCards.forEach((data) => {
-//   const card = new Card(data, "#cardTemplate");
-//   // renderCard(card.getView());
-// });
-
-// function renderCard(cardElement) {
-//   cardList.prepend(cardElement);
-// }
-
 //event listeners
 editProfileButton.addEventListener("click", () => {
   fillProfileForm();
@@ -159,7 +150,8 @@ addFormElement.addEventListener("submit", (evt) => {
   const name = evt.target.title.value;
   const link = evt.target.link.value;
   const card = new Card({ name, link }, "#cardTemplate");
-  // renderCard(card.getView());
+  // renderCard(card.getView()); add adding a new card
+  cardList.addItem(card.getView());
   closeModalWindow();
   addCardValidator.resetValidation();
 });

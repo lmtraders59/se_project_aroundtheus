@@ -18,12 +18,12 @@ export default class Popup {
       this._exitButton.addEventListener("click", () => this.close());
     }
   
-    open() {
+    openModal() {
       this._popupElement.classList.add("modal_opened");
       document.addEventListener("keydown", this._handleEscUp);
     }
   
-    close() {
+    closeModal() {
       this._popupElement.classList.remove("modal_opened");
       document.removeEventListener("keydown", this._handleEscUp);
     }

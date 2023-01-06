@@ -3,10 +3,8 @@ import FormValidator from "../components/FormValidator.js";
 import Card from "../components/Card.js";
 import "./index.css";
 import UserInfo from "../components/UserInfo.js";
-// import PopupWithImage from "../components/PopupWithImage.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 // import PopupWithForm from "../components/PopupWithForm.js";
-// import PopupConfirm from "../components/PopupConfirm.js";
-// import Popup from "../components/Popup.js";
 import Section from "../components/Section.js";
 
 import { openModalWindow, closeModalWindow } from "../components/utils.js";
@@ -65,8 +63,6 @@ const addFormElement = document.querySelector("#add-form");
 const nameInput = document.querySelector("#nameInput");
 const jobInput = document.querySelector("#jobInput");
 
-// const cardList = document.querySelector(".cards__container");
-
 const nameEl = document.querySelector(".profile__text");
 const jobEl = document.querySelector(".profile__description");
 
@@ -105,6 +101,9 @@ const cardList = new Section(
 );
 
 cardList.renderItems();
+
+const previewPopup = new PopupWithImage(selectors.previewPopup);
+previewPopup.setEventListeners();
 
 //event listeners
 editProfileButton.addEventListener("click", () => {
@@ -151,7 +150,6 @@ addFormElement.addEventListener("submit", (evt) => {
   const name = evt.target.title.value;
   const link = evt.target.link.value;
   const card = new Card({ name, link }, "#cardTemplate");
-  // renderCard(card.getView()); add adding a new card
   cardList.addItem(card.getView());
   closeModalWindow();
   addCardValidator.resetValidation();

@@ -19,7 +19,7 @@ export default class PopupWithForm extends Popup {
     return inputValues;
   }
 
-  close() {
+  closeModal() {
     this._formEl.reset();
     super.close();
   }

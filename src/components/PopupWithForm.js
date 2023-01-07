@@ -21,7 +21,7 @@ export default class PopupWithForm extends Popup {
 
   closeModal() {
     this._formEl.reset();
-    super.close();
+    super.closeModal();
   }
 
   renderLoading(isLoading) {

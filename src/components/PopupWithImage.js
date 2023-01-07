@@ -15,6 +15,6 @@ export default class PopupWithImage extends Popup {
     this._previewImage.src = data.link;
     this._previewImage.alt = `A picture of ${data.name}`;
     this._previewTitle.textContent = data.name;
-    super.open();
+    super.openModal();
   }
 }

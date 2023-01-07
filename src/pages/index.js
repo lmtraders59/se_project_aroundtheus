@@ -4,10 +4,13 @@ import Card from "../components/Card.js";
 import "./index.css";
 import UserInfo from "../components/UserInfo.js";
 import PopupWithImage from "../components/PopupWithImage.js";
-// import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
 
-import { openModalWindow, closeModalWindow } from "../components/utils.js";
+import {
+  openModalWindow,
+  closeModalWindow,
+} from "../components/utils/utils.js";
 
 // cards array
 const initialCards = [
@@ -102,7 +105,7 @@ const cardList = new Section(
 
 cardList.renderItems();
 
-const previewPopup = new PopupWithImage(selectors.previewPopup);
+const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 
 //event listeners

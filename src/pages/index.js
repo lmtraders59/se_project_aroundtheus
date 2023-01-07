@@ -107,6 +107,7 @@ cardList.renderItems();
 
 const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
+previewPopup.closeModal();
 
 //event listeners
 editProfileButton.addEventListener("click", () => {

@@ -43,7 +43,6 @@ const initialCards = [
 const profileEditPopup = document.querySelector("#profileEdit");
 const editProfileButton = document.querySelector("#openModal");
 const profileCloseButton = document.querySelector("#profileExitBtn");
-const addCardPopup = document.querySelector("#cardAdd");
 const addCardButton = document.querySelector("#openModal2");
 const addCloseButton = document.querySelector("#addExitBtn");
 const previewCloseButton = document.querySelector("#image-preview_close");
@@ -62,9 +61,6 @@ const profileDescription = document.querySelector(".profile__description");
 //forms
 const profileFormElement = document.querySelector("#edit-form");
 const addFormElement = document.querySelector("#add-form");
-
-const nameInput = document.querySelector("#nameInput");
-const jobInput = document.querySelector("#jobInput");
 
 const nameEl = document.querySelector(".profile__text");
 const jobEl = document.querySelector(".profile__description");
@@ -96,7 +92,6 @@ const cardList = new Section(
   {
     items: initialCards,
     renderer: (cardData) => {
-      // const card = new Card(cardData, "#cardTemplate");
       const card = renderCard(cardData);
       cardList.addItem(card.getView());
     },
@@ -120,7 +115,7 @@ previewPopup.closeModal();
 
 //Add card popup
 const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
-  // const card = new Card({ name: data.name, link: data.link }, "#cardTemplate");
+  const card = renderCard(data);
   cardList.addItem(card.getView());
   addCardValidator.resetValidation();
   cardFormPopup.closeModal();

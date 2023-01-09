@@ -1,10 +1,11 @@
 import { openModalWindow } from "./utils/utils.js";
 
 class Card {
-  constructor(data, cardselector) {
+  constructor(data, cardselector, { handleCardClick }) {
     this._link = data.link;
     this._name = data.name;
     this._cardselector = cardselector;
+    this.handleCardClick = handleCardClick;
   }
 
   _handleDelete = () => {
@@ -30,16 +31,21 @@ class Card {
     this._cardElement
       .querySelector(".card__image")
       .addEventListener("click", () => {
-        document.querySelector(".modal__preview-image").src =
-          this._cardImage.src;
+        this._handleCardClick({
+          link: this._cardImage.src,
+          name: this._cardTitle.textContent,
+        });
 
-        document.querySelector(".modal__preview-image").alt =
-          this._cardTitle.textContent;
+        // document.querySelector(".modal__preview-image").src =
+        //   this._cardImage.src;
 
-        document.querySelector(".modal__preview-title").textContent =
-          this._cardTitle.textContent;
-        const previewModal = document.querySelector("#image-preview");
-        openModalWindow(previewModal);
+        // document.querySelector(".modal__preview-image").alt =
+        //   this._cardTitle.textContent;
+
+        // document.querySelector(".modal__preview-title").textContent =
+        //   this._cardTitle.textContent;
+        // const previewModal = document.querySelector("#image-preview");
+        // openModalWindow(previewModal);
       });
   }
 
@@ -50,13 +56,10 @@ class Card {
       .cloneNode(true);
     this._cardImage = this._cardElement.querySelector(".card__image");
     this._cardTitle = this._cardElement.querySelector(".card__text");
-
     this._setEventListeners();
-
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
-
     return this._cardElement;
   }
 }

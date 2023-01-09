@@ -11,6 +11,7 @@ import {
   openModalWindow,
   closeModalWindow,
 } from "../components/utils/utils.js";
+import Card from "../components/Card.js";
 
 // cards array
 const initialCards = [
@@ -96,7 +97,8 @@ const cardList = new Section(
   {
     items: initialCards,
     renderer: (cardData) => {
-      const card = new Card(cardData, "#cardTemplate");
+      // const card = new Card(cardData, "#cardTemplate");
+      const card = renderCard(cardData);
       cardList.addItem(card.getView());
     },
   },
@@ -105,9 +107,33 @@ const cardList = new Section(
 
 cardList.renderItems();
 
+function renderCard(cardData) {
+  return new Card(cardData, "#cardTemplate", {
+   handleCardClick: (card) => {
+   previewPopup.openModal(card); 
+  }
+});
+
+
 const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 previewPopup.closeModal();
+
+//Add card popup
+const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
+  // const card = new Card({ name: data.name, link: data.link }, "#cardTemplate");
+  cardList.addItem(card.getView());
+  addCardValidator.resetValidation();
+  cardFormPopup.closeModal();
+});
+cardFormPopup.setEventListeners();
+
+// Card Button States
+addCardButton.addEventListener("click", () => {
+  addFormElement.reset();
+  addCardValidator.resetValidation();
+  cardFormPopup.openModal();
+});
 
 //event listeners
 editProfileButton.addEventListener("click", () => {
@@ -125,17 +151,8 @@ function fillProfileForm() {
 // Close Profile Button
 profileCloseButton.addEventListener("click", () => closeModalWindow());
 
-// Card Button States
-addCardButton.addEventListener("click", () => {
-  addFormElement.reset();
-  addCardValidator.resetValidation();
-  openModalWindow(addCardPopup);
-});
 addCloseButton.addEventListener("click", () => closeModalWindow());
 previewCloseButton.addEventListener("click", () => closeModalWindow());
-
-const profileName = document.querySelector(".profile__text");
-const profileJob = document.querySelector(".profile__description");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
@@ -148,17 +165,3 @@ function handleProfileFormSubmit(evt) {
 }
 
 profileFormElement.addEventListener("submit", handleProfileFormSubmit);
-
-addFormElement.addEventListener("submit", (evt) => {
-  evt.preventDefault();
-  const name = evt.target.title.value;
-  const link = evt.target.link.value;
-  const card = new Card({ name, link }, "#cardTemplate");
-  cardList.addItem(card.getView());
-  closeModalWindow();
-  addCardValidator.resetValidation();
-});
-
-const cardTemplate = document
-  .querySelector("#cardTemplate")
-  .content.querySelector(".card");

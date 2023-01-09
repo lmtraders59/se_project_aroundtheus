@@ -12,6 +12,7 @@ This is Project 8 of the Software Engineering program at Practicum. It was creat
 - Media Queries
 - Javascript
 - Webpack
+- OOP
 
 # Github Pages Link
 

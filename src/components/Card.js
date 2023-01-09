@@ -1,11 +1,9 @@
-import { openModalWindow } from "./utils/utils.js";
-
 class Card {
   constructor(data, cardselector, { handleCardClick }) {
     this._link = data.link;
     this._name = data.name;
     this._cardselector = cardselector;
-    this.handleCardClick = handleCardClick;
+    this._handleCardClick = handleCardClick;
   }
 
   _handleDelete = () => {
@@ -35,17 +33,6 @@ class Card {
           link: this._cardImage.src,
           name: this._cardTitle.textContent,
         });
-
-        // document.querySelector(".modal__preview-image").src =
-        //   this._cardImage.src;
-
-        // document.querySelector(".modal__preview-image").alt =
-        //   this._cardTitle.textContent;
-
-        // document.querySelector(".modal__preview-title").textContent =
-        //   this._cardTitle.textContent;
-        // const previewModal = document.querySelector("#image-preview");
-        // openModalWindow(previewModal);
       });
   }
 

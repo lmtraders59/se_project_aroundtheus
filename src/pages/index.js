@@ -11,7 +11,6 @@ import {
   openModalWindow,
   closeModalWindow,
 } from "../components/utils/utils.js";
-import Card from "../components/Card.js";
 
 // cards array
 const initialCards = [
@@ -109,11 +108,11 @@ cardList.renderItems();
 
 function renderCard(cardData) {
   return new Card(cardData, "#cardTemplate", {
-   handleCardClick: (card) => {
-   previewPopup.openModal(card); 
-  }
-});
-
+    handleCardClick: (card) => {
+      previewPopup.openModal(card);
+    },
+  });
+}
 
 const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();

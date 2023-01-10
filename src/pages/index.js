@@ -145,9 +145,6 @@ function fillProfileForm() {
 // Close Profile Button
 profileCloseButton.addEventListener("click", () => closeModalWindow());
 
-// addCloseButton.addEventListener("click", () => closeModalWindow());
-// previewCloseButton.addEventListener("click", () => closeModalWindow());
-
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   const data = {

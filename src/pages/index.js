@@ -6,53 +6,54 @@ import UserInfo from "../components/UserInfo.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
-// import { selectors } from "../utils/constants.js";
+import { selectors } from "../utils/constants.js";
 
 // cards array
-const initialCards = [
-  {
-    name: "Yosemite Valley",
-    link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
-  },
-  {
-    name: "Lake Louise",
-    link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
-  },
-  {
-    name: "Bald Mountains",
-    link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
-  },
-  {
-    name: "Latemar",
-    link: "https://code.s3.yandex.net/web-code/latemar.jpg",
-  },
-  {
-    name: "Vanoise National Park",
-    link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
-  },
-  {
-    name: "Lago di Braies",
-    link: "https://code.s3.yandex.net/web-code/lago.jpg",
-  },
-];
-//popups and buttons
-const profileEditPopupEl = document.querySelector("#profileEdit");
-const editProfileButton = document.querySelector("#openModal");
-const addCardButton = document.querySelector("#openModal2");
-const profileNameInput = profileEditPopupEl.querySelector(
-  ".modal__form-input-name"
-);
+// const initialCards = [
+//   {
+//     name: "Yosemite Valley",
+//     link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
+//   },
+//   {
+//     name: "Lake Louise",
+//     link: "https://code.s3.yandex.net/web-code/lake-louise.jpg",
+//   },
+//   {
+//     name: "Bald Mountains",
+//     link: "https://code.s3.yandex.net/web-code/bald-mountains.jpg",
+//   },
+//   {
+//     name: "Latemar",
+//     link: "https://code.s3.yandex.net/web-code/latemar.jpg",
+//   },
+//   {
+//     name: "Vanoise National Park",
+//     link: "https://code.s3.yandex.net/web-code/vanoise.jpg",
+//   },
+//   {
+//     name: "Lago di Braies",
+//     link: "https://code.s3.yandex.net/web-code/lago.jpg",
+//   },
+// ];
 
-const profileOccupationInput = profileEditPopupEl.querySelector(
-  ".modal__form-input-description"
-);
+//popups and buttons
+// const profileEditPopupEl = document.querySelector("#profileEdit");
+// const editProfileButton = document.querySelector("#openModal");
+// const addCardButton = document.querySelector("#openModal2");
+// const profileNameInput = profileEditPopupEl.querySelector(
+//   ".modal__form-input-name"
+// );
+
+// const profileOccupationInput = profileEditPopupEl.querySelector(
+//   ".modal__form-input-description"
+// );
 
 //forms
-const profileFormElement = document.querySelector("#edit-form");
-const addFormElement = document.querySelector("#add-form");
+// const profileFormElement = document.querySelector("#edit-form");
+// const addFormElement = document.querySelector("#add-form");
 
-const nameEl = document.querySelector(".profile__text");
-const jobEl = document.querySelector(".profile__description");
+// const nameEl = document.querySelector(".profile__text");
+// const jobEl = document.querySelector(".profile__description");
 
 const config = {
   inputSelector: ".modal__form-input",

@@ -9,8 +9,11 @@ const profileNameInput = profileEditPopupEl.querySelector(
 //forms and inputs
 const profileFormElement = document.querySelector("#edit-form");
 const addFormElement = document.querySelector("#add-form");
-// export const nameInput = document.querySelector("#nameInput");
-// export const jobInput = document.querySelector("#jobInput");
+const profileOccupationInput = profileEditPopupEl.querySelector(
+  ".modal__form-input-description"
+);
+const nameEl = document.querySelector(".profile__text");
+const jobEl = document.querySelector(".profile__description");
 
 /// cards array
 const initialCards = [
@@ -42,23 +45,21 @@ const initialCards = [
 
 //selectors
 export const selectors = {
-  previewPopup: "#image-preview",
-  cardAddForm: "#add-form",
-  profilePopup: "#profileEdit",
-  profileForm: "#edit-form",
-  cardTemplate: "#cardTemplate",
-  userNameSelector: ".profile__title",
-  userJobSelector: ".profile__description",
-  avatarPopup: "#edit-avatar",
-  avatarForm: "#edit-avatar-form",
-  deletePopup: "#delete-card",
+  // previewPopup: "#image-preview",
+  addFormElement: "#add-form",
+  profileEditPopupEl: "#profileEdit",
+  profileFormElement: "#edit-form",
+  // cardTemplate: "#cardTemplate",
+  nameEl: ".profile__text",
+  jobEl: ".profile__description",
+  // deletePopup: "#delete-card",
 };
 
 //validation config
-export const validationConfig = {
-  inputSelector: ".modal__form-input",
-  submitButtonSelector: ".modal__form-button",
-  inactiveButtonClass: "modal__form-button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "modal__error_visible",
-};
+// export const validationConfig = {
+//   inputSelector: ".modal__form-input",
+//   submitButtonSelector: ".modal__form-button",
+//   inactiveButtonClass: "modal__form-button_disabled",
+//   inputErrorClass: "popup__input_type_error",
+//   errorClass: "modal__error_visible",
+// };

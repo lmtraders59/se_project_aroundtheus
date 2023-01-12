@@ -111,7 +111,6 @@ previewPopup.setEventListeners();
 const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
   const card = renderCard(data);
   cardList.addItem(card.getView());
-  // addCardValidator.resetValidation();
   cardFormPopup.closeModal();
 });
 cardFormPopup.setEventListeners();
@@ -125,18 +124,9 @@ profileEditPopup.setEventListeners();
 
 // Card Button States
 addCardButton.addEventListener("click", () => {
-  // addFormElement.reset();
   addCardValidator.resetValidation();
   cardFormPopup.openModal();
 });
-
-// //event listeners
-// editProfileButton.addEventListener("click", () => {
-//   fillProfileForm();
-//   addProfileValidator.resetValidation();
-//   // openModalWindow(profileEditPopup);
-//   profileEditPopup.openModal();
-// });
 
 editProfileButton.addEventListener("click", () => {
   // fillProfileForm();
@@ -144,12 +134,5 @@ editProfileButton.addEventListener("click", () => {
   profileNameInput.value = data.userName;
   profileOccupationInput.value = data.userJob;
   addProfileValidator.resetValidation();
-  // openModalWindow(profileEditPopup);
   profileEditPopup.openModal();
 });
-
-// // Profile Button
-// function fillProfileForm() {
-//   profileNameInput.value = profileTitle.textContent;
-//   profileOccupationInput.value = profileDescription.textContent;
-// }

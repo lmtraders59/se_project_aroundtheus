@@ -6,7 +6,20 @@ import UserInfo from "../components/UserInfo.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
-import { selectors } from "../utils/constants.js";
+// profileOccupationInput: ".modal__form-input-description",
+import {
+  selectors,
+  addFormElement,
+  // profileEditPopupEl,
+  profileFormElement,
+  profileNameInput,
+  editProfileButton,
+  addCardButton,
+  nameEl,
+  jobEl,
+  profileOccupationInput,
+  initialCards,
+} from "../utils/constants.js";
 
 // cards array
 // const initialCards = [

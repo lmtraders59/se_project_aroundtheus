@@ -1,22 +1,22 @@
 //popups and buttons
-const profileEditPopupEl = document.querySelector("#profileEdit");
-const editProfileButton = document.querySelector("#openModal");
-const addCardButton = document.querySelector("#openModal2");
-const profileNameInput = profileEditPopupEl.querySelector(
+export const profileEditPopupEl = document.querySelector("#profileEdit");
+export const editProfileButton = document.querySelector("#openModal");
+export const addCardButton = document.querySelector("#openModal2");
+export const profileNameInput = profileEditPopupEl.querySelector(
   ".modal__form-input-name"
 );
 
 //forms and inputs
-const profileFormElement = document.querySelector("#edit-form");
-const addFormElement = document.querySelector("#add-form");
-const profileOccupationInput = profileEditPopupEl.querySelector(
+export const profileFormElement = document.querySelector("#edit-form");
+export const addFormElement = document.querySelector("#add-form");
+export const profileOccupationInput = profileEditPopupEl.querySelector(
   ".modal__form-input-description"
 );
-const nameEl = document.querySelector(".profile__text");
-const jobEl = document.querySelector(".profile__description");
+export const nameEl = document.querySelector(".profile__text");
+export const jobEl = document.querySelector(".profile__description");
 
 /// cards array
-const initialCards = [
+export const initialCards = [
   {
     name: "Yosemite Valley",
     link: "https://code.s3.yandex.net/web-code/yosemite.jpg",
@@ -45,14 +45,15 @@ const initialCards = [
 
 //selectors
 export const selectors = {
-  // previewPopup: "#image-preview",
   addFormElement: "#add-form",
   profileEditPopupEl: "#profileEdit",
   profileFormElement: "#edit-form",
-  // cardTemplate: "#cardTemplate",
+  profileNameInput: ".modal__form-input-name",
+  editProfileButton: "#openModal",
+  addCardButton: "#openModal2",
   nameEl: ".profile__text",
   jobEl: ".profile__description",
-  // deletePopup: "#delete-card",
+  profileOccupationInput: ".modal__form-input-description",
 };
 
 //validation config

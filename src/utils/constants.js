@@ -1,24 +1,16 @@
-//popups
-const profileEditPopup = document.querySelector("#profileEdit");
-
-//buttons
-export const editProfileButton = document.querySelector("#openModal");
-export const addCardButton = document.querySelector("#openModal2");
-const profileCloseButton = document.querySelector("#profileExitBtn");
-const addCloseButton = document.querySelector("#addExitBtn");
+//popups and buttons
+const profileEditPopupEl = document.querySelector("#profileEdit");
+const editProfileButton = document.querySelector("#openModal");
+const addCardButton = document.querySelector("#openModal2");
+const profileNameInput = profileEditPopupEl.querySelector(
+  ".modal__form-input-name"
+);
 
 //forms and inputs
 const profileFormElement = document.querySelector("#edit-form");
 const addFormElement = document.querySelector("#add-form");
-export const nameInput = document.querySelector("#nameInput");
-export const jobInput = document.querySelector("#jobInput");
-
-//user info
-export const profileName = document.querySelector(".profile__title");
-export const profileDescription = document.querySelector(
-  ".profile__description"
-);
-export const profileAvatar = document.querySelector(".profile__image");
+// export const nameInput = document.querySelector("#nameInput");
+// export const jobInput = document.querySelector("#jobInput");
 
 /// cards array
 const initialCards = [

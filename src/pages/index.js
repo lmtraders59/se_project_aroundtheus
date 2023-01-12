@@ -6,6 +6,7 @@ import UserInfo from "../components/UserInfo.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
+// import { selectors } from "../utils/constants.js";
 
 // cards array
 const initialCards = [
@@ -37,10 +38,7 @@ const initialCards = [
 //popups and buttons
 const profileEditPopupEl = document.querySelector("#profileEdit");
 const editProfileButton = document.querySelector("#openModal");
-const profileCloseButton = document.querySelector("#profileExitBtn");
 const addCardButton = document.querySelector("#openModal2");
-const addCloseButton = document.querySelector("#addExitBtn");
-const previewCloseButton = document.querySelector("#image-preview_close");
 const profileNameInput = profileEditPopupEl.querySelector(
   ".modal__form-input-name"
 );
@@ -48,10 +46,6 @@ const profileNameInput = profileEditPopupEl.querySelector(
 const profileOccupationInput = profileEditPopupEl.querySelector(
   ".modal__form-input-description"
 );
-
-// Profile Value
-const profileTitle = document.querySelector(".profile__text");
-const profileDescription = document.querySelector(".profile__description");
 
 //forms
 const profileFormElement = document.querySelector("#edit-form");
@@ -129,7 +123,6 @@ addCardButton.addEventListener("click", () => {
 });
 
 editProfileButton.addEventListener("click", () => {
-  // fillProfileForm();
   const data = userInfo.getUserInfo();
   profileNameInput.value = data.userName;
   profileOccupationInput.value = data.userJob;

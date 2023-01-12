@@ -26,14 +26,12 @@ class Card {
     cardDeleteButton.addEventListener("click", this._handleDelete);
 
     //listen for card image click
-    this._cardElement
-      .querySelector(".card__image")
-      .addEventListener("click", () => {
-        this._handleCardClick({
-          link: this._cardImage.src,
-          name: this._cardTitle.textContent,
-        });
+    this._cardImage.addEventListener("click", () => {
+      this._handleCardClick({
+        link: this._cardImage.src,
+        name: this._cardTitle.textContent,
       });
+    });
   }
 
   getView() {

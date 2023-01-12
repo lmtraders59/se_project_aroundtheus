@@ -7,11 +7,6 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import Section from "../components/Section.js";
 
-import {
-  openModalWindow,
-  closeModalWindow,
-} from "../components/utils/utils.js";
-
 // cards array
 const initialCards = [
   {
@@ -40,17 +35,17 @@ const initialCards = [
   },
 ];
 //popups and buttons
-const profileEditPopup = document.querySelector("#profileEdit");
+const profileEditPopupEl = document.querySelector("#profileEdit");
 const editProfileButton = document.querySelector("#openModal");
 const profileCloseButton = document.querySelector("#profileExitBtn");
 const addCardButton = document.querySelector("#openModal2");
 const addCloseButton = document.querySelector("#addExitBtn");
 const previewCloseButton = document.querySelector("#image-preview_close");
-const profileNameInput = profileEditPopup.querySelector(
+const profileNameInput = profileEditPopupEl.querySelector(
   ".modal__form-input-name"
 );
 
-const profileOccupationInput = profileEditPopup.querySelector(
+const profileOccupationInput = profileEditPopupEl.querySelector(
   ".modal__form-input-description"
 );
 
@@ -111,48 +106,50 @@ function renderCard(cardData) {
 
 const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
-previewPopup.closeModal();
 
 //Add card popup
 const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
   const card = renderCard(data);
   cardList.addItem(card.getView());
-  addCardValidator.resetValidation();
+  // addCardValidator.resetValidation();
   cardFormPopup.closeModal();
 });
 cardFormPopup.setEventListeners();
 
+const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
+  console.log(data);
+  userInfo.setUserInfo(data);
+  profileEditPopup.closeModal();
+});
+profileEditPopup.setEventListeners();
+
 // Card Button States
 addCardButton.addEventListener("click", () => {
-  addFormElement.reset();
+  // addFormElement.reset();
   addCardValidator.resetValidation();
   cardFormPopup.openModal();
 });
 
-//event listeners
+// //event listeners
+// editProfileButton.addEventListener("click", () => {
+//   fillProfileForm();
+//   addProfileValidator.resetValidation();
+//   // openModalWindow(profileEditPopup);
+//   profileEditPopup.openModal();
+// });
+
 editProfileButton.addEventListener("click", () => {
-  fillProfileForm();
+  // fillProfileForm();
+  const data = userInfo.getUserInfo();
+  profileNameInput.value = data.userName;
+  profileOccupationInput.value = data.userJob;
   addProfileValidator.resetValidation();
-  openModalWindow(profileEditPopup);
+  // openModalWindow(profileEditPopup);
+  profileEditPopup.openModal();
 });
 
-// Profile Button
-function fillProfileForm() {
-  profileNameInput.value = profileTitle.textContent;
-  profileOccupationInput.value = profileDescription.textContent;
-}
-
-// Close Profile Button
-profileCloseButton.addEventListener("click", () => closeModalWindow());
-
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
-  const data = {
-    name: evt.target.name.value,
-    description: evt.target.description.value,
-  };
-  userInfo.setUserInfo(data);
-  closeModalWindow();
-}
-
-profileFormElement.addEventListener("submit", handleProfileFormSubmit);
+// // Profile Button
+// function fillProfileForm() {
+//   profileNameInput.value = profileTitle.textContent;
+//   profileOccupationInput.value = profileDescription.textContent;
+// }

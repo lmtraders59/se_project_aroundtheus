@@ -5,7 +5,7 @@ export const addCardButton = document.querySelector("#openModal2");
 export const profileNameInput = profileEditPopupEl.querySelector(
   ".modal__form-input-name"
 );
-
+  
 //forms and inputs
 export const profileFormElement = document.querySelector("#edit-form");
 export const addFormElement = document.querySelector("#add-form");
@@ -55,12 +55,3 @@ export const selectors = {
   jobEl: ".profile__description",
   profileOccupationInput: ".modal__form-input-description",
 };
-
-//validation config
-// export const validationConfig = {
-//   inputSelector: ".modal__form-input",
-//   submitButtonSelector: ".modal__form-button",
-//   inactiveButtonClass: "modal__form-button_disabled",
-//   inputErrorClass: "popup__input_type_error",
-//   errorClass: "modal__error_visible",
-// };

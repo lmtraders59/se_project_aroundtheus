@@ -6,7 +6,7 @@ This is Project 9 of the Software Engineering program at Practicum. It was creat
 
 - Semantic HTML5
 - Flexbox
-- Positioning
+- Positioning9
 - BEM
 - CSS Grid
 - Media Queries

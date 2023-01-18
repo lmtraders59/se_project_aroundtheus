@@ -1,12 +1,12 @@
 # Practicum - Around The US
 
-This is Project 8 of the Software Engineering program at Practicum. It was created using HTML, CSS, and JavaScript based from the Figma design provided by Practicum.
+This is Project 9 of the Software Engineering program at Practicum. It was created using HTML, CSS, and JavaScript based from the Figma design provided by Practicum.
 
 # Project Features
 
 - Semantic HTML5
 - Flexbox
-- Positioning
+- Positioning9
 - BEM
 - CSS Grid
 - Media Queries

@@ -5,7 +5,7 @@ export const addCardButton = document.querySelector("#openModal2");
 export const profileNameInput = profileEditPopupEl.querySelector(
   ".modal__form-input-name"
 );
-  
+
 //forms and inputs
 export const profileFormElement = document.querySelector("#edit-form");
 export const addFormElement = document.querySelector("#add-form");

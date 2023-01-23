@@ -26,6 +26,20 @@ const config = {
   errorClass: "modal__error_visible",
 };
 
+import Api from "../utils/Api.js";
+
+const api = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/group-12",
+  headers: {
+    authorization: "b9a1bbc7-9041-4365-a327-38782162fa8e",
+    "Content-Type": "application/json",
+  },
+});
+
+api.getInitialCards.then([initialCards] => {
+  console.log(initialCards)
+});
+
 // Card Validator
 const addCardValidator = new FormValidator(config, addFormElement);
 addCardValidator.enableValidation();

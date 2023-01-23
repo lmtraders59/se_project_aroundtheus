@@ -78,12 +78,12 @@ export default class Api {
   }
 }
 
-// Api config
-// Token: b9a1bbc7-9041-4365-a327-38782162fa8e Group ID: group-12
-export const apiConfig = {
-  baseUrl: "https://around.nomoreparties.co/v1/group-12",
-  headers: {
-    authorization: "b9a1bbc7-9041-4365-a327-38782162fa8e",
-    "Content-Type": "application/json",
-  },
-};
+// // Api config
+// // Token: b9a1bbc7-9041-4365-a327-38782162fa8e Group ID: group-12
+// export const apiConfig = {
+//   baseUrl: "https://around.nomoreparties.co/v1/group-12",
+//   headers: {
+//     authorization: "b9a1bbc7-9041-4365-a327-38782162fa8e",
+//     "Content-Type": "application/json",
+//   },
+// };

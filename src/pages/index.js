@@ -15,7 +15,6 @@ import {
   nameEl,
   jobEl,
   profileOccupationInput,
-  initialCards,
 } from "../utils/constants.js";
 
 const config = {
@@ -37,7 +36,21 @@ const api = new Api({
 });
 
 api.getInitialCards.then([initialCards] => {
-  console.log(initialCards)
+
+
+
+  // Card List
+  const cardList = new Section(
+    {
+      items: initialCards,
+      renderer: (cardData) => {
+        const card = renderCard(cardData);
+        cardList.addItem(card.getView());
+      },
+    },
+    ".cards__container"
+  );
+  cardList.renderItems();  
 });
 
 // Card Validator
@@ -53,20 +66,6 @@ const userInfo = new UserInfo({
   nameElement: nameEl,
   jobElement: jobEl,
 });
-
-// Card List
-const cardList = new Section(
-  {
-    items: initialCards,
-    renderer: (cardData) => {
-      const card = renderCard(cardData);
-      cardList.addItem(card.getView());
-    },
-  },
-  ".cards__container"
-);
-
-cardList.renderItems();
 
 function renderCard(cardData) {
   return new Card(cardData, "#cardTemplate", {

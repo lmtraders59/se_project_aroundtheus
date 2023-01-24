@@ -39,7 +39,7 @@ const api = new Api({
 
 api.getInitialCards().then((initialCards) => {
   // Card List
-  const cardList = new Section(
+  cardList = new Section(
     {
       items: initialCards,
       renderer: (cardData) => {
@@ -50,13 +50,6 @@ api.getInitialCards().then((initialCards) => {
     ".cards__container"
   );
   cardList.renderItems();
-  //Add card popup
-  const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
-    const card = renderCard(data);
-    cardList.addItem(card.getView());
-    cardFormPopup.closeModal();
-  });
-  cardFormPopup.setEventListeners();
 });
 
 // Card Validator
@@ -85,12 +78,12 @@ const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 
 //Add card popup
-// const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
-//   const card = renderCard(data);
-//   cardList.addItem(card.getView());
-//   cardFormPopup.closeModal();
-// });
-// cardFormPopup.setEventListeners();
+const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
+  const card = renderCard(data);
+  cardList.addItem(card.getView());
+  cardFormPopup.closeModal();
+});
+cardFormPopup.setEventListeners();
 
 const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
   userInfo.setUserInfo(data);

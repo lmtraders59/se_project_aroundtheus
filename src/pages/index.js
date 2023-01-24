@@ -27,6 +27,8 @@ const config = {
 
 import Api from "../utils/Api.js";
 
+let cardList;
+
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-12",
   headers: {
@@ -35,10 +37,7 @@ const api = new Api({
   },
 });
 
-api.getInitialCards.then([initialCards] => {
-
-
-
+api.getInitialCards().then((initialCards) => {
   // Card List
   const cardList = new Section(
     {
@@ -50,7 +49,14 @@ api.getInitialCards.then([initialCards] => {
     },
     ".cards__container"
   );
-  cardList.renderItems();  
+  cardList.renderItems();
+  //Add card popup
+  const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
+    const card = renderCard(data);
+    cardList.addItem(card.getView());
+    cardFormPopup.closeModal();
+  });
+  cardFormPopup.setEventListeners();
 });
 
 // Card Validator
@@ -79,12 +85,12 @@ const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 
 //Add card popup
-const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
-  const card = renderCard(data);
-  cardList.addItem(card.getView());
-  cardFormPopup.closeModal();
-});
-cardFormPopup.setEventListeners();
+// const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
+//   const card = renderCard(data);
+//   cardList.addItem(card.getView());
+//   cardFormPopup.closeModal();
+// });
+// cardFormPopup.setEventListeners();
 
 const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
   userInfo.setUserInfo(data);

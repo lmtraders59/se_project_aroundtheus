@@ -15,7 +15,7 @@ export const profileOccupationInput = profileEditPopupEl.querySelector(
 export const nameEl = document.querySelector(".profile__text");
 export const jobEl = document.querySelector(".profile__description");
 
-/// cards array
+// cards array
 export const initialCards = [
   {
     name: "Yosemite Valley",

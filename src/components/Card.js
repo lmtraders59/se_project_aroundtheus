@@ -1,8 +1,8 @@
 class Card {
-  constructor(data, cardselector, { handleCardClick }) {
+  constructor(data, cardSelector, { handleCardClick }) {
     this._link = data.link;
     this._name = data.name;
-    this._cardselector = cardselector;
+    this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
   }
 
@@ -36,7 +36,7 @@ class Card {
 
   getView() {
     this._cardElement = document
-      .querySelector(this._cardselector)
+      .querySelector(this._cardSelector)
       .content.querySelector(".card")
       .cloneNode(true);
     this._cardImage = this._cardElement.querySelector(".card__image");

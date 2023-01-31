@@ -16,6 +16,7 @@ import {
   jobEl,
   profileOccupationInput,
 } from "../utils/constants.js";
+import Api from "../utils/Api.js";
 
 const config = {
   inputSelector: ".modal__form-input",
@@ -24,8 +25,6 @@ const config = {
   inputErrorClass: "modal__form-input_type_error",
   errorClass: "modal__error_visible",
 };
-
-import Api from "../utils/Api.js";
 
 let cardList;
 
@@ -37,20 +36,29 @@ const api = new Api({
   },
 });
 
-api.getInitialCards().then((initialCards) => {
-  // Card List
-  cardList = new Section(
-    {
-      items: initialCards,
-      renderer: (cardData) => {
-        const card = renderCard(cardData);
-        cardList.addItem(card.getView());
+Promise.all([api.getInitialCards(), api.getProfileData()])
+  .then((values) => {
+    // Card List
+    cardList = new Section(
+      {
+        items: values[0],
+        renderer: (cardData) => {
+          const card = renderCard(cardData);
+          cardList.addItem(card.getView());
+        },
       },
-    },
-    ".cards__container"
-  );
-  cardList.renderItems();
-});
+      ".cards__container"
+    );
+    cardList.renderItems();
+
+    userInfo.setUserInfo({
+      name: values[1].name,
+      description: values[1].about,
+    });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 // Card Validator
 const addCardValidator = new FormValidator(config, addFormElement);

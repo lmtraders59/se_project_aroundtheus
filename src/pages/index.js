@@ -74,10 +74,29 @@ const userInfo = new UserInfo({
   jobElement: jobEl,
 });
 
-// const userInfo.getUserInfo() = new UserInfo=> ({
-//     userInfo.getUserInfo().name,
-//     userInfo.getUserInfo().description,
+const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
+  api
+    .editProfile({ name: data.name, about: data.description })
+    .then((newUserObject) => {
+      userInfo.setUserInfo({
+        name: newUserObject.name,
+        description: newUserObject.about,
+      });
+    })
+    .catch((error) => {
+      alert("There was an error");
+    })
+    .finally(() => {
+      profileEditPopup.closeModal();
+    });
+  // profileEditPopup.setEventListeners();
+});
+
+// const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
+//   userInfo.setUserInfo(data);
+//   profileEditPopup.closeModal();
 // });
+// profileEditPopup.setEventListeners();
 
 function renderCard(cardData) {
   return new Card(cardData, "#cardTemplate", {
@@ -97,12 +116,6 @@ const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
   cardFormPopup.closeModal();
 });
 cardFormPopup.setEventListeners();
-
-const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
-  userInfo.setUserInfo(data);
-  profileEditPopup.closeModal();
-});
-profileEditPopup.setEventListeners();
 
 // Card Button States
 addCardButton.addEventListener("click", () => {

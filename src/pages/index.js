@@ -74,6 +74,11 @@ const userInfo = new UserInfo({
   jobElement: jobEl,
 });
 
+// const userInfo.getUserInfo() = new UserInfo=> ({
+//     userInfo.getUserInfo().name,
+//     userInfo.getUserInfo().description,
+// });
+
 function renderCard(cardData) {
   return new Card(cardData, "#cardTemplate", {
     handleCardClick: (card) => {

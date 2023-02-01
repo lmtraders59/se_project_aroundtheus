@@ -56,8 +56,8 @@ Promise.all([api.getInitialCards(), api.getProfileData()])
       description: values[1].about,
     });
   })
-  .catch((err) => {
-    console.log(err);
+  .catch((error) => {
+    console.log(error);
   });
 
 // Card Validator
@@ -76,7 +76,7 @@ const userInfo = new UserInfo({
 
 const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
   api
-    .editProfile({ name: data.name, about: data.description })
+    .updateProfileData({ name: data.name, about: data.description })
     .then((newUserObject) => {
       userInfo.setUserInfo({
         name: newUserObject.name,
@@ -84,13 +84,11 @@ const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
       });
     })
     .catch((error) => {
+      console.log(error);
       alert("There was an error");
-    })
-    .finally(() => {
-      profileEditPopup.closeModal();
     });
-  // profileEditPopup.setEventListeners();
 });
+profileEditPopup.setEventListeners();
 
 // const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
 //   userInfo.setUserInfo(data);

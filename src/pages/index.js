@@ -111,7 +111,19 @@ const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
 cardFormPopup.setEventListeners();
 
 // const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
-// api.addNewCard(data.name, data.link)
+//   api
+//     .addNewCard(data)
+//     .then(newCard) => {
+//       const card = renderCard(data);
+//       cardList.addItem(card.getView());
+//       cardFormPopup.closeModal();
+//    });
+//    .catch((error) => {
+//     console.log(error);
+//     alert("There was an error");
+// });
+// });
+// cardFormPopup.setEventListeners();
 
 // Card Button States
 addCardButton.addEventListener("click", () => {

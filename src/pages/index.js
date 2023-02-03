@@ -76,7 +76,7 @@ const userInfo = new UserInfo({
 
 const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
   api
-    .updateProfileData({ name: data.name, about: data.description })
+    .updateProfileData(data.name, data.description)
     .then((newUserObject) => {
       userInfo.setUserInfo({
         name: newUserObject.name,
@@ -87,14 +87,9 @@ const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
       console.log(error);
       alert("There was an error");
     });
+  profileEditPopup.closeModal();
 });
 profileEditPopup.setEventListeners();
-
-// const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
-//   userInfo.setUserInfo(data);
-//   profileEditPopup.closeModal();
-// });
-// profileEditPopup.setEventListeners();
 
 function renderCard(cardData) {
   return new Card(cardData, "#cardTemplate", {
@@ -114,6 +109,9 @@ const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
   cardFormPopup.closeModal();
 });
 cardFormPopup.setEventListeners();
+
+// const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
+// api.addNewCard(data.name, data.link)
 
 // Card Button States
 addCardButton.addEventListener("click", () => {

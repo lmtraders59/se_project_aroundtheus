@@ -90,6 +90,43 @@
   background-position: center;
 }
 
+/* .profile__image-edit:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.profile__avatar {
+  margin: 40px 30px 0 0;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: relative;
+} */
+
+/* .profile__add {
+  box-sizing: border-box;
+  border: 2px solid #fff;
+  border-radius: 2px;
+  min-width: 150px;
+  min-height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  background-image: url(../images/Add.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+}
+.profile__add:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+.profile__add-image {
+  width: 22px;
+  height: 22px;
+} */
+
 @media screen and (max-width: 740px) {
   .profile {
     padding-right: 20px;

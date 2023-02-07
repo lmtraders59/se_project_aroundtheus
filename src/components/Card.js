@@ -14,6 +14,24 @@ class Card {
     this.cardLikeButton.classList.toggle("card__like-button_on");
   };
 
+  // cardLiked() {
+  //   return this._likes.some((item) => item._id === this._userId);
+  // }
+
+  // _renderLikes() {
+  //   this._likesCount.textContent = this._likes.length;
+  //   if (this.cardLiked()) {
+  //     this._cardLikeButton.classList.add("card__like-button_on");
+  //   } else {
+  //     this._cardLikeButton.classList.remove("card__like-button_on");
+  //   }
+  // }
+
+  // updateLikes(likes) {
+  //   this._likes = likes;
+  //   this._renderLikes();
+  // }
+
   _setEventListeners() {
     // like button
     this.cardLikeButton = this._cardElement.querySelector(".card__like-button");

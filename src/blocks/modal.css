@@ -151,6 +151,10 @@
   cursor: default;
 }
 
+.modal__form-delete {
+  margin-bottom: 0;
+}
+
 @media screen and (max-width: 880px) {
   .modal__container {
     width: 282px;

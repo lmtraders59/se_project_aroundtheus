@@ -44,14 +44,10 @@
                 <div class="card__content-container">
                   <h3 class="card__text"></h3>
                   <button type="button" class="card__delete-button"></button>
-                  <button type="button" class="card__like-button">
-                    <img
-                      src="<%=require('./images/heart-vector.svg')%>"
-                      alt="Heart Vector"
-                    />
-                    <!-- <p class="card__like-count"></p> -->
-                  </button>
-                </div>
+                  <div class="card__likes">
+                    <button class="card__like-button"></button>
+                    <p class="card__like-count"></p>
+                  </div>
               </li>
             </template>
           </ul>

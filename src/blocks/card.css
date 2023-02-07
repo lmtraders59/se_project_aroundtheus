@@ -47,9 +47,11 @@
 
 .card__like-button {
   border: none;
-  /* background-image: url(../images/heart-vector.svg); */
-  background: no-repeat;
-  background-position: center;
+  background: url(../images/heart-vector.svg);
+  background-repeat: no-repeat;
+  height: 19px;
+  width: 21px;
+  margin-top: 26px;
 }
 
 .card__like-button:hover {
@@ -82,9 +84,9 @@
   cursor: pointer;
 }
 
-.card__like-container {
+/* .card__like-container {
   margin: 0 18px 0 0;
-}
+} */
 
 .card__like-count {
   color: black;

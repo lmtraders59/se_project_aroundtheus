@@ -65,7 +65,8 @@ class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
-    this._likes = this._likes.length;
+    this._cardElement.querySelector(".card__like-count").textContent =
+      this._likes.length;
     return this._cardElement;
   }
 }

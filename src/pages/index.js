@@ -40,6 +40,7 @@ const api = new Api({
 /*                      Get initial Cards and Profile Data                     */
 /* -------------------------------------------------------------------------- */
 Promise.all([api.getInitialCards(), api.getProfileData()])
+  // Promise.all([api.getInitialCards(), api.getProfileData(), Card.addLike()])
   .then((values) => {
     // Card List
     cardList = new Section(

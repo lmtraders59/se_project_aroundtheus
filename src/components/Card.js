@@ -2,6 +2,8 @@ class Card {
   constructor(data, cardSelector, { handleCardClick }) {
     this._link = data.link;
     this._name = data.name;
+    this._likes = data.likes;
+    // console.log(this._likes.length);
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
   }
@@ -14,23 +16,23 @@ class Card {
     this.cardLikeButton.classList.toggle("card__like-button_on");
   };
 
-  // cardLiked() {
-  //   return this._likes.some((item) => item._id === this._userId);
-  // }
+  cardLiked() {
+    return this._likes.some((item) => item._id === this._userId);
+  }
 
-  // _renderLikes() {
-  //   this._likesCount.textContent = this._likes.length;
-  //   if (this.cardLiked()) {
-  //     this._cardLikeButton.classList.add("card__like-button_on");
-  //   } else {
-  //     this._cardLikeButton.classList.remove("card__like-button_on");
-  //   }
-  // }
+  _renderLikes() {
+    this._likesCount.textContent = this._likes.length;
+    if (this.cardLiked()) {
+      this._cardLikeButton.classList.add("card__like-button_on");
+    } else {
+      this._cardLikeButton.classList.remove("card__like-button_on");
+    }
+  }
 
-  // updateLikes(likes) {
-  //   this._likes = likes;
-  //   this._renderLikes();
-  // }
+  updateLikes(likes) {
+    this._likes = likes;
+    this._renderLikes();
+  }
 
   _setEventListeners() {
     // like button
@@ -63,6 +65,7 @@ class Card {
     this._cardImage.src = this._link;
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
+    this._likes = this._likes.length;
     return this._cardElement;
   }
 }

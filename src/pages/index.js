@@ -40,7 +40,6 @@ const api = new Api({
 /*                      Get initial Cards and Profile Data                     */
 /* -------------------------------------------------------------------------- */
 Promise.all([api.getInitialCards(), api.getProfileData()])
-  // Promise.all([api.getInitialCards(), api.getProfileData(), Card.addLike()])
   .then((values) => {
     // Card List
     cardList = new Section(
@@ -63,6 +62,28 @@ Promise.all([api.getInitialCards(), api.getProfileData()])
   .catch((error) => {
     console.log(error);
   });
+
+handleLike: () => {
+  if (card.cardLiked()) {
+    api
+      .removeLike(data._id)
+      .then((res) => {
+        card.updateLikes(res.likes);
+      })
+      .catch((err) =>
+        console.log(`An error occurred when removing a like: ${err}`)
+      );
+  } else {
+    api
+      .addLike(data._id)
+      .then((res) => {
+        card.updateLikes(res.likes);
+      })
+      .catch((err) =>
+        console.log(`An error occurred when adding a like: ${err}`)
+      );
+  }
+};
 
 // Card Validator
 const addCardValidator = new FormValidator(config, addFormElement);

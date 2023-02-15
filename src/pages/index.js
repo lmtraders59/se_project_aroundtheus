@@ -63,28 +63,6 @@ Promise.all([api.getInitialCards(), api.getProfileData()])
     console.log(error);
   });
 
-handleLike: () => {
-  if (card.cardLiked()) {
-    api
-      .removeLike(data._id)
-      .then((res) => {
-        card.updateLikes(res.likes);
-      })
-      .catch((err) =>
-        console.log(`An error occurred when removing a like: ${err}`)
-      );
-  } else {
-    api
-      .addLike(data._id)
-      .then((res) => {
-        card.updateLikes(res.likes);
-      })
-      .catch((err) =>
-        console.log(`An error occurred when adding a like: ${err}`)
-      );
-  }
-};
-
 // Card Validator
 const addCardValidator = new FormValidator(config, addFormElement);
 addCardValidator.enableValidation();
@@ -120,6 +98,27 @@ function renderCard(cardData) {
   return new Card(cardData, "#cardTemplate", {
     handleCardClick: (card) => {
       previewPopup.openModal(card);
+    },
+    handleLike: (card) => {
+      if (card.cardLiked()) {
+        api
+          .removeLike(card.id)
+          .then((res) => {
+            card.updateLikes(res.likes);
+          })
+          .catch((err) =>
+            console.log(`An error occurred when removing a like: ${err}`)
+          );
+      } else {
+        api
+          .addLike(card.id)
+          .then((res) => {
+            card.updateLikes(res.likes);
+          })
+          .catch((err) =>
+            console.log(`An error occurred when adding a like: ${err}`)
+          );
+      }
     },
   });
 }

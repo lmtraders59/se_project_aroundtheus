@@ -1,19 +1,22 @@
 class Card {
-  constructor(data, cardSelector, { handleCardClick }) {
+  constructor(data, cardSelector, { handleCardClick, handleLike }) {
+    this.id = data.id;
     this._link = data.link;
     this._name = data.name;
     this._likes = data.likes;
     // console.log(this._likes.length);
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
+    this._handleCardClick.like = handleLike;
   }
 
   _handleDelete = () => {
     this._cardElement.remove();
   };
 
-  _handleLike = () => {
+  _handleLikeClick = () => {
     this.cardLikeButton.classList.toggle("card__like-button_on");
+    this._handleLike(this);
   };
 
   cardLiked() {
@@ -37,7 +40,7 @@ class Card {
   _setEventListeners() {
     // like button
     this.cardLikeButton = this._cardElement.querySelector(".card__like-button");
-    this.cardLikeButton.addEventListener("click", this._handleLike);
+    this.cardLikeButton.addEventListener("click", this._handleLikeClick);
 
     // delete card button
     const cardDeleteButton = this._cardElement.querySelector(

@@ -99,6 +99,23 @@ function renderCard(cardData) {
     handleCardClick: (card) => {
       previewPopup.openModal(card);
     },
+
+    // handleDeleteClick: () => {
+    //   deleteForm.open(() => {
+    //     deleteForm.renderLoading(true);
+    //     api
+    //       .deleteCard(data._id)
+    //       .then(() => {
+    //         card.handleDelete();
+    //         deleteForm.close();
+    //       })
+    //       .catch((err) =>
+    //         console.log(`An error occurred when deleting card: ${err}`)
+    //       )
+    //       .finally(() => deleteForm.renderLoading(false));
+    //   });
+    // },
+    
     handleLike: (card) => {
       if (card.cardLiked()) {
         api

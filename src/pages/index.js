@@ -115,7 +115,7 @@ function renderCard(cardData) {
     //       .finally(() => deleteForm.renderLoading(false));
     //   });
     // },
-    
+
     handleLike: (card) => {
       if (card.cardLiked()) {
         api

@@ -1,5 +1,5 @@
 class Card {
-  constructor(data, cardSelector, { handleCardClick, handleLike }) {
+  constructor(data, cardSelector, { handleCardClick, handleDeleteClick, handleLike }) {
     this.id = data.id;
     this._link = data.link;
     this._name = data.name;
@@ -8,12 +8,18 @@ class Card {
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._handleCardClick.like = handleLike;
+    this._handleDeleteClick = handleDeleteClick;
   }
 
-  _handleDelete = () => {
+  handleDelete = () => {
     this._cardElement.remove();
   };
 
+  _handleLikeClick = () => {
+    this.cardLikeButton.classList.toggle("card__like-button_on");
+    this._handleLike(this);
+  };
+  
   _handleLikeClick = () => {
     this.cardLikeButton.classList.toggle("card__like-button_on");
     this._handleLike(this);

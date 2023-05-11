@@ -27,6 +27,7 @@ const config = {
 };
 
 let cardList;
+let userId;
 
 const api = new Api({
   baseUrl: "https://around.nomoreparties.co/v1/group-12",
@@ -41,6 +42,7 @@ const api = new Api({
 /* -------------------------------------------------------------------------- */
 Promise.all([api.getInitialCards(), api.getProfileData()])
   .then((values) => {
+    userId = values[1]._id
     // Card List
     cardList = new Section(
       {
@@ -95,7 +97,7 @@ const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
 profileEditPopup.setEventListeners();
 
 function renderCard(cardData) {
-  return new Card(cardData, "#cardTemplate", {
+  return new Card(cardData, userId, "#cardTemplate", {
     handleCardClick: (card) => {
       previewPopup.openModal(card);
     },

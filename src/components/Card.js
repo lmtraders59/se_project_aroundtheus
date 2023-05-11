@@ -1,12 +1,14 @@
 class Card {
   constructor(
     data,
+    userId,
     cardSelector,
     { handleCardClick, handleDeleteClick, handleLike }
   ) {
     this.id = data._id;
     this._link = data.link;
     this._name = data.name;
+    this._userId = userId;
     this._likes = data.likes;
     // console.log(this._likes.length);
     this._cardSelector = cardSelector;
@@ -25,7 +27,10 @@ class Card {
   // };
 
   cardLiked() {
-    return this._likes.some((item) => item._id === this._userId);
+    return this._likes.some((item) => {
+      return item._id === this._userId
+      
+    });
   }
 
   _renderLikes() {

@@ -54,6 +54,9 @@
   top: 0;
   left: 0;
 }
+.modal__form-fieldset:last-of-type {
+  margin-bottom: 0;
+}
 .modal__form-input {
   font-family: "Inter", Arial, sans-serif;
   font-style: normal;

@@ -147,6 +147,7 @@ previewPopup.setEventListeners();
 
 //Add card popup
 const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
+  // addForm.renderLoading(true);
   api
     .addNewCard(data)
     .then((newCard) => {
@@ -158,6 +159,7 @@ const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
       console.log(error);
       alert("There was an error");
     });
+    // .finally(() => addForm.renderLoading(false));
 });
 cardFormPopup.setEventListeners();
 

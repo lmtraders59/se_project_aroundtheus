@@ -5,6 +5,7 @@ import "./index.css";
 import UserInfo from "../components/UserInfo.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
+import PopupWithConfirm from "../components/PopupWithConfirm.js";
 import Section from "../components/Section.js";
 import {
   addFormElement,
@@ -80,6 +81,7 @@ const userInfo = new UserInfo({
 });
 
 const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
+  profileEditPopup.renderLoading(true);
   api
     .updateProfileData(data.name, data.description)
     .then((newUserObject) => {
@@ -91,7 +93,8 @@ const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
     .catch((error) => {
       console.log(error);
       alert("There was an error");
-    });
+    })
+    .finally(() => profileEditPopup.renderLoading(false));
   profileEditPopup.closeModal();
 });
 profileEditPopup.setEventListeners();
@@ -102,21 +105,23 @@ function renderCard(cardData) {
       previewPopup.openModal(card);
     },
 
-    // handleDeleteClick: () => {
-    //   deleteForm.open(() => {
-    //     deleteForm.renderLoading(true);
-    //     api
-    //       .deleteCard(data._id)
-    //       .then(() => {
-    //         card.handleDelete();
-    //         deleteForm.close();
-    //       })
-    //       .catch((err) =>
-    //         console.log(`An error occurred when deleting card: ${err}`)
-    //       )
-    //       .finally(() => deleteForm.renderLoading(false));
-    //   });
-    // },
+    handleDeleteClick: () => {
+      deleteForm.openModal();
+      return
+      deleteForm.open(() => {
+        deleteForm.renderLoading(true);
+        api
+          .deleteCard(data._id)
+          .then(() => {
+            card.handleDelete();
+            deleteForm.close();
+          })
+          .catch((err) =>
+            console.log(`An error occurred when deleting card: ${err}`)
+          )
+          .finally(() => deleteForm.renderLoading(false));
+      });
+    },
 
     handleLike: (card) => {
       if (card.cardLiked()) {
@@ -145,9 +150,10 @@ function renderCard(cardData) {
 const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 
+const deleteForm = new PopupWithConfirm("#cardDelete");
 //Add card popup
 const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
-  // addForm.renderLoading(true);
+  cardFormPopup.renderLoading(true);
   api
     .addNewCard(data)
     .then((newCard) => {
@@ -158,8 +164,8 @@ const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
     .catch((error) => {
       console.log(error);
       alert("There was an error");
-    });
-    // .finally(() => addForm.renderLoading(false));
+    })
+    .finally(() => cardFormPopup.renderLoading(false));
 });
 cardFormPopup.setEventListeners();
 

@@ -58,7 +58,7 @@ class Card {
     const cardDeleteButton = this._cardElement.querySelector(
       ".card__delete-button"
     );
-    cardDeleteButton.addEventListener("click", this._handleDelete);
+    cardDeleteButton.addEventListener("click", this._handleDeleteClick);
 
     //listen for card image click
     this._cardImage.addEventListener("click", () => {

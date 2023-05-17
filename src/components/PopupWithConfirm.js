@@ -1,18 +1,17 @@
 import Popup from "./Popup.js";
 
 export default class PopupWithConfirm extends Popup {
-  
-
-  renderLoading(isLoading) {
-    if (isLoading) {
-      this._saveButton.textContent = "Saving...";
-    } else {
-      this._saveButton.textContent = "Save";
-    }
-  }
+  // renderLoading(isLoading) {
+  //   if (isLoading) {
+  //     this._saveButton.textContent = "Saving...";
+  //   } else {
+  //     this._saveButton.textContent = "Save";
+  //   }
+  // }
 
   setEventListeners() {
-    this._popupElement.querySelector(".modal__form").addEventListener("submit", (evt) => {
+    const formEl = this._popupElement.querySelector(".modal__form");
+    formEl.addEventListener("submit", (evt) => {
       evt.preventDefault();
       this._handleSubmit();
     });

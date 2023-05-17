@@ -43,7 +43,7 @@ const api = new Api({
 /* -------------------------------------------------------------------------- */
 Promise.all([api.getInitialCards(), api.getProfileData()])
   .then((values) => {
-    userId = values[1]._id
+    userId = values[1]._id;
     // Card List
     cardList = new Section(
       {
@@ -105,21 +105,24 @@ function renderCard(cardData) {
       previewPopup.openModal(card);
     },
 
-    handleDeleteClick: () => {
+    handleDeleteClick: (cardId) => {
       deleteForm.openModal();
-      return
-      deleteForm.open(() => {
-        deleteForm.renderLoading(true);
+
+      deleteForm.setSubmitAction(() => {
+        alert("You did it!");
+
+        // call api here
+        // deleteForm.renderLoading(true);
         api
-          .deleteCard(data._id)
+          .deleteCard(cardId)
           .then(() => {
             card.handleDelete();
             deleteForm.close();
           })
           .catch((err) =>
             console.log(`An error occurred when deleting card: ${err}`)
-          )
-          .finally(() => deleteForm.renderLoading(false));
+          );
+        // .finally(() => deleteForm.renderLoading(false));
       });
     },
 
@@ -151,6 +154,8 @@ const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 
 const deleteForm = new PopupWithConfirm("#cardDelete");
+deleteForm.setEventListeners();
+
 //Add card popup
 const cardFormPopup = new PopupWithForm("#cardAdd", (data) => {
   cardFormPopup.renderLoading(true);

@@ -48,6 +48,7 @@
                     <button class="card__like-button"></button>
                     <p class="card__like-count"></p>
                   </div>
+                </div>
               </li>
             </template>
           </ul>
@@ -164,19 +165,30 @@
           <img class="modal__preview-image" alt="" src="#" />
           <h3 class="modal__preview-title"></h3>
         </div>
-        <div class="modal" id="cardDelete">
-          <div class="modal__container">
+      </div>
+    </div>
+
+    <div class="modal" id="cardDelete">
+      <div class="modal__container">
+        <button
+          class="modal__exit-button"
+          id="delete-card_close"
+          type="button"
+        >
+          <img
+            src="<%=require('./images/Close-icon.svg')%>"
+            alt="exit button"
+            class="modal__exit-button-image"
+          />
+        </button>
         <form class="modal__form" id="confirm-delete">
           <h3 class="modal__form-title modal__form-delete">Are you sure?</h3>
           <fieldset class="modal__form-fieldset">
-            <button id="delete-button" type="button" class="modal__form-button">
+            <button id="delete-button" type="submit" class="modal__form-button">
               Yes
             </button>
           </fieldset>
         </form>
-        </div>
-        </div>
-
       </div>
     </div>
   </body>

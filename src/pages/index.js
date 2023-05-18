@@ -100,7 +100,7 @@ const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
 profileEditPopup.setEventListeners();
 
 function renderCard(cardData) {
-  return new Card(cardData, userId, "#cardTemplate", {
+  const card = new Card(cardData, userId, "#cardTemplate", {
     handleCardClick: (card) => {
       previewPopup.openModal(card);
     },
@@ -109,20 +109,20 @@ function renderCard(cardData) {
       deleteForm.openModal();
 
       deleteForm.setSubmitAction(() => {
-        alert("You did it!");
+
 
         // call api here
-        // deleteForm.renderLoading(true);
+        deleteForm.renderLoading(true);
         api
           .deleteCard(cardId)
           .then(() => {
             card.handleDelete();
-            deleteForm.close();
+            deleteForm.closeModal();
           })
           .catch((err) =>
             console.log(`An error occurred when deleting card: ${err}`)
-          );
-        // .finally(() => deleteForm.renderLoading(false));
+          )
+          .finally(() => deleteForm.renderLoading(false));
       });
     },
 
@@ -148,6 +148,7 @@ function renderCard(cardData) {
       }
     },
   });
+  return card;
 }
 
 const previewPopup = new PopupWithImage("#image-preview");

@@ -66,6 +66,7 @@
 }
 
 .card__delete-button {
+  display: none;
   background-color: transparent;
   background-image: url(../images/Trash.svg);
   background-size: contain;
@@ -77,6 +78,10 @@
   left: 250px;
   position: absolute;
   bottom: 320px;
+}
+
+.card__delete-button_visible {
+  display: block;
 }
 
 .card__delete-button:hover {

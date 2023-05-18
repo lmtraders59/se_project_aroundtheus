@@ -14,9 +14,10 @@ class Card {
     this._handleCardClick = handleCardClick;
     this._handleLikeCallback = handleLike;
     this._handleDeleteClick = handleDeleteClick;
+    this.ownerId = data.owner._id;
   }
 
-  _handleDelete = () => {
+  handleDelete = () => {
     this._cardElement.remove();
   };
 
@@ -83,6 +84,12 @@ class Card {
     this._cardTitle.textContent = this._name;
     this._likesCount = this._cardElement.querySelector(".card__like-count");
     this._likesCount.textContent = this._likes.length;
+    if (this._userId === this.ownerId) {
+      // show trash icon "card__delete-button"
+      const trashBtn = this._cardElement.querySelector(".card__delete-button")
+      trashBtn.classList.add("card__delete-button_visible")
+    }
+    
     return this._cardElement;
   }
 }

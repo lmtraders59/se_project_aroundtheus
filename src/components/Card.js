@@ -10,7 +10,6 @@ class Card {
     this._name = data.name;
     this._userId = userId;
     this._likes = data.likes;
-    // console.log(this._likes.length);
     this._cardSelector = cardSelector;
     this._handleCardClick = handleCardClick;
     this._handleLikeCallback = handleLike;

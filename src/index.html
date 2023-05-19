@@ -8,19 +8,22 @@
   <body class="body">
     <div class="page">
       <header class="header">
-        <img
-          src="<%=require('./images/aroundtheus.svg')%>"
-          alt="Around Logo"
-          class="header__around-image"
-        />
+          <img
+            src="<%=require('./images/aroundtheus.svg')%>"
+            alt="Around Logo"
+            class="header__around-image"
+          />
       </header>
       <main class="main">
         <section class="profile">
-          <img
-            src="<%=require('./images/jacques-cousteau.jpg')%>"
-            alt="Avatar"
-            class="profile__image"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src="<%=require('./images/jacques-cousteau.jpg')%>"
+              alt="Avatar"
+              class="profile__image"
+            />
+            <button>Pencil</button>
+        </div>
           <div class="profile__image-container">
             <h1 class="profile__text">Jacques Cousteau</h1>
             <button
@@ -191,5 +194,5 @@
         </form>
       </div>
     </div>
-  </body>
+    <profile__avatar class="div"></profile__avatar>
 </html>

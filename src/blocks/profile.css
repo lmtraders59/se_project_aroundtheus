@@ -90,10 +90,29 @@
   background-position: center;
 }
 
-.profile__image-edit:hover {
+
+/* .profile__image-edit {
+  z-index: 1;
+  position: absolute;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: none;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+
+
+.profile__image:hover {
   opacity: 1;
   cursor: pointer;
-}
+} 
 
 /* .profile__avatar {
   margin: 40px 30px 0 0;

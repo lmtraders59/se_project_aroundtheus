@@ -109,8 +109,6 @@ function renderCard(cardData) {
       deleteForm.openModal();
 
       deleteForm.setSubmitAction(() => {
-
-
         // call api here
         deleteForm.renderLoading(true);
         api

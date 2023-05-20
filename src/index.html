@@ -194,5 +194,24 @@
         </form>
       </div>
     </div>
-    <profile__avatar class="div"></profile__avatar>
+    <div class="profile">
+      <div class="profile__avatar">
+        <img alt="Avatar" src=" " class="profile__image" />
+        <button type="button" class="profile__image-edit">
+          <img
+            alt="Avatar edit button"
+            src="<%=require('./images/EditAvatar.png')%>"
+          />
+        </button>
+      </div>
+      <div class="profile__text">
+        <div class="profile__text-button">
+          <h1 class="profile__title"></h1>
+          <button type="button" id="openModal" class="profile__edit"></button>
+        </div>
+        <p class="profile__description"></p>
+      </div>
+      <button type="button" class="profile__add" id="openModal2"></button>
+    </div>
+    <!-- <profile__avatar class="div"></profile__avatar> -->
 </html>

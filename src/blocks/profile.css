@@ -107,6 +107,10 @@
   left: 0;
   right: 0;
 } */
+.profile__image-edit {
+  background-color: black;
+  border: none;
+}
 
 
 .profile__image:hover {

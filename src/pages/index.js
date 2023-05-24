@@ -16,6 +16,7 @@ import {
   nameEl,
   jobEl,
   profileOccupationInput,
+  profileAddImage,
 } from "../utils/constants.js";
 import Api from "../utils/Api.js";
 
@@ -105,11 +106,10 @@ function renderCard(cardData) {
       previewPopup.openModal(card);
     },
 
+    // Delete card
     handleDeleteClick: (cardId) => {
       deleteForm.openModal();
-
       deleteForm.setSubmitAction(() => {
-        // call api here
         deleteForm.renderLoading(true);
         api
           .deleteCard(cardId)
@@ -179,6 +179,13 @@ addCardButton.addEventListener("click", () => {
   cardFormPopup.openModal();
 });
 
+// profile Button States
+profileAddImage.addEventListener("click", () => {
+  addProfileValidator.resetValidation();
+  // addCardValidator.resetValidation();
+  cardProfilePopup.openModal();
+});
+
 editProfileButton.addEventListener("click", () => {
   const data = userInfo.getUserInfo();
   profileNameInput.value = data.userName;
@@ -186,3 +193,26 @@ editProfileButton.addEventListener("click", () => {
   addProfileValidator.resetValidation();
   profileEditPopup.openModal();
 });
+
+//Add profile popup
+const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
+  api
+  .setUserAvatar(data).then(()=>{})
+  cardProfilePopup.closeModal();
+});
+cardProfilePopup.setEventListeners();
+
+// const cardProfilePopup = new PopupWithForm(selectors.profilePopup, (data) => {
+//   cardProfilePopup.renderLoading(true);
+//   api
+//     .updateProfileData(data.name, data.description)
+//     .then(() => {
+//       newUserInfo.setUserInfo(data);
+//       cardProfilePopup.close();
+//     })
+//     .catch((err) =>
+//       console.log(`An error occurred when loading user profile data: ${err}`)
+//     )
+//     .finally(() => cardProfilePopup.renderLoading(false));
+// });
+// cardProfilePopup.setEventListeners();

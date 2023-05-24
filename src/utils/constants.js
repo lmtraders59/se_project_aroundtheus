@@ -2,6 +2,7 @@
 export const profileEditPopupEl = document.querySelector("#profileEdit");
 export const editProfileButton = document.querySelector("#openModal");
 export const addCardButton = document.querySelector("#openModal2");
+export const profileAddImage = document.querySelector(".profile__image-edit");
 export const profileNameInput = profileEditPopupEl.querySelector(
   ".modal__form-input-name"
 );

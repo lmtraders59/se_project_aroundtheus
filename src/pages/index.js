@@ -158,14 +158,6 @@ function renderCard(cardData) {
   return card;
 }
 
-// function submitAvatar({ avatar }) {
-//   return api
-
-
-
-// }
-
-
 const previewPopup = new PopupWithImage("#image-preview");
 previewPopup.setEventListeners();
 
@@ -215,6 +207,8 @@ editProfileButton.addEventListener("click", () => {
 const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
   api
   .setUserAvatar(data).then(()=>{})
+  console.log(data);
+userInfo.setAvatar(data)
   cardProfilePopup.closeModal();
 });
 cardProfilePopup.setEventListeners();

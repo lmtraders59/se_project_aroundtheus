@@ -8,19 +8,27 @@
   <body class="body">
     <div class="page">
       <header class="header">
-        <img
-          src="c75819857ff1599f0c50.svg"
-          alt="Around Logo"
-          class="header__around-image"
-        />
+          <img
+            src="c75819857ff1599f0c50.svg"
+            alt="Around Logo"
+            class="header__around-image"
+          />
       </header>
       <main class="main">
         <section class="profile">
-          <img
-            src="6163c2039d1f0eb8d7ca.jpg"
-            alt="jacques cousteau"
-            class="profile__image"
-          />
+          <div class="profile__avatar-container">
+            <img
+              src="6163c2039d1f0eb8d7ca.jpg"
+              alt="Avatar"
+              class="profile__image"
+            />
+                <button type="button" class="profile__image-edit">
+                  <img
+                    alt="Avatar edit button"
+                    src="bbf66eb7b81dccb49b10.png"
+                  />
+                </button>
+          </div>
           <div class="profile__image-container">
             <h1 class="profile__text">Jacques Cousteau</h1>
             <button
@@ -35,6 +43,7 @@
             class="profile__save-button"
             id="openModal2"
           ></button>
+          
         </section>
         <section class="cards">
           <ul class="cards__container page__section">
@@ -44,12 +53,10 @@
                 <div class="card__content-container">
                   <h3 class="card__text"></h3>
                   <button type="button" class="card__delete-button"></button>
-                  <button type="button" class="card__like-button">
-                    <img
-                      src="50fc1486490dde97ccc1.svg"
-                      alt="Heart Vector"
-                    />
-                  </button>
+                  <div class="card__likes">
+                    <button class="card__like-button"></button>
+                    <p class="card__like-count"></p>
+                  </div>
                 </div>
               </li>
             </template>
@@ -169,5 +176,57 @@
         </div>
       </div>
     </div>
-  </body>
+
+    <div class="modal" id="cardDelete">
+      <div class="modal__container">
+        <button
+          class="modal__exit-button"
+          id="delete-card_close"
+          type="button"
+        >
+          <img
+            src="dac22d3e7f8c8059add2.svg"
+            alt="exit button"
+            class="modal__exit-button-image"
+          />
+        </button>
+        <form class="modal__form" id="confirm-delete">
+          <h3 class="modal__form-title modal__form-delete">Are you sure?</h3>
+          <fieldset class="modal__form-fieldset">
+            <button id="delete-button" type="submit" class="modal__form-button">
+              Yes
+            </button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+    <div class="modal" id="edit-avatar">
+      <div class="modal__container">
+        <button type="button" class="modal__exit-button" id="avatarExitBtn">
+          <img
+            src="dac22d3e7f8c8059add2.svg"
+            alt="exit button"
+            class="modal__exit-button-image"
+          />
+        </button>
+        <form class="modal__form" id="edit-avatar-form">
+          <h3 class="modal__form-title">Change profile picture</h3>
+          <fieldset class="modal__form-fieldset">
+            <input
+              type="url"
+              class="modal__form-input"
+              name="avatar"
+              value=""
+              required
+              id="profile-link"
+              placeholder="Avatar link"
+            />
+            <span class="modal__error" id="profile-link-error"></span>
+          </fieldset>
+          <fieldset class="modal__form-fieldset">
+            <button type="submit" class="modal__form-button">Save</button>
+          </fieldset>
+        </form>
+      </div>
+    </div>
 </html>

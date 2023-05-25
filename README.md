@@ -15,7 +15,7 @@ This is Project 9 of the Software Engineering program at Practicum. It was creat
 - OOP
 
 # Plan to improve the project
-In the future adding more JavaScript functionality
+In the future plans to add more JavaScript functionality
 
 # Github Pages Link
 

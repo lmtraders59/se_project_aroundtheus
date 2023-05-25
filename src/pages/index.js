@@ -21,9 +21,6 @@ import {
   avatarForm,
 } from "../utils/constants.js";
 import Api from "../utils/Api.js";
-
-  
-  console.log(avatarEl);
 const config = {
   inputSelector: ".modal__form-input",
   submitButtonSelector: ".modal__form-button",
@@ -203,11 +200,9 @@ editProfileButton.addEventListener("click", () => {
 });
 
 //Add profile popup
-// const cardProfilePopup = new PopupWithForm("#edit-avatar-modal", ({ submitAvatar })
 const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
   api
   .setUserAvatar(data).then(()=>{})
-  console.log(data);
 userInfo.setAvatar(data)
   cardProfilePopup.closeModal();
 });

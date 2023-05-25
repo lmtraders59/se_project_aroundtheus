@@ -77,14 +77,3 @@ export default class Api {
     }).then(this._checkServerResponse);
   }
 }
-
-// updateProfileData = (name, about) => {
-//   return fetch(`${this.url}/users/me`, {
-//     method: "PATCH",
-//     headers: this.headers,
-//     body: JSON.stringify({
-//       name,
-//       about,
-//     }),
-//   }).then(this._checkServerResponse);
-// };

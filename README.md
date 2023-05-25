@@ -14,6 +14,9 @@ This is Project 9 of the Software Engineering program at Practicum. It was creat
 - Webpack
 - OOP
 
+# Plan to improve the project
+In the future adding more JavaScript functionality
+
 # Github Pages Link
 
 https://lmtraders59.github.io/se_project_aroundtheus/

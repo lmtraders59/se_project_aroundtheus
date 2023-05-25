@@ -15,6 +15,8 @@ export const profileOccupationInput = profileEditPopupEl.querySelector(
 );
 export const nameEl = document.querySelector(".profile__text");
 export const jobEl = document.querySelector(".profile__description");
+export const avatarEl = document.querySelector(".profile__image");
+
 
 // cards array
 export const initialCards = [
@@ -55,4 +57,6 @@ export const selectors = {
   nameEl: ".profile__text",
   jobEl: ".profile__description",
   profileOccupationInput: ".modal__form-input-description",
+  avatarPopup: "#edit-avatar",
+  avatarForm: "#edit-avatar-form",
 };

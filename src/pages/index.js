@@ -201,6 +201,7 @@ editProfileButton.addEventListener("click", () => {
 
 //Add profile popup
 const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
+  cardProfilePopup.renderLoading(true);
   api
   .setUserAvatar(data).then(()=>{
     userInfo.setAvatar(data)
@@ -210,6 +211,6 @@ const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
     console.log(error);
     alert("There was an error");
   })
-  .finally(() => cardFormPopup.renderLoading(false));
+  .finally(() => cardProfilePopup.renderLoading(false));
 });
 cardProfilePopup.setEventListeners();

@@ -84,7 +84,6 @@ class Card {
     this._cardImage.alt = this._name;
     this._cardTitle.textContent = this._name;
     this._likesCount = this._cardElement.querySelector(".card__like-count");
-    // this._likesCount.textContent = this._likes.length;
     this._renderLikes();
     if (this._userId === this.ownerId) {
       // show trash icon "card__delete-button"

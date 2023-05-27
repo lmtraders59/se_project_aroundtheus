@@ -95,13 +95,13 @@ const profileEditPopup = new PopupWithForm("#profileEdit", (data) => {
         name: newUserObject.name,
         description: newUserObject.about,
       });
+      profileEditPopup.closeModal();
     })
     .catch((error) => {
       console.log(error);
       alert("There was an error");
     })
     .finally(() => profileEditPopup.renderLoading(false));
-  profileEditPopup.closeModal();
 });
 profileEditPopup.setEventListeners();
 
@@ -202,8 +202,14 @@ editProfileButton.addEventListener("click", () => {
 //Add profile popup
 const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
   api
-  .setUserAvatar(data).then(()=>{})
-userInfo.setAvatar(data)
+  .setUserAvatar(data).then(()=>{
+    userInfo.setAvatar(data)
   cardProfilePopup.closeModal();
+  })
+  .catch((error) => {
+    console.log(error);
+    alert("There was an error");
+  })
+  .finally(() => cardFormPopup.renderLoading(false));
 });
 cardProfilePopup.setEventListeners();

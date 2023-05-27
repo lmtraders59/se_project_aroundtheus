@@ -22,7 +22,7 @@ export default class UserInfo {
   }
 
   getAvatar(data) {
-    return this._avatar;
+    return this._avatar.src;
   }
 }
 

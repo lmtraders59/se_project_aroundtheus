@@ -44,8 +44,8 @@ const api = new Api({
 /*                      Get initial Cards and Profile Data                     */
 /* -------------------------------------------------------------------------- */
 Promise.all([api.getInitialCards(), api.getProfileData()])
-  .then(([ cardsList, userInfo ]) => {
-    userId = userInfo._id;
+  .then(([ cardsList, userData ]) => {
+    userId = userData._id;
     // Card List
     cardList = new Section(
       {
@@ -60,11 +60,11 @@ Promise.all([api.getInitialCards(), api.getProfileData()])
     cardList.renderItems();
 
     userInfo.setUserInfo({
-      name: userInfo.name,
-      description: userInfo.about,
+      name: userData.name,
+      description: userData.about,
     });
     userInfo.setAvatar({
-      avatar: userInfo.avatar,
+      avatar: userData.avatar,
     })
   })
   .catch((error) => {
@@ -203,8 +203,8 @@ editProfileButton.addEventListener("click", () => {
 const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
   cardProfilePopup.renderLoading(true);
   api
-  .setUserAvatar(data).then(()=>{
-    userInfo.setAvatar(data)
+  .setUserAvatar(data).then((res)=>{
+    userInfo.setAvatar(res)
   cardProfilePopup.closeModal();
   })
   .catch((error) => {

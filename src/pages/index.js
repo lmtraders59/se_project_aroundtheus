@@ -205,7 +205,7 @@ const cardProfilePopup = new PopupWithForm("#edit-avatar", (data) => {
   api
   .setUserAvatar(data).then((res)=>{
     userInfo.setAvatar(res)
-  cardProfilePopup.closeModal();
+    cardProfilePopup.closeModal();
   })
   .catch((error) => {
     console.log(error);

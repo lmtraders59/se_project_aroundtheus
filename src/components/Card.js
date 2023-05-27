@@ -90,7 +90,6 @@ class Card {
       const trashBtn = this._cardElement.querySelector(".card__delete-button")
       trashBtn.classList.add("card__delete-button_visible")
     }
-    
     return this._cardElement;
   }
 }

@@ -44,12 +44,12 @@ const api = new Api({
 /*                      Get initial Cards and Profile Data                     */
 /* -------------------------------------------------------------------------- */
 Promise.all([api.getInitialCards(), api.getProfileData()])
-  .then((values) => {
-    userId = values[1]._id;
+  .then(([ cardsList, userInfo ]) => {
+    userId = userInfo._id;
     // Card List
     cardList = new Section(
       {
-        items: values[0],
+        items: cardsList,
         renderer: (cardData) => {
           const card = renderCard(cardData);
           cardList.addItem(card.getView());
@@ -60,11 +60,11 @@ Promise.all([api.getInitialCards(), api.getProfileData()])
     cardList.renderItems();
 
     userInfo.setUserInfo({
-      name: values[1].name,
-      description: values[1].about,
+      name: userInfo.name,
+      description: userInfo.about,
     });
     userInfo.setAvatar({
-      avatar: values[1].avatar,
+      avatar: userInfo.avatar,
     })
   })
   .catch((error) => {

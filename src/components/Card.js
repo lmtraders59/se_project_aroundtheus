@@ -85,10 +85,10 @@ class Card {
     this._cardTitle.textContent = this._name;
     this._likesCount = this._cardElement.querySelector(".card__like-count");
     this._renderLikes();
-    if (this._userId === this.ownerId) {
+    if (this._userId !== this.ownerId) {
       // show trash icon "card__delete-button"
       const trashBtn = this._cardElement.querySelector(".card__delete-button")
-      trashBtn.classList.add("card__delete-button_visible")
+      trashBtn.remove();
     }
     return this._cardElement;
   }
